@@ -20,7 +20,8 @@
     "underscore": "~1.8.3",
     "normalize.css": "~3.0.3",
     "angular": "~1.4.1",
-    "ui-router": "~0.2.15"
+    "ui-router": "~0.2.15",
+    "foundation": "~5.5.2"
   },
   "devDependencies": {
     "mocha": "~2.2.5",
