@@ -10,13 +10,16 @@
 <body ng-app="CodeBytes">
 
   <nav ng-controller="NavCtrl">
-    <a href="#/feed">CodeBytes</a> |
-    <a href="#/topquestions">Top Questions</a> |
-    <a href="#/addpost">Add Post</a> |
-    <a href="#/about">About</a> |
-    <a href="#/signup">Sign Up</a> |
-    <a href="#/login">Login</a> |
-    <a href="#/" ng-click="logout()">Logout</a>
+    <div class="topSpace"></div>
+    <div class="navDiv">
+      <a class="logo" href="#/feed">CodeBytes</a>
+      <a class="link" href="#/topquestions">Top Questions</a><span>|</span>
+      <a class="link" href="#/addpost">Add Post</a><span>|</span>
+      <a class="link" href="#/about">About</a><span>|</span>
+      <a class="link" href="#/signup">Sign Up</a><span>|</span>
+      <a class="link" href="#/login">Login</a><span>|</span>
+      <a class="link" href="#/" ng-click="logout()">Logout</a>
+    </div>
   </nav>
 
   <div class="container row" ui-view>
