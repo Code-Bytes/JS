@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif; }
+
+nav span {
+  font-size: 24px;
+  margin: 15px; }
+
+nav {
+  border-bottom: RGBA(240, 240, 240, 1);
+  height: 65px;
+  width: 100%; }
