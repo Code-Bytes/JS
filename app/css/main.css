@@ -5,7 +5,8 @@
 nav {
   border-bottom: 1px solid RGBA(240, 240, 240, 1);
   height: 65px;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 50px; }
 
 nav a {
   font-size: 24px;
@@ -32,3 +33,9 @@ nav span {
 
 nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid; }
+
+label {
+  color: RGBA(143, 144, 138, 1); }
+
+legend {
+  color: RGBA(143, 144, 138, 1); }
