@@ -11,23 +11,33 @@
       $stateProvider
         .state('signup', {
           url: '/signup',
-          templateUrl: 'js/templates/signup.html',
-          controller: 'SignUpController'
+          templateUrl: 'js/templates/signup.tpl.html',
+          controller: 'UserController'
         })
         .state('signin', {
           url: '/signin',
-          templateUrl: 'js/templates/signin.html',
-          controller: 'SignInController'
+          templateUrl: 'js/templates/signin.tpl.html',
+          controller: 'UserController'
         })
         .state('feed', {
           url: '/feed',
-          templateUrl: 'js/templates/feed.html',
+          templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
-        .state('profile', {
-          url: '/profile :id',
-          templateUrl: 'js/templates/profile.html',
-          controller: 'ProfileController'
         })
+        .state('/addpost', {
+          url: '/addpost',
+          templateUrl: 'js/templates/addpost.tpl.html',
+          controller: 'AddPostController'
+        })
+        .state('post', {
+          url: '/post/:id',
+          templateUrl: 'js/templates/singlepost.tpl.html',
+          controller: 'SinglePostController'
+        })
+        .state('profile', {
+          url: '/profile/:id',
+          templateUrl: 'js/templates/profile.tpl.html',
+          controller: 'UserController'
         });
     }
   ]);
