@@ -14,14 +14,19 @@
           templateUrl: 'js/templates/signup.tpl.html',
           controller: 'UserController'
         })
-        .state('signin', {
-          url: '/signin',
-          templateUrl: 'js/templates/signin.tpl.html',
+        .state('login', {
+          url: '/login',
+          templateUrl: 'js/templates/login.tpl.html',
           controller: 'UserController'
         })
         .state('feed', {
           url: '/feed',
           templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('topQuestions', {
+          url: '/topquestions',
+          templateUrl: 'js/templates/topquestions.tpl.html',
           controller: 'FeedController'
         })
         .state('/addpost', {
@@ -33,6 +38,11 @@
           url: '/post/:id',
           templateUrl: 'js/templates/singlepost.tpl.html',
           controller: 'SinglePostController'
+        })
+        .state('about', {
+          url: 'about',
+          templateUrl: 'js/templates/about.tpl.html',
+          controller: 'FeedController'
         })
         .state('profile', {
           url: '/profile/:id',

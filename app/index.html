@@ -9,9 +9,14 @@
 </head>
 <body ng-app="CodeBytes">
 
-  <nav>
-    <span>CodeBytes</span>
-
+  <nav ng-controller="NavCtrl">
+    <a href="#/feed">CodeBytes</a> |
+    <a href="#/topquestions">Top Questions</a> |
+    <a href="#/addpost">Add Post</a> |
+    <a href="#/about">About</a> |
+    <a href="#/signup">Sign Up</a> |
+    <a href="#/login">Login</a> |
+    <a href="#/" ng-click="logout()">Logout</a>
   </nav>
 
   <div class="container row" ui-view>
@@ -27,6 +32,18 @@
 
   <!-- MAIN -->
   <script src="js/main.js"></script>
+
+  <!-- POSTS -->
+  <script src="js/posts/addpost.controller.js"></script>
+  <script src="js/posts/feed.controller.js"></script>
+  <script src="js/posts/nav.controller.js"></script>
+  <script src="js/posts/singlepost.controller.js"></script>
+  <script src="js/posts/post.service.js"></script>
+
+  <!-- USERS -->
+  <script src="js/users/user.controller.js"></script>
+  <script src="js/users/user.service.js"></script>
+
 
 </body>
 </html>
