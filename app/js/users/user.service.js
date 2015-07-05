@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .service('UserService', ['$http', '$cookies', '$location',
+  .service('UserService', ['$http', '$location',
 
-    function ($http, $cookies, $location) {
+    function ($http, $location) {
 
 
 
