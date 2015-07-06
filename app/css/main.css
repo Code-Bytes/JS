@@ -7,7 +7,8 @@ nav {
   height: 65px;
   width: 100%;
   margin-bottom: 50px;
-  position: relative; }
+  position: relative;
+  overflow: visible; }
 
 nav a {
   font-size: 24px;
@@ -42,14 +43,12 @@ nav span {
   margin: 0; }
 
 .dropDown {
-  height: 0;
-  width: 0;
   background-color: RGBA(237, 233, 222, 0.7);
+  border: 1px RGBA(143, 144, 138, 1) solid;
   border-radius: 3px;
   position: absolute;
   top: 65px;
-  right: 10px;
-  display: none; }
+  right: 10px; }
 
 .dropLink {
   font-size: 14px;
@@ -57,8 +56,10 @@ nav span {
   padding: 0px; }
 
 .portrait:hover .dropDown {
-  height: 65px;
-  width: 125px; }
+  display: inline-block; }
+
+.avatarDiv:hover .dropDown {
+  display: inline-block; }
 
 .logout {
   border-top: 1px RGBA(143, 144, 138, 1) solid; }
@@ -67,8 +68,8 @@ nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid; }
 
 .avatarDiv {
-  height: 50px;
-  width: 50px;
+  height: 48px;
+  width: 48px;
   background-color: RGBA(211, 214, 219, 1);
   border-radius: 100%;
   position: absolute;
@@ -79,10 +80,18 @@ nav a:hover {
   width: 40px;
   height: 40px;
   display: inline-block;
-  margin: 5px 5px; }
+  margin: 5px 5px;
+  color: white; }
+
+.profPortrait {
+  color: black; }
 
 label {
   color: RGBA(143, 144, 138, 1); }
 
 legend {
   color: RGBA(143, 144, 138, 1); }
+
+.profile {
+  border: 1px RGBA(143, 144, 138, 1) solid;
+  text-align: center; }
