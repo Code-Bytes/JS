@@ -40,7 +40,7 @@
           controller: 'SinglePostController'
         })
         .state('about', {
-          url: 'about',
+          url: '/about',
           templateUrl: 'js/templates/about.tpl.html',
           controller: 'FeedController'
         })
