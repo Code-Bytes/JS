@@ -19,8 +19,8 @@
           templateUrl: 'js/templates/login.tpl.html',
           controller: 'UserController'
         })
-        .state('feed', {
-          url: '/feed',
+        .state('home', {
+          url: '/',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
