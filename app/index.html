@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project Name</title>
+  <title>CodeBytes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/vendor/foundation.css">
@@ -15,7 +15,6 @@
     <div class="navDiv">
       <a class="logo" href="#/feed">CodeBytes</a>
       <a class="link" href="#/topquestions">Top Questions</a><span>|</span>
-      <a class="link" href="#/about">About</a><span>|</span>
       <a class="link" href="#/signup">Sign Up</a><span>|</span>
       <a class="link" href="#/login">Login</a>
       <a class="postLink" href="#/addpost">
@@ -25,7 +24,13 @@
       </a>
       <a class="avatarDiv" href="#/myprofile"><img class="portrait" src="images/portrait.png"/></a>
     </div>
-    <div></div>
+
+    <div class="dropDown">
+      <div class="dropLinkDiv"><a class="dropLink" href="/#/myprofile">Profile</a></div>
+      <div class="dropLinkDiv"><a class="dropLink" href="/#help">Help</a></div>
+      <div class="dropLinkDiv"><a class="dropLink" href="/#settings">Settings</a></div>
+      <div class="dropLinkDiv logout"><a class="dropLink" href="/#/">Logout</a></div>
+    </div>
   </nav>
 
   <div class="container row" ui-view>

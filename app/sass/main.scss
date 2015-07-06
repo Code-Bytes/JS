@@ -54,7 +54,32 @@ nav span {
   margin: 0;
 }
 
+.dropDown {
+  height: 0;
+  width: 0;
+  background-color: RGBA(237, 233, 222, .7);
+  // border: 1px RGBA(143, 144, 138, 1) solid;
+  border-radius: 3px;
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  display: none;
+}
 
+.dropLink {
+  font-size: 14px;
+  margin: 15px;
+  padding: 0px;
+}
+
+.portrait:hover .dropDown {
+  height: 65px;
+  width: 125px;
+}
+
+.logout {
+  border-top: 1px RGBA(143, 144, 138, 1) solid;
+}
 
 nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid;
