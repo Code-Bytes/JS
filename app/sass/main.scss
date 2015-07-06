@@ -13,6 +13,7 @@ nav {
   width: 100%;
   margin-bottom: 50px;
   position: relative;
+  overflow: visible;
 }
 
 nav a {
@@ -55,15 +56,13 @@ nav span {
 }
 
 .dropDown {
-  height: 0;
-  width: 0;
   background-color: RGBA(237, 233, 222, .7);
-  // border: 1px RGBA(143, 144, 138, 1) solid;
+  border: 1px RGBA(143, 144, 138, 1) solid;
   border-radius: 3px;
   position: absolute;
   top: 65px;
   right: 10px;
-  display: none;
+  // display: none;
 }
 
 .dropLink {
@@ -73,8 +72,11 @@ nav span {
 }
 
 .portrait:hover .dropDown {
-  height: 65px;
-  width: 125px;
+  display: inline-block;
+}
+
+.avatarDiv:hover .dropDown {
+  display: inline-block;
 }
 
 .logout {
@@ -90,8 +92,8 @@ nav img:hover {
 }
 
 .avatarDiv {
-  height: 50px;
-  width: 50px;
+  height: 48px;
+  width: 48px;
   background-color: RGBA(211, 214, 219, 1);
   border-radius: 100%;
   position: absolute;
@@ -104,12 +106,16 @@ nav img:hover {
   height: 40px;
   display: inline-block;
   margin: 5px 5px;
+  color: white;
 }
 
+.profPortrait {
+  color: black;
+}
 
 /////////////////
-////Forms///////
-////////////////
+////Forms////////
+/////////////////
 
 
 //Sign In
@@ -122,3 +128,12 @@ legend {
   color: RGBA(143, 144, 138, 1);
 }
 
+
+/////////////////
+////Profile//////
+/////////////////
+
+.profile {
+  border: 1px RGBA(143, 144, 138, 1) solid;
+  text-align: center;
+}

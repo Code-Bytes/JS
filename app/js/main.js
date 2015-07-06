@@ -45,7 +45,7 @@
           controller: 'FeedController'
         })
         .state('profile', {
-          url: '/profile/:id',
+          url: '/myprofile',
           templateUrl: 'js/templates/profile.tpl.html',
           controller: 'UserController'
         });
