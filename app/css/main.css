@@ -32,10 +32,19 @@ nav span {
   font-size: 12px;
   color: RGBA(143, 144, 138, 1); }
 
+.postLink {
+  position: absolute;
+  right: 75px;
+  top: 10px; }
+
+.add {
+  font-size: 24px;
+  margin: 0; }
+
 nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid; }
 
-.profileDiv {
+.avatarDiv {
   height: 50px;
   width: 50px;
   background-color: RGBA(211, 214, 219, 1);
