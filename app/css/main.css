@@ -6,7 +6,8 @@ nav {
   border-bottom: 1px solid RGBA(240, 240, 240, 1);
   height: 65px;
   width: 100%;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
 
 nav a {
   font-size: 24px;
@@ -33,6 +34,21 @@ nav span {
 
 nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid; }
+
+.profileDiv {
+  height: 50px;
+  width: 50px;
+  background-color: RGBA(211, 214, 219, 1);
+  border-radius: 100%;
+  position: absolute;
+  top: 2px;
+  right: 10px; }
+
+.portrait {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 5px 5px; }
 
 label {
   color: RGBA(143, 144, 138, 1); }

@@ -12,6 +12,7 @@ nav {
   height: 65px;
   width: 100%;
   margin-bottom: 50px;
+  position: relative;
 }
 
 nav a {
@@ -44,6 +45,27 @@ nav span {
 
 nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid;
+}
+
+nav img:hover {
+
+}
+
+.profileDiv {
+  height: 50px;
+  width: 50px;
+  background-color: RGBA(211, 214, 219, 1);
+  border-radius: 100%;
+  position: absolute;
+  top: 2px;
+  right: 10px;
+}
+
+.portrait {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin: 5px 5px;
 }
 
 
