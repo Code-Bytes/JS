@@ -24,9 +24,9 @@
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
-        .state('topQuestions', {
-          url: '/topquestions',
-          templateUrl: 'js/templates/topquestions.tpl.html',
+        .state('topPosts', {
+          url: '/topposts',
+          templateUrl: 'js/templates/topposts.tpl.html',
           controller: 'FeedController'
         })
         .state('/addpost', {
