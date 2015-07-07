@@ -92,10 +92,6 @@ label {
 legend {
   color: RGBA(143, 144, 138, 1); }
 
-.profile {
-  text-align: center; }
-
-<<<<<<< HEAD
 .radiobtn {
   display: inline-block;
   width: 45%;
@@ -115,7 +111,10 @@ legend {
     -moz-box-shadow: 0 0 10px #ccc;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc; }
-=======
+
+.profile {
+  text-align: center; }
+
 .profilePortraitDiv {
   width: 80px;
   height: 80px;
@@ -197,4 +196,3 @@ legend {
 .post {
   font-size: 11px;
   font-style: italic; }
->>>>>>> devMeade
