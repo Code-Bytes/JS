@@ -91,6 +91,12 @@ label {
 legend {
   color: RGBA(143, 144, 138, 1); }
 
+<<<<<<< HEAD
+=======
+.filterby {
+  font-size: 1.2em; }
+
+>>>>>>> e3202eb6f8b28cc76f2714150e7dbfd9330a6592
 .radiobtn {
   display: inline-block;
   width: 45%;

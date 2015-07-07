@@ -1,10 +1,10 @@
 (function() {
   'use strict';
 
-  angular.module('CodeBytes', ['ui.router'])
+  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer'])
 
-  .config([ '$stateProvider', '$urlRouterProvider',
-    function ($stateProvider, $urlRouterProvider) {
+  .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
+    function ($stateProvider, $urlRouterProvider, $authProvider) {
 
       $urlRouterProvider.otherwise('/');
 
@@ -49,7 +49,45 @@
           templateUrl: 'js/templates/profile.tpl.html',
           controller: 'UserController'
         });
+
+
+      $authProvider.github({
+        clientId: '7ab0c77e00440005341a'
+      });
+
+      $authProvider.httpInterceptor = true; // Add Authorization header to HTTP request
+      $authProvider.loginOnSignup = true;
+      $authProvider.baseUrl = '/';  // API Base URL for the paths below.
+      $authProvider.loginRedirect = '/';
+      $authProvider.logoutRedirect = '/';
+      $authProvider.signupRedirect = '/login';
+      $authProvider.loginUrl = '/auth/login';
+      $authProvider.signupUrl = '/auth/signup';
+      $authProvider.loginRoute = '/login';
+      $authProvider.signupRoute = '/signup';
+      $authProvider.tokenRoot = false; // set the token parent element if the token is not the JSON root
+      $authProvider.tokenName = 'token';
+      $authProvider.tokenPrefix = 'satellizer'; // Local Storage name prefix
+      $authProvider.unlinkUrl = '/auth/unlink/';
+      $authProvider.unlinkMethod = 'get';
+      $authProvider.authHeader = 'Authorization';
+      $authProvider.authToken = 'Bearer';
+      $authProvider.withCredentials = true;
+      $authProvider.platform = 'browser'; // or 'mobile'
+      $authProvider.storage = 'localStorage'; // or 'sessionStorage'
+
+      $authProvider.github({
+        url: '/auth/github',
+        authorizationEndpoint: 'https://github.com/login/oauth/authorize',
+        redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+        scope: [],
+        scopeDelimiter: ' ',
+        type: '2.0',
+        popupOptions: { width: 1020, height: 618 }
+      });
+
     }
+
   ]);
 
 }());
