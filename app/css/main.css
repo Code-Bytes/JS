@@ -114,6 +114,13 @@ legend {
 .signin i {
   margin-right: 10px; }
 
+.addpost label {
+  margin: 10px; }
+
+.addpostbtn {
+  margin-top: 10px;
+  margin-left: 10px; }
+
 .filterby {
   font-size: 1.2em; }
 
