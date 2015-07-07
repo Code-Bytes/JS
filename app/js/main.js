@@ -47,7 +47,7 @@
 
 
       $authProvider.github({
-        clientId: '7ab0c77e00440005341a'
+        clientId: '7ab0c77e00440005341a',
       });
 
       $authProvider.httpInterceptor = true; // Add Authorization header to HTTP request
@@ -72,7 +72,7 @@
       $authProvider.storage = 'localStorage'; // or 'sessionStorage'
 
       $authProvider.github({
-        url: '/auth/github',
+        url: 'https://pacific-hamlet-4796.herokuapp.com/auth/github',
         authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         scope: [],

@@ -42,14 +42,24 @@ nav span {
   font-size: 24px;
   margin: 0; }
 
+.avatarDiv {
+  z-index: 999; }
+
 .dropDown {
   background-color: RGBA(237, 233, 222, 0.7);
   border: 1px RGBA(143, 144, 138, 1) solid;
   border-radius: 3px;
   position: absolute;
   top: 65px;
-  right: 10px;
+  right: 15px;
   height: 105px; }
+
+.dropDown {
+  list-style-type: none; }
+
+.logo:hover .dropDown {
+  display: block;
+  background-color: red; }
 
 .dropLink {
   font-size: 14px;
