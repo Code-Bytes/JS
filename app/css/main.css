@@ -111,7 +111,8 @@ legend {
     width: 100%;
     max-width: 300px;
     margin: 0 auto 20px auto;
-    opacity: 0.75; }
+    opacity: 0.75;
+    border-radius: 50%; }
     .team-member .memberpic:hover {
       opacity: 1;
       -moz-box-shadow: 0 0 10px #ccc;
@@ -132,10 +133,12 @@ legend {
     border-bottom: 1px solid transparent;
     -webkit-transition: color 0.3s;
     transition: color 0.3s; }
-  .team-member a:-webkit-any-link {
-    color: white;
-    text-decoration: underline;
-    cursor: auto; }
+    .team-member a:-webkit-any-link {
+      color: white;
+      text-decoration: underline;
+      cursor: auto; }
+    .team-member a:hover .fa {
+      font-size: 1.5em; }
   .team-member .fa {
     display: inline-block;
     font-size: 1.25em;
@@ -168,7 +171,7 @@ legend {
   .team-member .social-btn.sb-sm {
     width: 30px;
     height: 30px;
-    font-size: 0.7em;
+    font-size: 0.65em;
     line-height: 30px;
     margin: 6px 4px; }
 

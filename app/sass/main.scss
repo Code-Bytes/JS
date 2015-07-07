@@ -161,6 +161,7 @@ legend {
   max-width: 300px;
   margin: 0 auto 20px auto;
   opacity: 0.75;
+  border-radius: 50%;
 
     &:hover {
       opacity: 1;
@@ -191,12 +192,16 @@ legend {
     border-bottom: 1px solid transparent;
     -webkit-transition: color .3s;
     transition: color .3s;
-  }
 
-  a:-webkit-any-link {
-    color: white;
-    text-decoration: underline;
-    cursor: auto;
+    &:-webkit-any-link {
+      color: white;
+      text-decoration: underline;
+      cursor: auto;
+    }
+
+    &:hover .fa {
+      font-size: 1.5em;
+    }
   }
 
   .fa {
@@ -246,7 +251,7 @@ legend {
   .social-btn.sb-sm {
     width: 30px;
     height: 30px;
-    font-size: 0.7em;
+    font-size: 0.65em;
     line-height: 30px;
     margin: 6px 4px;
   }
