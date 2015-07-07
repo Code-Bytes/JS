@@ -134,6 +134,105 @@ legend {
 /////////////////
 
 .profile {
-  border: 1px RGBA(143, 144, 138, 1) solid;
+  // border: 1px RGBA(143, 144, 138, 1) solid;
   text-align: center;
+}
+
+.profilePortraitDiv {
+  width: 80px;
+  height: 80px;
+  background-color: RGBA(211, 214, 219, 1);
+  border-radius: 100%;
+  border: RGBA(145, 146, 140, 1) solid 1px;
+  overflow: hidden;
+  margin: 50px auto 10px auto;
+  // padding: 5px;
+}
+
+.profPortrait {
+  color: white;
+  margin: 3px;
+  margin-top: 5px;
+}
+
+.profileTitle {
+  font-size: 44px;
+  font-style: bold;
+  margin-bottom: 50px;
+}
+
+.spaceDiv {
+  width: 100%;
+  height: 30px;
+}
+
+.stats {
+  margin: 0 auto;
+}
+
+.stats span {
+  font-size: 11px;
+  display: block;
+}
+
+#postNumber {
+  margin-top: 10px;
+  font-style: bold;
+  font-size: 14px;
+}
+
+#bitsNumber {
+  margin-top: 10px;
+  font-style: bold;
+  font-size: 14px
+}
+
+.profSection {
+  display: inline-block;
+}
+
+.profSection {
+  width: 120px;
+  height: 65px;
+}
+
+.profLinks a {
+  color: RGBA(143, 144, 138, 1);
+}
+
+.profLinks span {
+  margin-bottom: 10px;
+}
+
+.codeBits {
+  border-left: 1px solid RGBA(240, 240, 240, 1);
+  border-right: 1px solid RGBA(240, 240, 240, 1);
+}
+
+.recentPostsDivider {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px RGBA(240, 240, 240, 1) solid;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.recentPostsHeader span {
+  border: RGBA(143, 144, 138, 1) solid 1px;
+  font-size: 11px;
+  width: 130px;
+  height: 20px;
+  padding: 2px 5px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left:-65px;
+}
+
+.post {
+  font-size: 11px;
+  font-style: italic;
 }
