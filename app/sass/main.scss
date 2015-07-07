@@ -175,18 +175,104 @@ legend {
   text-align: center;
 }
 
-.teamphoto {
-  width: 350px;
-  display: block;
-  margin: 15px auto;
-  border-radius: 5px;
+.team-member {
+  max-width: 320px;
+  margin: 30px auto;
+  text-align: center;
+
+  .memberpic {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 20px auto;
   opacity: 0.75;
 
-  &:hover {
-    opacity: 1;
-    -moz-box-shadow: 0 0 10px #ccc;
-    -webkit-box-shadow: 0 0 10px #ccc;
-    box-shadow: 0 0 10px #ccc;
+    &:hover {
+      opacity: 1;
+      -moz-box-shadow: 0 0 10px #ccc;
+      -webkit-box-shadow: 0 0 10px #ccc;
+      box-shadow: 0 0 10px #ccc;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  span {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #999;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  a {
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+  }
+
+  a:-webkit-any-link {
+    color: white;
+    text-decoration: underline;
+    cursor: auto;
+  }
+
+  .fa {
+    display: inline-block;
+    // font: normal normal normal 14px/1 FontAwesome;
+    font-size: 1.25em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+  }
+
+  .social-btn {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    color: #fff;
+    line-height: 54px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 8px 4px;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+  }
+
+  .sb-linkedin {
+    background-color: #0976b4;
+  }
+
+  .sb-email {
+    background-color: #44c456;
+  }
+
+  .sb-github {
+    background-color: black;
+  }
+
+  .sb-facebook {
+    background-color: #3b5998;
+  }
+
+  .sb-twitter {
+    background-color: #55acee;
+  }
+
+  .social-btn.sb-sm {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7em;
+    line-height: 30px;
+    margin: 6px 4px;
   }
 }
 
