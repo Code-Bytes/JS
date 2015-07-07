@@ -55,11 +55,6 @@ nav span {
   margin: 0;
 }
 
-.avatarDiv {
-  z-index: 999;
-}
-
-
 .dropDown {
   background-color: RGBA(237, 233, 222, .7);
   border: 1px RGBA(143, 144, 138, 1) solid;
@@ -68,16 +63,12 @@ nav span {
   top: 65px;
   right: 15px;
   height: 105px;
-}
-
-.dropDown{
+  visibility: hidden;
   list-style-type: none;
-  // display: none;
 }
 
-.logo:hover .dropDown{
-  display: block;
-  background-color: red;
+.ddPoint:hover .dropDown{
+ visibility: visible;
 }
 
 .dropLink {
