@@ -92,6 +92,9 @@ label {
 legend {
   color: RGBA(143, 144, 138, 1); }
 
+.filterby {
+  font-size: 1.2em; }
+
 .radiobtn {
   display: inline-block;
   width: 45%;
