@@ -55,15 +55,21 @@ nav span {
 }
 
 .dropDown {
-  height: 0;
-  width: 0;
-  background-color: RGBA(237, 233, 222, .7);
-  // border: 1px RGBA(143, 144, 138, 1) solid;
-  border-radius: 3px;
-  position: absolute;
-  top: 65px;
-  right: 10px;
-  display: none;
+  // height: 0;
+  // width: 0;
+  // background-color: RGBA(237, 233, 222, .7);
+  // // border: 1px RGBA(143, 144, 138, 1) solid;
+  // border-radius: 3px;
+  // position: absolute;
+  // top: 65px;
+  // right: 10px;
+  // display: none;
+          min-width: 125px; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
 }
 
 .dropLink {
@@ -73,8 +79,9 @@ nav span {
 }
 
 .portrait:hover .dropDown {
-  height: 65px;
-  width: 125px;
+  // height: 65px;
+  // width: 125px;
+  display: block; /* Display the dropdown */
 }
 
 .logout {
@@ -122,3 +129,12 @@ legend {
   color: RGBA(143, 144, 138, 1);
 }
 
+//////////////////
+///// Filter /////
+//////////////////
+
+.radiobtn {
+  display: inline-block;
+  width: 45%;
+  font-size: 0.65em;
+}

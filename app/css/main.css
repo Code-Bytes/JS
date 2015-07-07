@@ -42,14 +42,13 @@ nav span {
   margin: 0; }
 
 .dropDown {
-  height: 0;
-  width: 0;
-  background-color: RGBA(237, 233, 222, 0.7);
-  border-radius: 3px;
+  min-width: 125px;
+  /* Set width of the dropdown */
+  background: #f2f2f2;
+  display: none;
   position: absolute;
-  top: 65px;
-  right: 10px;
-  display: none; }
+  z-index: 999;
+  left: 0; }
 
 .dropLink {
   font-size: 14px;
@@ -57,8 +56,8 @@ nav span {
   padding: 0px; }
 
 .portrait:hover .dropDown {
-  height: 65px;
-  width: 125px; }
+  display: block;
+  /* Display the dropdown */ }
 
 .logout {
   border-top: 1px RGBA(143, 144, 138, 1) solid; }
@@ -86,3 +85,8 @@ label {
 
 legend {
   color: RGBA(143, 144, 138, 1); }
+
+.radiobtn {
+  display: inline-block;
+  width: 45%;
+  font-size: 0.65em; }
