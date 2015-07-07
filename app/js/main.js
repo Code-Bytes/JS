@@ -9,11 +9,6 @@
       $urlRouterProvider.otherwise('/');
 
       $stateProvider
-        .state('signup', {
-          url: '/signup',
-          templateUrl: 'js/templates/signup.tpl.html',
-          controller: 'UserController'
-        })
         .state('login', {
           url: '/login',
           templateUrl: 'js/templates/login.tpl.html',
