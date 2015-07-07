@@ -1,21 +1,37 @@
+<div class="small-10 large-centered columns signin">
 
-<div class="small-4 large-centered columns signin">
+  <div class="small-7 columns signin">
+    <form>
+      <fieldset>
+        <legend>About CodeBytes</legend>
+        <p>CodeBytes is a real time sharing and collaboration platform for the developer community.</p>
+        <p>Whether you are a seasoned veteran, or just getting started, CodeBytes is a place where you can share short posts, photos, illustrations, videos, screencasts and code snippets.</p>
+        <p>There is no need to create an account, simply log in with your existing Github account and go to town!</p>
+      </fieldset>
+    </form>
 
-  <form>
-    <fieldset>
-      <legend>Sign In</legend>
+  </div>
 
-      <label>Username
-        <input type="text" ng-model="info.username" placeholder="Username">
-      </label>
+  <div class="small-5 columns signin">
+    <form>
+      <fieldset>
+        <legend>Why Github?</legend>
+        <ul>
+          <li>No new social media account to maintain</li>
+          <li>Pulling directly from your Github Gists allows you to:
+            <ul>
+              <li>Demo</li>
+              <li>Ask for Help</li>
+              <li>Just Plain Show Off</li>
+            </ul>
+          </li>
+          <span>And all at the click of a button!</span>
+        </ul>
+        <button class="small-centered columns login" ng-click="authenticate('github')">
+          <i class="fa fa-github-square"></i>Sign in with GitHub</button>
 
-      <label>Password
-        <input type="password" ng-model="info.password" placeholder="Password">
-      </label>
-
-      <button ng-click="authenticate('github')">Sign in with GitHub</button>
-
-    </fieldset>
-  </form>
+      </fieldset>
+    </form>
+  </div>
 
 </div>

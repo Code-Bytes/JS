@@ -91,12 +91,32 @@ label {
 legend {
   color: RGBA(143, 144, 138, 1); }
 
-<<<<<<< HEAD
-=======
+.signin span {
+  color: RGBA(143, 144, 138, 1);
+  padding: 10px;
+  margin-left: 0; }
+
+.signin p {
+  color: RGBA(143, 144, 138, 1);
+  padding: 10px; }
+
+.signin li {
+  color: RGBA(143, 144, 138, 1);
+  padding: 5px; }
+
+.login {
+  padding: 13px;
+  color: white; }
+
+.signin {
+  margin-bottom: 75px; }
+
+.signin i {
+  margin-right: 10px; }
+
 .filterby {
   font-size: 1.2em; }
 
->>>>>>> e3202eb6f8b28cc76f2714150e7dbfd9330a6592
 .radiobtn {
   display: inline-block;
   width: 45%;
