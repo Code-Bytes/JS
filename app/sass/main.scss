@@ -62,6 +62,7 @@ nav span {
   position: absolute;
   top: 65px;
   right: 10px;
+  height: 105px;
   // display: none;
 }
 
@@ -69,14 +70,6 @@ nav span {
   font-size: 14px;
   margin: 15px;
   padding: 0px;
-}
-
-.portrait:hover .dropDown {
-  display: inline-block;
-}
-
-.avatarDiv:hover .dropDown {
-  display: inline-block;
 }
 
 .logout {
@@ -87,8 +80,9 @@ nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid;
 }
 
-nav img:hover {
-
+.dropDown ul {
+  list-style-type: none;
+  margin-left: 0px;
 }
 
 .avatarDiv {
@@ -160,6 +154,7 @@ legend {
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc;
   }
+}
 
 /////////////////
 ////Profile//////

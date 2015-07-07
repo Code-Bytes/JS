@@ -48,24 +48,23 @@ nav span {
   border-radius: 3px;
   position: absolute;
   top: 65px;
-  right: 10px; }
+  right: 10px;
+  height: 105px; }
 
 .dropLink {
   font-size: 14px;
   margin: 15px;
   padding: 0px; }
 
-.portrait:hover .dropDown {
-  display: inline-block; }
-
-.avatarDiv:hover .dropDown {
-  display: inline-block; }
-
 .logout {
   border-top: 1px RGBA(143, 144, 138, 1) solid; }
 
 nav a:hover {
   border-bottom: 1px RGBA(143, 144, 138, 1) solid; }
+
+.dropDown ul {
+  list-style-type: none;
+  margin-left: 0px; }
 
 .avatarDiv {
   height: 48px;
@@ -92,10 +91,6 @@ label {
 legend {
   color: RGBA(143, 144, 138, 1); }
 
-.profile {
-  text-align: center; }
-
-<<<<<<< HEAD
 .radiobtn {
   display: inline-block;
   width: 45%;
@@ -115,7 +110,10 @@ legend {
     -moz-box-shadow: 0 0 10px #ccc;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc; }
-=======
+
+.profile {
+  text-align: center; }
+
 .profilePortraitDiv {
   width: 80px;
   height: 80px;
@@ -197,4 +195,3 @@ legend {
 .post {
   font-size: 11px;
   font-style: italic; }
->>>>>>> devMeade
