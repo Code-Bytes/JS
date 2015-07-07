@@ -128,7 +128,6 @@ legend {
   color: RGBA(143, 144, 138, 1);
 }
 
-
 /////////////////
 ////Profile//////
 /////////////////
@@ -136,4 +135,13 @@ legend {
 .profile {
   border: 1px RGBA(143, 144, 138, 1) solid;
   text-align: center;
+}
+//////////////////
+///// Filter /////
+//////////////////
+
+.radiobtn {
+  display: inline-block;
+  width: 45%;
+  font-size: 0.65em;
 }

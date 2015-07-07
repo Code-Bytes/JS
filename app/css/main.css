@@ -95,3 +95,8 @@ legend {
 .profile {
   border: 1px RGBA(143, 144, 138, 1) solid;
   text-align: center; }
+
+.radiobtn {
+  display: inline-block;
+  width: 45%;
+  font-size: 0.65em; }
