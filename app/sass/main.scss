@@ -138,3 +138,26 @@ legend {
   width: 45%;
   font-size: 0.65em;
 }
+
+//////////////////
+//// About Us ////
+//////////////////
+
+.aboutheader {
+  text-align: center;
+}
+
+.teamphoto {
+  width: 350px;
+  display: block;
+  margin: 15px auto;
+  border-radius: 5px;
+  opacity: 0.75;
+
+  &:hover {
+    opacity: 1;
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+  }
+}
