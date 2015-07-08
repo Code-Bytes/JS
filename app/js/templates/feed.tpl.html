@@ -1,3 +1,23 @@
+<div ng-if="isAuthenticated() && currentUser.username">
+  <div class="row">
+   <!--  <div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">
+      <a href="#/photo/{{photo.id}}">
+        <img ng-src="{{photo.images.standard_resolution.url}}" class="thumbnail img-responsive">
+      </a>
+    </div> -->
+  </div>
+</div>
+
+<div ng-if="!isAuthenticated()">
+  <div>
+    <h2>CodeBytes</h2>
+    <p>This is developer social network is powered by <strong>Satellizer</strong>. To continue, please log in with your Github account</p>
+    <p>
+      <a class="btn btn-lg btn-success" href="#/login"><i class="ion-log-in"></i> Log in</a>
+    </p>
+  </div>
+</div>
+
 <div class="large-4 columns"> <!-- Filter sidebar -->
   <div class="panel"> <!-- Panel -->
 

@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+  var endpoint = 'https://pacific-hamlet-4796.herokuapp.com/auth/';
+
   angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer'])
 
   .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
@@ -71,8 +73,11 @@
       $authProvider.platform = 'browser'; // or 'mobile'
       $authProvider.storage = 'localStorage'; // or 'sessionStorage'
 
+      $authProvider.loginUrl = endpoint + 'login';
+      // $authProvider.signupUrl = endpoint + 'signup';
+
       $authProvider.github({
-        url: 'https://pacific-hamlet-4796.herokuapp.com/auth/github',
+        url: endpoint + 'github',
         authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         scope: [],
@@ -83,6 +88,13 @@
 
     }
 
-  ]);
+  ])
+
+  .run(function($rootScope, $window, $auth) {
+    if ($auth.isAuthenticated()) {
+      $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+    }
+
+  });
 
 }());

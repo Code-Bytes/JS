@@ -5,7 +5,7 @@
 
   .controller('AddPostController', ['$scope', 'PostService',
 
-    function($scope, PostService) {
+    function ($scope, PostService) {
 
 
 

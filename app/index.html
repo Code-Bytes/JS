@@ -26,13 +26,14 @@
 
       <div class="ddPoint">
         <a class="avatarDiv" href="#/myprofile">
-          <i class="fa fa-user fa-2x portrait"></i>
+          <!-- <i class="fa fa-user fa-2x portrait"></i> -->
+          <img src="{{ currentUser.avatar }}">
         </a>
         <ul class="dropDown">
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#/myprofile">Profile</a></div></li>
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#help">Help</a></div></li>
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#settings">Settings</a></div></li>
-          <li><div class="dropLinkDiv logout"><a class="dropLink" href="/#/">Logout</a></div></li>
+          <li><div class="dropLinkDiv logout"><a class="dropLink" ng-click="logout()" href="">Logout</a></div></li>
         </ul>
       </div>
     </div>

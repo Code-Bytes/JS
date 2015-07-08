@@ -51,10 +51,21 @@ nav span {
   right: 15px;
   height: 105px;
   visibility: hidden;
-  list-style-type: none; }
+  list-style-type: none;
+  -webkit-transiton: opacity 8s;
+  -moz-transition: opacity 8s;
+  -ms-transition: opacity 8s;
+  -o-transition: opacity 8s;
+  -transition: opacity 8s; }
+
+.ddPoint {
+  padding: 5px; }
 
 .ddPoint:hover .dropDown {
-  visibility: visible; }
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  z-index: 250; }
 
 .dropLink {
   font-size: 14px;

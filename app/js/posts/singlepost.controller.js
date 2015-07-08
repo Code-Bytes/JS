@@ -5,7 +5,7 @@
 
   .controller('SinglePostController', ['$scope', '$location', 'PostService',
 
-    function($scope, $location, PostService) {
+    function ($scope, $location, PostService) {
 
 
 
