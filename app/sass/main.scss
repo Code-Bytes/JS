@@ -74,6 +74,10 @@ nav span {
 
 .ddPoint {
   padding: 5px;
+  display: inline-block;
+  width: 75px;
+  height: 100px;
+  float: right;
 }
 
 .ddPoint:hover .drop{
@@ -115,6 +119,10 @@ nav a:hover {
   top: 2px;
   right: 10px;
   overflow: hidden;
+}
+
+.avatarDiv:hover {
+  background-color: RGBA(143, 144, 138, 1);
 }
 
 .portrait {
