@@ -15,6 +15,7 @@
 
       // };
 
+
       $scope.githubLogin = function() {
         $auth.authenticate('github')
           .then(function(response) {
