@@ -14,7 +14,7 @@
         .state('login', {
           url: '/login',
           templateUrl: 'js/templates/login.tpl.html',
-          controller: 'UserController'
+          controller: 'NavController'
         })
         .state('home', {
           url: '/',
@@ -87,15 +87,17 @@
       });
 
 
+
+
     }
 
-  ])
+  ]);
 
-  .run(function($rootScope, $window, $auth) {
-    if ($auth.isAuthenticated()) {
-      $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-    }
+  // .run(function($rootScope, $window, $auth) {
+  //   if ($auth.isAuthenticated()) {
+  //     $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+  //   }
 
-  });
+  // });
 
 }());

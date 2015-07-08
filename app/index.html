@@ -11,7 +11,7 @@
 </head>
 <body ng-app="CodeBytes">
 
-  <nav ng-controller="NavCtrl">
+  <nav ng-controller="NavController">
     <div class="topSpace"></div>
     <div class="navDiv">
       <a class="logo" href="#/">CodeBytes</a>
@@ -25,10 +25,7 @@
       </a>
 
       <div class="ddPoint">
-        <a class="avatarDiv" href="#/myprofile">
-          <!-- <i class="fa fa-user fa-2x portrait"></i> -->
-          <img src="{{ currentUser.avatar }}">
-        </a>
+        <a class="avatarDiv" href="#/myprofile" ng-bind-html="avatar()"></a>
         <ul class="dropDown">
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#/myprofile">Profile</a></div></li>
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#help">Help</a></div></li>
