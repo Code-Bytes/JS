@@ -89,7 +89,8 @@ nav a:hover {
   border-radius: 100%;
   position: absolute;
   top: 2px;
-  right: 10px; }
+  right: 10px;
+  overflow: hidden; }
 
 .portrait {
   width: 40px;
@@ -131,7 +132,7 @@ legend {
   margin-right: 10px; }
 
 .addpost label {
-  margin: 10px; }
+  margin-top: 15px; }
 
 .addpostbtn {
   margin-top: 10px;

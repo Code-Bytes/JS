@@ -111,6 +111,7 @@ nav a:hover {
   position: absolute;
   top: 2px;
   right: 10px;
+  overflow: hidden;
 }
 
 .portrait {
@@ -176,7 +177,7 @@ legend {
 /////////////////
 
 .addpost label {
-  margin: 10px;
+  margin-top: 15px;
 }
 
 .addpostbtn {

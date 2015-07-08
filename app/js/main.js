@@ -14,7 +14,7 @@
         .state('login', {
           url: '/login',
           templateUrl: 'js/templates/login.tpl.html',
-          controller: 'UserController'
+          controller: 'NavController'
         })
         .state('home', {
           url: '/',
@@ -49,7 +49,7 @@
 
 
       $authProvider.github({
-        clientId: '7ab0c77e00440005341a',
+        clientId: 'c5dc1797fa0f28e2bdef',
       });
 
       $authProvider.httpInterceptor = true; // Add Authorization header to HTTP request
