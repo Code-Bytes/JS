@@ -52,13 +52,15 @@
         } else {
           return $sce.trustAsHtml('<i class="fa fa-user fa-2x portrait"></i>');
         }
-
       };
 
-      console.log($auth.getPayload());
-
-      console.log($auth.getToken());
-      console.log($rootScope.isLoggedIn());
+      $scope.avatarLink = function(){
+        if ($rootScope.isLoggedIn() === true){
+          return '/#/myprofile';
+        } else {
+          return '/#/login';
+        }
+      };
 
     }
 
