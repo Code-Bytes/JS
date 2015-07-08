@@ -7,14 +7,6 @@
 
     function ($scope, UserService, $auth, $window, $location, $rootScope) {
 
-
-
-
-
-
-
-
-
     }
 
   ]);
