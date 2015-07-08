@@ -21,18 +21,6 @@
           });
       };
 
-      $scope.githubLogin = function() {
-        $auth.authenticate('github')
-          .then(function(response) {
-            $window.localStorage.currentUser = JSON.stringify(response.data.user);
-            $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-            console.log('in github login function in user controller');
-            console.log($rootScope.currentUser);
-          })
-          .catch(function(response) {
-            console.log(response.data);
-          });
-      };
 
       $scope.isAuthenticated = function() {
         return $auth.isAuthenticated();
@@ -63,12 +51,15 @@
         } else {
           return $sce.trustAsHtml('<i class="fa fa-user fa-2x portrait"></i>');
         }
-
       };
 
-      console.log($auth.getToken());
-      console.log($rootScope.isLoggedIn());
-
+      $scope.avatarLink = function(){
+        if ($rootScope.isLoggedIn() === true){
+          return '/#/myprofile';
+        } else {
+          return '/#/login';
+        }
+      };
     }
 
   ]);
