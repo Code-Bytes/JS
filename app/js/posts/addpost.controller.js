@@ -19,7 +19,9 @@
       //New Post Method
       $scope.addPost = function () {
 
-      $http.post('https://pacific-hamlet-4796.herokuapp.com/auth/'  + 'posts/', $scope.p, $rootScope.token)
+      console.log($scope.p);
+
+      $http.post('https://pacific-hamlet-4796.herokuapp.com/'  + 'posts/', {'Authorization': $rootScope.token}, $scope.p)
 
         .success( function (data) {
 
