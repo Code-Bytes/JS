@@ -5,14 +5,14 @@
 
   angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer'])
 
-  // .constant('ENDPOINT', {
-  //   URL: 'https://pacific-hamlet-4796.herokuapp.com/auth/',
-  //   CONFIG: {
-  //     headers: {
-  //      'token' : $rootScope.token
-  //     }
-  //   }
-  // })
+  .constant('HEROKU', {
+    URL: 'https://pacific-hamlet-4796.herokuapp.com/auth/',
+    CONFIG: {
+      headers: {
+       'token' : ''
+      }
+    }
+  })
 
   .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
     function ($stateProvider, $urlRouterProvider, $authProvider) {
