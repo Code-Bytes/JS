@@ -34,8 +34,6 @@
 
       $rootScope.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-      console.log($rootScope.currentUser);
-
       $rootScope.token = $auth.getToken();
 
       $rootScope.isLoggedIn = function(){
