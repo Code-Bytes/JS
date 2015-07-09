@@ -1,12 +1,7 @@
-<div ng-if="isAuthenticated() && currentUser.username">
+<!-- <div ng-if="isAuthenticated() && currentUser.username">
   <div class="row">
-   <!--  <div ng-repeat="photo in photos" class="col-lg-2 col-sm-3 col-xs-4">
-      <a href="#/photo/{{photo.id}}">
-        <img ng-src="{{photo.images.standard_resolution.url}}" class="thumbnail img-responsive">
-      </a>
-    </div> -->
   </div>
-</div>
+</div> -->
 
 <div ng-if="!isAuthenticated()">
   <div>
@@ -18,40 +13,40 @@
   </div>
 </div>
 
-<div class="large-4 columns"> <!-- Filter sidebar -->
+<div class="large-4 columns sidebar"> <!-- Filter sidebar -->
   <div class="panel"> <!-- Panel -->
 
     <h4 class="filterby">Filter by:</h4>
     <label>Language(s):</label> <!-- Filter by programming language -->
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="Ruby" id="langRuby"><label for="langRuby">Ruby</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="Ruby" id="langRuby"><label for="langRuby">Ruby</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="Python" id="langPython"><label for="langPython">Python</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="Python" id="langPython"><label for="langPython">Python</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="JavaScript" id="langJS"><label for="langJS">JavaScript</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="JavaScript" id="langJS"><label for="langJS">JavaScript</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="CPlusPlus" id="langCPlusPlus"><label for="langCPlusPlus">C++</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="CPlusPlus" id="langCPlusPlus"><label for="langCPlusPlus">C++</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="CSharp" id="langCSharp"><label for="langCSharp">C#</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="CSharp" id="langCSharp"><label for="langCSharp">C#</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="ObjectiveC" id="langObjectiveC"><label for="langObjectiveC">Objective-C</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="ObjectiveC" id="langObjectiveC"><label for="langObjectiveC">Objective-C</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="SQL" id="langSQL"><label for="langSQL">SQL</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="SQL" id="langSQL"><label for="langSQL">SQL</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="PHP" id="langPHP"><label for="langPHP">PHP</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="PHP" id="langPHP"><label for="langPHP">PHP</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="Java" id="langJava"><label for="langJava">Java</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="Java" id="langJava"><label for="langJava">Java</label>
     </div>
-    <div class="radiobtn">
-      <input type="radio" name="lang" value="C" id="langC"><label for="langC">C</label>
+    <div class="checkbox filter">
+      <input type="checkbox" name="lang" value="C" id="langC"><label for="langC">C</label>
     </div> <!-- Filter by programming language -->
 
     <hr/>
@@ -74,10 +69,9 @@
 
     <button class="tiny radius">Submit</button>
 
-    <!-- <a href="#" class="button tiny">Submit</a> -->
-
   </div> <!-- End panel -->
 </div> <!-- End filter sidebar -->
+
 
 <div class="large-8 columns"> <!-- Feed -->
   <div class="row"> <!-- First post -->

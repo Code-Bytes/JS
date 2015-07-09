@@ -185,13 +185,14 @@ legend {
 // Checkboxes throughout app
 .checkbox {
   display: inline-block;
+  width: 30%;
 }
 
 // Overriding Foundation default
 input[type="text"],
 input[type="checkbox"],
 input[type="radio"] {
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 /////////////////
@@ -215,8 +216,16 @@ input[type="radio"] {
 ///// Filter /////
 //////////////////
 
+.sidebar {
+  float: right;
+}
+
 .filterby {
   font-size: 1.2em;
+}
+
+.checkbox.filter {
+  width: 45%;
 }
 
 .radiobtn {

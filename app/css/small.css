@@ -1,2 +1,5 @@
 body {
   min-width: 250px; }
+
+.sidebar {
+  display: none; }

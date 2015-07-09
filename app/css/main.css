@@ -142,12 +142,13 @@ legend {
   margin-right: 10px; }
 
 .checkbox {
-  display: inline-block; }
+  display: inline-block;
+  width: 30%; }
 
 input[type="text"],
 input[type="checkbox"],
 input[type="radio"] {
-  margin: 0 0 0.25rem 0; }
+  margin: 0 0 0.5rem 0; }
 
 .apppostform {
   margin: 20px; }
@@ -159,8 +160,14 @@ input[type="radio"] {
   margin-top: 10px;
   margin-left: 10px; }
 
+.sidebar {
+  float: right; }
+
 .filterby {
   font-size: 1.2em; }
+
+.checkbox.filter {
+  width: 45%; }
 
 .radiobtn {
   display: inline-block;
