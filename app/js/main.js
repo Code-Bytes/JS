@@ -5,6 +5,15 @@
 
   angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer'])
 
+  // .constant('ENDPOINT', {
+  //   URL: 'https://pacific-hamlet-4796.herokuapp.com/auth/',
+  //   CONFIG: {
+  //     headers: {
+  //      'token' : $rootScope.token
+  //     }
+  //   }
+  // })
+
   .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
     function ($stateProvider, $urlRouterProvider, $authProvider) {
 
@@ -26,7 +35,7 @@
           templateUrl: 'js/templates/topposts.tpl.html',
           controller: 'FeedController'
         })
-        .state('/addpost', {
+        .state('addpost', {
           url: '/addpost',
           templateUrl: 'js/templates/addpost.tpl.html',
           controller: 'AddPostController'
