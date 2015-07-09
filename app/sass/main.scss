@@ -182,10 +182,25 @@ legend {
   margin-right: 10px;
 }
 
+// Checkboxes throughout app
+.checkbox {
+  display: inline-block;
+}
+
+// Overriding Foundation default
+input[type="text"],
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 0 0 0.25rem 0;
+}
 
 /////////////////
 ///Add Post//////
 /////////////////
+
+.apppostform {
+  margin: 20px;
+}
 
 .addpost label {
   margin-top: 15px;

@@ -141,6 +141,17 @@ legend {
 .signin i {
   margin-right: 10px; }
 
+.checkbox {
+  display: inline-block; }
+
+input[type="text"],
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 0 0 0.25rem 0; }
+
+.apppostform {
+  margin: 20px; }
+
 .addpost label {
   margin-top: 15px; }
 
