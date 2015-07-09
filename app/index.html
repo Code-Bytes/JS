@@ -11,8 +11,7 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/small.css" media="(max-width: 425px)">
-  <link rel="stylesheet" href="css/big.css" media="(min-width: 700px)">
+  <link rel="stylesheet" href="css/mobile.css" media="(max-width: 425px)">
 </head>
 
 <body ng-app="CodeBytes">
@@ -21,8 +20,8 @@
     <div class="topSpace"></div>
     <div class="navDiv">
       <a class="logo" href="#/">CodeBytes</a>
-      <a class="link" href="#/topposts">Top Posts</a><span>|</span>
-      <a class="link" href="#/login">Getting Started</a>
+      <a class="link" href="#/topposts">Top Posts</a><span ng-if="!isAuthenticated()">|</span>
+      <a class="link" href="#/login" ng-if="!isAuthenticated()">Getting Started</a>
 
       <a class="postLink" href="#/addpost">
         <span class="add">&#123;</span>
@@ -48,13 +47,13 @@
   </div>
 
   <footer class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
       <hr/>
       <div class="row">
-        <div class="large-5 columns">
+        <div class="small-7 columns footer">
           <p>© 2015 CodeBytes</p>
         </div>
-        <div class="large-7 columns">
+        <div class="small-5 columns footer">
           <ul class="inline-list right">
             <li><a href="#/about">About Us</a></li>
           </ul>

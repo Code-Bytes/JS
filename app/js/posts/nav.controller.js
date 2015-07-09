@@ -4,9 +4,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('NavController', ['PostService','$scope', '$rootScope', '$auth', '$window', '$location', '$sce',
+  .controller('NavController', ['PostService','$scope', '$rootScope', '$auth', '$window', '$location', '$sce', '$http',
 
-    function (PostService, $scope, $rootScope, $auth, $window, $location, $sce) {
+    function (PostService, $scope, $rootScope, $auth, $window, $location, $sce, $http) {
 
       $scope.githubLogin = function() {
         $auth.authenticate('github')
@@ -35,6 +35,19 @@
       $rootScope.currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
       console.log($rootScope.currentUser);
+
+      // Trying to pull html_url from currentUser.url, which returns
+      // JSON data for user--may need backend to give this to us
+      /*
+      var apiUrl = $rootScope.currentUser.url;
+      console.log(apiUrl);
+      $scope.html_url = '';
+      $http.get(apiUrl).success(function(data) {
+        console.log("success!");
+        $scope.html_url = data.html_url;
+          console.log(data.html_url);
+      });
+      */
 
       $rootScope.token = $auth.getToken();
 

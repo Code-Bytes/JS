@@ -253,11 +253,10 @@ input[type="radio"] {
   text-align: center; }
 
 .profilePortraitDiv {
-  width: 80px;
-  height: 80px;
+  width: 180px;
+  height: 180px;
   background-color: RGBA(211, 214, 219, 1);
   border-radius: 100%;
-  border: RGBA(145, 146, 140, 1) solid 1px;
   overflow: hidden;
   margin: 50px auto 10px auto; }
 
