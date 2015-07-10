@@ -1,60 +1,34 @@
+<div class="row">
 
-
-<!--       <div class="row">
-        <div class="large-12 columns">
-          <div class="nav-bar right">
-           <ul class="button-group">
-             <li><a href="#" class="button">Link 1</a></li>
-             <li><a href="#" class="button">Link 2</a></li>
-             <li><a href="#" class="button">Link 3</a></li>
-             <li><a href="#" class="button">Link 4</a></li>
-            </ul>
-          </div>
-          <h1>Blog <small>This is my blog. It's awesome.</small></h1>
-          <hr/>
-        </div>
-      </div> -->
-
-
-
-
-
+  <div class="large-9 columns" role="content">
+    <article>
+      <h3><a href="#">{{ post.title }}</a></h3>
+      <h6>Written by user <a href="#">{{ post.user_id }}</a> {{ post.created_at }}</h6>
 
       <div class="row">
-
-
-        <div class="large-9 columns" role="content">
-
-          <article>
-
-            <h3><a href="#">{{ post.title }}</a></h3>
-            <h6>Written by user <a href="#">{{ post.user_id }}</a> {{ post.created_at }}</h6>
-
-            <div class="row">
-              <div class="large-6 columns">
-                <p>{{ post.content }}</p>
-              </div>
-      <!--         <div class="large-6 columns">
-                <img src="http://placehold.it/400x240&text=[img]"/>
-              </div> -->
-            </div>
-          </article>
-
+        <div class="large-6 columns">
+          <p>{{ post.content }}</p>
         </div>
-
-
-
-
-
-
-        <aside class="large-3 columns">
-          <h5>Similar Posts:</h5>
-          <ul class="side-nav" ng-repeat="post in posts">
-            <li><a href="#/post/{{ post.id }}">{{ post.title }}</a></li>
-            <li><span>Created: {{ post.created_at }}<span></li>
-            <li><span>Created by user {{ post.user_id }}<span></li>
-          </ul>
-
-        </aside>
+        <!--  <div class="large-6 columns">
+          <img src="http://placehold.it/400x240&text=[img]"/>
+        </div> -->
       </div>
+    </article>
 
+    <!-- <div ng-if="isAuthenticated() && (currentUser.username === )"> -->
+
+
+  </div>
+
+
+
+
+  <aside class="large-3 columns">
+    <h5>Similar Posts:</h5>
+    <ul class="side-nav" ng-repeat="post in posts">
+      <li><a href="#/post/{{ post.id }}">{{ post.title }}</a></li>
+      <li><span>Created: {{ post.created_at }}<span></li>
+      <li><span>Created by user {{ post.user_id }}<span></li>
+    </ul>
+  </aside>
+</div>
