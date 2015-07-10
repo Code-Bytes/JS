@@ -212,6 +212,21 @@ input[type="radio"] {
   margin-left: 10px;
 }
 
+#titleInput {
+  border: none;
+  box-shadow: none;
+  font-size: 32px;
+  font-style: bold;
+  color: RGBA(143, 144, 138, 1);
+}
+
+#postInput {
+  border: none;
+  box-shadow: none;
+  font-style: bold;
+  color: RGBA(143, 144, 138, 1);
+}
+
 //////////////////
 ///// Filter /////
 //////////////////
