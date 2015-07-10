@@ -3,9 +3,12 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['$scope', '$location', 'PostService', '$http', '$rootScope',
+  .controller('SinglePostController', ['$scope', '$location', 'PostService', '$http', '$rootScope', '$stateParams',
 
-    function ($scope, $location, PostService, $http, $rootScope) {
+    function ($scope, $location, PostService, $http, $rootScope, $stateParams) {
+
+      $scope.id = $stateParams.id;
+
 
       $scope.header = {
         "Authorization": $rootScope.token
@@ -25,9 +28,12 @@
 
         $scope.posts = data;
 
-        // data.filter( function(x) {
-        //   if (x.id == )
-        // });
+        data.filter( function(x) {
+          if (x.id == $scope.id)
+            console.log(x);
+            $scope.post = x;
+
+        });
 
 
       });
