@@ -2,7 +2,7 @@
   <div class="row addpost"> <!-- Post Title -->
     <div class="large-12 columns">
       <label>Post Title/Question:</label>
-        <input ng-model="NewPost.title" type="text" placeholder="Post Title or Question"/>
+        <input ng-model="post.title" type="text" placeholder="Post Title or Question"/>
     </div>
   </div> <!-- End Post Title -->
 
@@ -92,12 +92,12 @@
   <div class="row addpost">
     <div class="large-12 columns">
       <label>Details:
-        <textarea ng-model="NewPost.content" placeholder="Post Details"></textarea>
+        <textarea ng-model="post.content" placeholder="Post Details"></textarea>
       </label>
     </div>
   </div>
 
-  <a href="#" class="button tiny radius addpostbtn" ng-click="addPost()">Submit</a>
+  <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>
   <!-- <button class="tiny radius">Submit</button> -->
 
 </form>

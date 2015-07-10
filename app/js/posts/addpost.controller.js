@@ -3,47 +3,41 @@
 
   angular.module('CodeBytes')
 
-  .controller('AddPostController', ['$scope', 'PostService', '$http', '$rootScope',
+  .controller('AddPostController', ['$scope', 'PostService', '$location',
 
-    function ($scope, PostService, $http, $rootScope) {
-
-      //Post Constructor
-      $scope.NewPost = {
-        'title': '',
-        'content': ''
-      };
-
-      //Post Object Instance
-      // $scope.p = new NewPost();
+    function ($scope, PostService, $location) {
 
       //New Post Method
-      $scope.addPost = function () {
+      $scope.addPost = function (x) {
 
-        console.log($scope.NewPost);
+        // console.log($scope.NewPost);
 
-        $scope.header = {
-          "Authorization": $rootScope.token
-        };
+        // $scope.header = {
+        //   "Authorization": $rootScope.token
+        // };
 
-        console.log($rootScope.token);
+        // console.log($rootScope.token);
 
-        var req = {
-           method: 'POST',
-           url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
-           headers: {
-             'Authorization': $rootScope.token
-           },
-           data: $scope.NewPost
-          };
+        // var req = {
+        //    method: 'POST',
+        //    url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
+        //    headers: {
+        //      'Authorization': $rootScope.token
+        //    },
+        //    data: $scope.NewPost
+        //   };
 
 
-        $http(req)
+        // $http(req)
+        PostService.addNewPost(x)
+          .success( function () {
 
-          .success( function (data) {
-
-              console.log(data);
+              // console.log(data);
               // $location.path('/');
 
+            // Route Home
+            $location.path('/');
+            $scope.post = {};
           });
       };
 
