@@ -333,6 +333,20 @@ input[type="radio"] {
   font-size: 13px;
   font-style: italic; }
 
+.post {
+  padding-bottom: 30px; }
+
+strong {
+  display: block;
+  font-size: 20px; }
+
+.thumbText {
+  font-size: 13px;
+  margin-bottom: 10px; }
+
+.thumbTime {
+  font-size: 13px; }
+
 .foot {
   float: right;
   display: inline-block;

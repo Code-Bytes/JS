@@ -7,6 +7,8 @@
 
     function ($scope, $auth, $location, PostService, $http, $rootScope) {
 
+      $rootScope.postId;
+
       $scope.header = {
         "Authorization": $rootScope.token
       };
