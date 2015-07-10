@@ -3,13 +3,33 @@
 
   angular.module('CodeBytes')
 
-  .controller('FeedController', ['$scope', '$auth', '$location', 'PostService',
+  .controller('FeedController', ['$scope', '$auth', '$location', 'PostService', '$http', '$rootScope',
 
-    function ($scope, $auth, $location, PostService) {
+    function ($scope, $auth, $location, PostService, $http, $rootScope) {
 
-      $scope.isAuthenticated = function() {
-        return $auth.isAuthenticated();
-      };
+      $scope.getPosts = function () {
+        $scope.header = {
+          "Authorization": $rootScope.token
+        };
+
+        var req = {
+           method: 'GET',
+           url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
+           headers: {
+             'Authorization': $rootScope.token
+           }
+        };
+
+        $http(req)
+
+        .success( function (data) {
+
+              console.log(data);
+
+          });
+      }
+
+      $scope.getPosts();
 
     }
 
