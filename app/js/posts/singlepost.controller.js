@@ -9,7 +9,6 @@
 
       $scope.id = $stateParams.id;
 
-
       $scope.header = {
         "Authorization": $rootScope.token
       };
@@ -29,14 +28,17 @@
         $scope.posts = data;
 
         data.filter( function(x) {
-          if (x.id == $scope.id)
-            console.log(x);
-            $scope.post = x;
+            if (x.id == $scope.id){
+              $scope.post = x;
+            }
+          });
+
+        console.log($scope.post);
 
         });
 
 
-      });
+
 
     }
 
