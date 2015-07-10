@@ -45,9 +45,14 @@
           templateUrl: 'js/templates/singlepost.tpl.html',
           controller: 'SinglePostController'
         })
-        .state('about', {
-          url: '/about',
-          templateUrl: 'js/templates/about.tpl.html',
+        .state('aboutteam', {
+          url: '/aboutteam',
+          templateUrl: 'js/templates/aboutteam.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('tech', {
+          url: '/tech',
+          templateUrl: 'js/templates/tech.tpl.html',
           controller: 'FeedController'
         })
         .state('profile', {
