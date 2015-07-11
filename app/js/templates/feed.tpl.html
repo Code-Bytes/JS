@@ -82,7 +82,7 @@
     <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
       <ul class="inline-list">
         <li><span class="thumbTime">Posted:</span></li>
-        <li><span class="thumbTime">{{ post.created_at }}</li>
+        <li><span class="thumbTime">{{ post.created_at | date:'medium' }}</li>
       </ul>
     </div>
   </div> <!-- End Post -->
