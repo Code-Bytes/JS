@@ -3,42 +3,32 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['$scope', '$location', 'PostService', '$http', '$rootScope', '$stateParams',
+  .controller('SinglePostController', ['PostService', '$scope', '$rootScope', '$stateParams',
 
-    function ($scope, $location, PostService, $http, $rootScope, $stateParams) {
+    function (PostService, $scope, $rootScope, $stateParams) {
 
-      $scope.id = $stateParams.id;
+      var id = $stateParams.id;
 
-      $scope.header = {
-        "Authorization": $rootScope.token
-      };
+      // $scope.header = {
+      //   "Authorization": $rootScope.token
+      // };
+      // Not sure if needed? ^
 
-      var req = {
-         method: 'GET',
-         url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
-         headers: {
-           'Authorization': $rootScope.token
-         }
-      };
+      // Get all posts then filter
+      PostService.getPosts();
 
-      $http(req)
-
-      .success( function (data) {
-
+      $rootScope.$on('PostsReceived', function (event, data) {
         $scope.posts = data;
 
+        // Filter for clicked post's ID
         data.filter( function(x) {
-            if (x.id == $scope.id){
-              $scope.post = x;
-            }
-          });
-
-        console.log($scope.post);
+          if (x.id == id){
+            $scope.post = x;
+          }
 
         });
 
-
-
+      });
 
     }
 

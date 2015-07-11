@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('AddPostController', ['$scope', 'PostService', '$location',
+  .controller('AddPostController', ['PostService', '$scope', '$location',
 
-    function ($scope, PostService, $location) {
+    function (PostService, $scope, $location) {
 
       //New Post Method
       $scope.addPost = function (x) {

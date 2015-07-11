@@ -3,15 +3,15 @@
 
   angular.module('CodeBytes')
 
-  .controller('FeedController', ['$scope', '$auth', '$location', 'PostService', '$http', '$rootScope',
+  .controller('FeedController', ['PostService', '$scope', '$rootScope',
 
-    function ($scope, $auth, $location, PostService, $http, $rootScope) {
+    function (PostService, $scope, $rootScope) {
 
       // $rootScope.postId; // Unsure why this is here?
 
-      $scope.header = {
-        "Authorization": $rootScope.token
-      };
+      // $scope.header = {
+      //   "Authorization": $rootScope.token
+      // };
 
       PostService.getPosts();
 
