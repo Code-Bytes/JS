@@ -8,7 +8,6 @@
     function ($http, $rootScope) {
 
       var req = {
-        method: 'POST',
         url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
         headers: {
           'Authorization': $rootScope.token
@@ -21,20 +20,21 @@
         this.content = options.content;
       };
 
-      // $scope.NewPost = {
-      //   'title': '',
-      //   'content': ''
-      // };
-
       // Get array of posts
       this.getPosts = function() {
-
+        var getReq = req;
+        getReq.method = 'GET';
+        $http(getReq).success( function (data) {
+          $rootScope.$broadcast('PostsReceived', data);
+        });
       };
 
       // Add a new post
       this.addNewPost = function(post) {
-        req.data = new Post(post);
-        return $http(req);
+        var postReq = req;
+        postReq.method = 'POST';
+        postReq.data = new Post(post);
+        return $http(postReq);
       };
     }
 
