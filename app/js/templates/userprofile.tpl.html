@@ -1,0 +1,46 @@
+<div class="small-11 small-centered columns profile">
+  <div class="outline">
+
+    <div class="profilePortraitDiv">
+      <!-- <i class="fa fa-user fa-5x profPortrait"></i> -->
+      <img src="{{ currentUser.avatar }}">
+    </div>
+
+    <span class="profileTitle">{{ currentUser.username }}</span>
+    <br>
+    <span>{{ currentUser.company }}</span>
+    <br>
+    <span>{{ currentUser.location }}</span>
+    <br>
+    <a href="{{ currentUser.blog }}">{{ currentUser.blog }}</a>
+
+    <div class="spaceDiv"></div>
+
+    <div class="stats">
+      <div class="profSection posts">
+        <span>POSTS</span>
+        <span id="postNumber">77</span>
+      </div>
+
+      <div class=" profSection codeBits">
+        <span>BITS</span>
+        <span id="bitsNumber">1,076</span>
+      </div>
+
+      <div class="profSection profLinks">
+        <span>LINKS</span>
+        <a href="{{ currentUser.url }}"><i class="fa fa-github-square"></i></a>
+        <a href=""><i class="fa fa-linkedin-square"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="recentPostsDivider">
+    <div class="recentPostsHeader"><span>RECENT POSTS</span></div>
+  </div>
+
+  <div class="recentPosts">
+    <span class="post">nothing seems to be here</span>
+  </div>
+
+</div>

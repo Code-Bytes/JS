@@ -7,6 +7,7 @@
 
     function ($http, $rootScope) {
 
+      // Defines AJAX params
       var req = {
         url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
         headers: {

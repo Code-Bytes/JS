@@ -72,20 +72,22 @@
   </div> <!-- End panel -->
   </div> <!-- End filter sidebar -->
 
+  <!-- Feed Beginning -->
+  <div class="large-8 columns">
 
-  <div class="large-8 columns"> <!-- Feed -->
-    <div class="row post" ng-repeat="post in feed"> <!-- Post -->
+    <!-- Post Template -->
+    <div class="row post" ng-repeat="post in feed">
       <div class="large-2 columns small-3">
-    <img src="http://placehold.it/80x80&text=[img]"/>
-  </div>
-  <div class="large-10 columns">
-    <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
-      <ul class="inline-list">
-        <li><span class="thumbTime">Posted:</span></li>
-        <li><span class="thumbTime">{{ post.created_at | date:'medium' }}</li>
-      </ul>
-    </div>
-  </div> <!-- End Post -->
+        <img src="http://placehold.it/80x80&text=[img]"/>
+      </div>
+      <div class="large-10 columns">
+        <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
+        <ul class="inline-list">
+          <li><span class="thumbTime">Posted:</span></li>
+          <li><span class="thumbTime">{{ post.created_at | date:'medium' }}</li>
+        </ul>
+      </div>
+    </div> <!-- End Post -->
 
 
-</div> <!-- End feed -->
+  </div> <!-- End feed -->
