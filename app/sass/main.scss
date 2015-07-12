@@ -488,7 +488,11 @@ input[type="radio"] {
   padding-bottom: 30px;
 }
 
-
+.postAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
 
 // .post:hover {
 //   border: 1px solid RGBA(240, 240, 240, 1);

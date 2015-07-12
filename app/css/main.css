@@ -352,6 +352,11 @@ input[type="radio"] {
 .post {
   padding-bottom: 30px; }
 
+.postAvatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%; }
+
 strong {
   display: block;
   font-size: 20px; }

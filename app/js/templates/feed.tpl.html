@@ -84,8 +84,8 @@
       <!-- Post Itself -->
       <div class="large-10 columns">
         <div>
-          <img class="postAvatar" src=""/>
-          <span class="postUser">Username</span>
+          <img class="postAvatar" ng-src="{{ post.avatar }}"/>
+          <span class="postUser">{{ post.creator }}</span>
         </div>
         <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
         <ul class="inline-list">

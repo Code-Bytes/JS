@@ -3,40 +3,74 @@
 
   angular.module('CodeBytes')
 
-  .service('PostService', ['$http', '$rootScope',
+  .service('PostService', ['$http', '$rootScope', '$auth',
 
-    function ($http, $rootScope) {
+    function ($http, $rootScope, $auth) {
 
-      // Defines AJAX params
-      var req = {
+      //Gets User Token
+      var token = $auth.getToken();
+
+      // Defines AJAX params for posts
+      var feedReq = {
         url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
         headers: {
-          'Authorization': $rootScope.token
+          'Authorization': token
         },
       };
 
+
+// Start Add Post Methods
       //Post Constructor
       var Post = function(options) {
         this.title = options.title;
         this.content = options.content;
       };
 
-      // Get array of posts
-      this.getPosts = function() {
-        var getReq = req;
-        getReq.method = 'GET';
-        $http(getReq).success( function (data) {
-          $rootScope.$broadcast('PostsReceived', data);
-        });
-      };
-
       // Add a new post
       this.addNewPost = function(post) {
-        var postReq = req;
+        var postReq = feedReq;
         postReq.method = 'POST';
         postReq.data = new Post(post);
         return $http(postReq);
       };
+//End Add Post Methods
+
+
+//Start Methods to Get Post and User info for feed
+      // Array of posts including user info
+      // var completeFeed = [];
+
+      // Get array of posts
+      this.getPosts = function() {
+
+        var getReq = feedReq;
+        getReq.method = 'GET';
+        $http(getReq).success( function (data) {
+          _.each(data, function(x){
+        // Defines AJAX params for users
+            var userReq = {
+              url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + x.user_id,
+              headers: {
+                'Authorization': token
+              },
+            };
+            var getReq = userReq;
+            getReq.method = 'GET';
+            $http(getReq).success(function(data){
+              x.creator = data.username;
+              x.avatar = data.avatar;
+
+            });
+
+          });
+          // console.log(x);
+          $rootScope.$broadcast('PostsReceived', data);
+          console.log(data);
+        });
+      };
+
+
+
     }
 
   ]);
