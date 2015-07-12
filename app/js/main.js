@@ -59,6 +59,11 @@
           url: '/myprofile',
           templateUrl: 'js/templates/profile.tpl.html',
           controller: 'UserController'
+        })
+        .state('userprofile', {
+          url: '/profile/:id',
+          templateUrl: 'js/templates/userprofile.tpl.html',
+          controller: 'UserController'
         });
 
 
