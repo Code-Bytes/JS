@@ -17,7 +17,7 @@
       };
 
       $scope.avatar = function(){
-        UserService.getAvatar();
+        return UserService.getAvatar();
       };
 
       $scope.avatarLink = function(){
