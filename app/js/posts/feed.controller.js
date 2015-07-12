@@ -17,6 +17,7 @@
 
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.feed = data;
+
       });
 
     }

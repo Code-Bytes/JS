@@ -30,7 +30,7 @@
 
      <div class="ddPoint">
         <a class="avatarDiv" ng-href="{{ avatarLink() }}" ng-bind-html="avatar()"></a>
-        <ul class="dropDown" ng-class="isLoggedIn() ? 'drop' : 'x'">
+        <ul class="dropDown" ng-class="isAuthenticated() ? 'drop' : 'x'">
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#/myprofile">Profile</a></div></li>
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#help">Help</a></div></li>
           <li><div class="dropLinkDiv"><a class="dropLink" href="/#settings">Settings</a></div></li>

@@ -21,11 +21,11 @@
       };
 
       $scope.avatarLink = function(){
-        UserService.avatarUrl();
+        return UserService.avatarUrl();
       };
 
       $scope.logout = function() {
-        UserService.logOut();
+        return UserService.logOut();
       };
 
     }

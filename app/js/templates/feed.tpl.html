@@ -77,10 +77,16 @@
 
     <!-- Post Template -->
     <div class="row post" ng-repeat="post in feed">
+      <!-- Voting Section -->
       <div class="large-2 columns small-3">
         <img src="http://placehold.it/80x80&text=[img]"/>
       </div>
+      <!-- Post Itself -->
       <div class="large-10 columns">
+        <div>
+          <img class="postAvatar" src=""/>
+          <span class="postUser">Username</span>
+        </div>
         <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
         <ul class="inline-list">
           <li><span class="thumbTime">Posted:</span></li>
