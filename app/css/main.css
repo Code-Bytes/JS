@@ -373,6 +373,32 @@ strong {
 .thumbTime {
   font-size: 13px; }
 
+.voteDiv {
+  height: 80px;
+  border: 1px solid RGBA(143, 144, 138, 1);
+  border-radius: 100px;
+  position: relative;
+  text-align: center; }
+
+.voteDivTop {
+  position: absolute;
+  top: 3px;
+  left: 6px; }
+
+.voteDivBot {
+  position: absolute;
+  bottom: 3px;
+  left: 6px; }
+
+.votes {
+  margin-top: 30px; }
+
+.voteDiv i {
+  border-radius: 100%; }
+
+.voteDiv i:hover {
+  box-shadow: 2px 2px 2px 2px RGBA(20, 141, 184, 1); }
+
 .foot {
   float: right;
   display: inline-block;

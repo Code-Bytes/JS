@@ -78,11 +78,19 @@
     <!-- Post Template -->
     <div class="row post" ng-repeat="post in feed">
       <!-- Voting Section -->
-      <div class="large-2 columns small-3">
-        <img src="http://placehold.it/80x80&text=[img]"/>
+      <div class="large-1 columns small-3">
+        <div class="voteDiv">
+          <div class="voteDivTop">
+            <i class="fa fa-arrow-up"></i>
+          </div>
+          <div class="votes"><span>1</span></div>
+          <div class="voteDivBot">
+            <i class="fa fa-arrow-down"></i>
+          </div>
+        </div>
       </div>
       <!-- Post Itself -->
-      <div class="large-10 columns">
+      <div class="large-11 columns">
         <div>
           <img class="postAvatar" ng-src="{{ post.avatar }}"/>
           <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.creator }}</a>

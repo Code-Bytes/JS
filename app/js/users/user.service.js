@@ -7,6 +7,8 @@
 
     function ($http, $location, $auth, $window, $rootScope, $sce, $stateParams) {
 
+      var token = $auth.getToken();
+
       var isLoggedIn = function() {
         if ($auth.getToken() !== null){
           return true;
@@ -68,7 +70,15 @@
 
       this.getPosts = function(){
         // Defines AJAX params for users
-        var id = $stateParams.id;
+        var idFunc = function(){
+          if ($stateParams.id === undefined){
+            return token.id;
+          } else {
+            return $stateParams.id;
+          }
+        };
+        var id = idFunc();
+        console.log(id);
         var postReq = {
           url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id + '/posts',
           headers: {
