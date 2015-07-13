@@ -377,7 +377,6 @@ input[type="radio"] {
 /// About Tech ///
 //////////////////
 
-
 .abouttech {
   border: 1px dotted grey;
 }
@@ -387,7 +386,6 @@ input[type="radio"] {
 /////////////////
 
 .profile {
-  // border: 1px RGBA(143, 144, 138, 1) solid;
   text-align: center;
 }
 
@@ -396,10 +394,8 @@ input[type="radio"] {
   height: 180px;
   background-color: RGBA(211, 214, 219, 1);
   border-radius: 100%;
-  // border: RGBA(145, 146, 140, 1) solid 1px;
   overflow: hidden;
   margin: 50px auto 10px auto;
-  // padding: 5px;
 }
 
 .profPortrait {
@@ -509,7 +505,7 @@ input[type="radio"] {
 }
 
 .feedpost {
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   padding-left: 150px;
   position: relative;
 }
@@ -521,14 +517,33 @@ input[type="radio"] {
   left: 134px;
 }
 
+.topCover {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  top: -5px;
+  left: 100px;
+  // border: red 1px solid;
+}
+
+.botCover {
+  width: 50px;
+  height: 120px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+}
+
 .postDivider {
   position: absolute;
-  bottom: 0;
+  bottom: -15px;
   left: 150px;
   width: 80%;
   height: 1px;
   background-color: RGBA(240, 240, 240, 1);
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .postAvatar {
