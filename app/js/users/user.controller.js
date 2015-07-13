@@ -3,9 +3,12 @@
 
   angular.module('CodeBytes')
 
-  .controller('UserController', ['$scope', 'UserService', '$auth', '$window', '$location', '$rootScope',
+  .controller('UserController', ['$scope', 'UserService', '$auth', '$window', '$location',
 
-    function ($scope, UserService, $auth, $window, $location, $rootScope) {
+    function ($scope, UserService, $auth, $window, $location) {
+
+      $scope.currentUser = JSON.parse($window.localStorage.currentUser);
+
 
 
 
