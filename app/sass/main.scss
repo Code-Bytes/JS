@@ -235,7 +235,14 @@ input[type="radio"] {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+}
+
+.panel {
+  position: fixed;
+  display: block;
+  top: 65px;
+  margin: 0;
+  height: 76.5vh;
 }
 
 .sidebar {

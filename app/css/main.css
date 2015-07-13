@@ -175,8 +175,14 @@ input[type="radio"] {
 .feedFilter {
   position: absolute;
   top: 0;
-  right: 0;
-  height: 100vh; }
+  right: 0; }
+
+.panel {
+  position: fixed;
+  display: block;
+  top: 65px;
+  margin: 0;
+  height: 76.5vh; }
 
 .sidebar {
   float: right; }
