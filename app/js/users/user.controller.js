@@ -17,9 +17,15 @@
 
       $scope.getPosts = UserService.getPosts;
 
+      $scope.postNumber = 0;
+
       $scope.getPosts().success(function(data){
         $scope.userPosts = data;
+        _.each(data, function(){
+          $scope.postNumber ++;
+        });
       });
+
 
     }
 
