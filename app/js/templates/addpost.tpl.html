@@ -90,9 +90,15 @@
 
   <div class="row addpost">
     <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.content" placeholder="Post Details"></textarea>
+        <textarea id="postInput" ng-model="post.gist" placeholder="Gist Url"></textarea>
     </div>
   </div>
+
+  <div class="row addpost"> <!-- Post Content -->
+    <div class="large-12 columns">
+        <textarea id="postInput" ng-model="post.content" placeholder="Post Details"></textarea>
+    </div>
+  </div> <!-- End Post Content -->
 
   <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>
 
