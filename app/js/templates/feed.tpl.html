@@ -94,12 +94,12 @@
         <div>
           <img class="postAvatar" ng-src="{{ post.avatar }}"/>
           <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.creator }}</a>
+          <span class="thumbTime">{{ post.created_at | date:'short' }}</span>
         </div>
         <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
-        <ul class="inline-list">
-          <li><span class="thumbTime">Posted:</span></li>
-          <li><span class="thumbTime">{{ post.created_at | date:'medium' }}</li>
-        </ul>
+
+
+
       </div>
     </div> <!-- End Post -->
 

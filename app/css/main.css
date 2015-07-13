@@ -371,7 +371,8 @@ strong {
   margin-bottom: 10px; }
 
 .thumbTime {
-  font-size: 13px; }
+  font-size: 13px;
+  float: right; }
 
 .voteDiv {
   height: 80px;
