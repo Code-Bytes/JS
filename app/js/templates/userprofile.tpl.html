@@ -3,16 +3,16 @@
 
     <div class="profilePortraitDiv">
       <!-- <i class="fa fa-user fa-5x profPortrait"></i> -->
-      <img src="{{ currentUser.avatar }}">
+      <img src="{{ thisUser.avatar }}">
     </div>
 
-    <span class="profileTitle">{{ currentUser.username }}</span>
+    <span class="profileTitle">{{ thisUser.username }}</span>
     <br>
-    <span>{{ currentUser.company }}</span>
+    <span>{{ thisUser.company }}</span>
     <br>
-    <span>{{ currentUser.location }}</span>
+    <span>{{ thisUser.location }}</span>
     <br>
-    <a href="{{ currentUser.blog }}">{{ currentUser.blog }}</a>
+    <a href="{{ currentUser.blog }}">{{ thisUser.blog }}</a>
 
     <div class="spaceDiv"></div>
 

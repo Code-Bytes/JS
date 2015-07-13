@@ -37,8 +37,6 @@
 
 
 //Start Methods to Get Post and User info for feed
-      // Array of posts including user info
-      // var completeFeed = [];
 
       // Get array of posts
       this.getPosts = function() {
@@ -59,7 +57,6 @@
             $http(getReq).success(function(data){
               x.creator = data.username;
               x.avatar = data.avatar;
-
             });
 
           });

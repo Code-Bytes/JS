@@ -9,8 +9,11 @@
 
       $scope.currentUser = JSON.parse($window.localStorage.currentUser);
 
+      $scope.getUser = UserService.getUser;
 
-
+      $scope.getUser().success(function(data){
+        $scope.thisUser = data;
+      });
 
     }
 

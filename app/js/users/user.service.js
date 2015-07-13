@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .service('UserService', ['$http', '$location', '$auth', '$window', '$rootScope', '$sce',
+  .service('UserService', ['$http', '$location', '$auth', '$window', '$rootScope', '$sce', '$stateParams',
 
-    function ($http, $location, $auth, $window, $rootScope, $sce) {
+    function ($http, $location, $auth, $window, $rootScope, $sce, $stateParams) {
 
       var isLoggedIn = function() {
         if ($auth.getToken() !== null){
@@ -50,6 +50,22 @@
         delete $window.localStorage.currentUser;
         $rootScope.token = null;
         $location.path('/');
+      };
+
+      this.thisUser = {};
+
+      this.getUser = function(){
+        // Defines AJAX params for users
+        var id = $stateParams.id;
+        var userReq = {
+          url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id,
+          headers: {
+            'Authorization': $rootScope.token
+          },
+          method: 'GET'
+        };
+        return $http(userReq);
+
       };
 
 
