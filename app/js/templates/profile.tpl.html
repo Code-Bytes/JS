@@ -1,4 +1,4 @@
-<div class="small-11 small-centered columns profile">
+ <div class="small-11 small-centered columns profile">
   <div class="outline">
 
     <div class="profilePortraitDiv">
@@ -39,8 +39,14 @@
     <div class="recentPostsHeader"><span>RECENT POSTS</span></div>
   </div>
 
-  <div class="recentPosts">
-    <span class="post">nothing seems to be here</span>
+  <div class="recentPosts" ng-repeat="post in userPosts">
+    <div class="large-12 columns profilePosts">
+      <div>
+        <span class="profileFeed">Posted:</span>
+        <span class="profileFeed">{{ post.created_at | date:'medium' }}</span>
+      </div>
+      <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
+    </div>
   </div>
 
 </div>

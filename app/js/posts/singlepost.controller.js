@@ -22,6 +22,7 @@
         data.filter( function(x) {
           if (x.id == id) {
             $scope.post = x;
+            console.log(x);
           }
 
         });

@@ -1,3 +1,4 @@
+<div class="feedView">
 <!-- <div ng-if="isAuthenticated() && currentUser.username">
   <div class="row">
   </div>
@@ -13,7 +14,44 @@
   </div>
 </div> -->
 
-<div class="large-4 columns sidebar"> <!-- Filter sidebar -->
+  <!-- Feed Beginning -->
+  <div class="large-7 columns feed">
+    <div class="treeLine"></div>
+
+    <!-- Post Template -->
+    <div class="row feedpost" ng-repeat="post in feed">
+      <div class="iconDiv">
+
+      </div>
+      <!-- Voting Section -->
+      <div class="large-1 columns small-3">
+        <div class="voteDiv">
+          <div class="voteDivTop">
+            <i class="fa fa-arrow-up"></i>
+          </div>
+          <div class="votes"><span>1</span></div>
+          <div class="voteDivBot">
+            <i class="fa fa-arrow-down"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Post Itself -->
+      <div class="large-11 columns">
+        <div>
+          <img class="postAvatar" ng-src="{{ post.avatar }}"/>
+          <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.creator }}</a>
+          <span class="thumbTime">{{ post.created_at | date:'short' }}</span>
+        </div>
+        <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
+
+      </div>
+      <div class="postDivider"></div>
+    </div> <!-- End Post -->
+
+  </div> <!-- End feed -->
+
+
+<div class="large-4 feedFilter"> <!-- Filter sidebar -->
   <div class="panel"> <!-- Panel -->
 
     <h4 class="filterby">Filter by:</h4>
@@ -71,29 +109,4 @@
 
   </div> <!-- End panel -->
   </div> <!-- End filter sidebar -->
-
-  <!-- Feed Beginning -->
-  <div class="large-8 columns">
-
-    <!-- Post Template -->
-    <div class="row post" ng-repeat="post in feed">
-      <!-- Voting Section -->
-      <div class="large-2 columns small-3">
-        <img src="http://placehold.it/80x80&text=[img]"/>
-      </div>
-      <!-- Post Itself -->
-      <div class="large-10 columns">
-        <div>
-          <img class="postAvatar" ng-src="{{ post.avatar }}"/>
-          <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.creator }}</a>
-        </div>
-        <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
-        <ul class="inline-list">
-          <li><span class="thumbTime">Posted:</span></li>
-          <li><span class="thumbTime">{{ post.created_at | date:'medium' }}</li>
-        </ul>
-      </div>
-    </div> <!-- End Post -->
-
-
-  </div> <!-- End feed -->
+</div>

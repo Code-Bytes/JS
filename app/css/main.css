@@ -6,7 +6,6 @@ nav {
   border-bottom: 1px solid RGBA(240, 240, 240, 1);
   height: 65px;
   width: 100%;
-  margin-bottom: 50px;
   position: relative;
   overflow: visible; }
 
@@ -173,6 +172,11 @@ input[type="radio"] {
   font-style: bold;
   color: RGBA(143, 144, 138, 1); }
 
+.feedFilter {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
 .sidebar {
   float: right; }
 
@@ -186,6 +190,9 @@ input[type="radio"] {
   display: inline-block;
   width: 45%;
   font-size: 0.65em; }
+
+.panel {
+  border: none; }
 
 .aboutheader {
   text-align: center; }
@@ -349,8 +356,36 @@ input[type="radio"] {
   font-size: 13px;
   font-style: italic; }
 
-.post {
-  padding-bottom: 30px; }
+.profilePosts {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px; }
+
+.feedView {
+  position: relative; }
+
+.feed {
+  margin-top: 50px; }
+
+.feedpost {
+  padding-bottom: 50px;
+  padding-left: 150px;
+  position: relative; }
+
+.treeLine {
+  border-left: 3px solid RGBA(31, 80, 128, 1);
+  height: 100%;
+  position: absolute;
+  left: 134px; }
+
+.postDivider {
+  position: absolute;
+  bottom: 0;
+  left: 150px;
+  width: 80%;
+  height: 1px;
+  background-color: RGBA(240, 240, 240, 1);
+  margin-bottom: 30px; }
 
 .postAvatar {
   width: 20px;
@@ -366,7 +401,44 @@ strong {
   margin-bottom: 10px; }
 
 .thumbTime {
-  font-size: 13px; }
+  font-size: 13px;
+  float: right; }
+
+.voteDiv {
+  height: 50px;
+  border-radius: 100px;
+  text-align: center; }
+
+.voteDivTop {
+  position: absolute;
+  text-align: center;
+  top: 3px;
+  left: 18px; }
+
+.voteDivBot {
+  position: absolute;
+  text-align: center;
+  bottom: 0px;
+  left: 18px; }
+
+.votes {
+  margin-top: 30px; }
+
+.voteDiv i {
+  border-radius: 100%; }
+
+.voteDiv i:hover {
+  box-shadow: 2px 2px 2px 2px RGBA(20, 141, 184, 1); }
+
+.iconDiv {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: 3px solid RGBA(31, 80, 128, 1);
+  background-color: RGBA(240, 240, 240, 1);
+  position: absolute;
+  top: 20px;
+  left: 100px; }
 
 .foot {
   float: right;

@@ -61,6 +61,7 @@
 
           });
           $rootScope.$broadcast('PostsReceived', data);
+
         });
       };
 
