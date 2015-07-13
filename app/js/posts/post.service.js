@@ -60,9 +60,7 @@
             });
 
           });
-          // console.log(x);
           $rootScope.$broadcast('PostsReceived', data);
-          console.log(data);
         });
       };
 
