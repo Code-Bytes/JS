@@ -65,8 +65,21 @@
           method: 'GET'
         };
         return $http(userReq);
-
       };
+
+      this.getPosts = function(){
+        // Defines AJAX params for users
+        var id = $stateParams.id;
+        var postReq = {
+          url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id + '/posts',
+          headers: {
+            'Authorization': $rootScope.token
+          },
+          method: 'GET'
+        };
+        return $http(postReq);
+      };
+
 
 
     }

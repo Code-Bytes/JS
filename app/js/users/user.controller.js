@@ -15,6 +15,12 @@
         $scope.thisUser = data;
       });
 
+      $scope.getPosts = UserService.getPosts;
+
+      $scope.getPosts().success(function(data){
+        $scope.userPosts = data;
+      });
+
     }
 
   ]);
