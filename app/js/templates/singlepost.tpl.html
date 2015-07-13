@@ -3,21 +3,21 @@
   <div class="large-9 columns" role="content">
     <article>
       <h3><a href="#">{{ post.title }}</a></h3>
-      <a href="#">{{ post.creator }}</a> {{ post.created_at | date:'medium' }}
+
+      <h6>Written by user <a href="#">{{ post.creator }}</a> {{ post.created_at | date:'medium' }}</h6>
+
 
       <div class="row">
         <div class="large-6 columns">
           <p>{{ post.content }}</p>
         </div>
-        <!--  <div class="large-6 columns">
-          <img src="http://placehold.it/400x240&text=[img]"/>
-        </div> -->
       </div>
     </article>
 
-    <!-- <div ng-if="isAuthenticated() && (currentUser.username === )"> -->
-
-
+    <div ng-if="isCurrentUser()">
+      <a href="#" class="button tiny radius" ng-click="editPost()">Edit</a>
+      <a href="#" class="button tiny radius" ng-click="deletePost()">Delete</a>
+    </div>
   </div>
 
 

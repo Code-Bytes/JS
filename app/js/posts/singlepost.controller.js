@@ -9,20 +9,18 @@
 
       var id = $stateParams.id;
 
-      // $scope.header = {
-      //   "Authorization": $rootScope.token
-      // };
-      // Not sure if needed? ^
+      var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
       // Get all posts then filter
       PostService.getPosts();
 
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.posts = data;
+        console.log($scope.posts[2].title);
 
-        // Filter for clicked post's ID
+        // Filter for clicked post creator id
         data.filter( function(x) {
-          if (x.id == id){
+          if (x.id == id) {
             $scope.post = x;
             console.log(x);
           }
@@ -30,6 +28,12 @@
         });
 
       });
+
+      $scope.isCurrentUser = function() {
+        // if () {
+
+        // }
+      };
 
     }
 
