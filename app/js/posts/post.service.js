@@ -31,6 +31,7 @@
         var postReq = feedReq;
         postReq.method = 'POST';
         postReq.data = new Post(post);
+        console.log(postReq);
         return $http(postReq);
       };
 //End Add Post Methods

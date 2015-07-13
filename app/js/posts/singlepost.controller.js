@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['PostService', '$scope', '$rootScope', '$stateParams',
+  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams',
 
-    function (PostService, $scope, $rootScope, $stateParams) {
+    function (PostService, UserService, $scope, $rootScope, $stateParams) {
 
       var id = $stateParams.id;
 
@@ -22,7 +22,6 @@
         data.filter( function(x) {
           if (x.id == id) {
             $scope.post = x;
-            console.log(x);
           }
 
         });
@@ -30,9 +29,9 @@
       });
 
       $scope.isCurrentUser = function() {
-        // if () {
+        // UserService.thisUser().success(function() {
 
-        // }
+        // })
       };
 
     }

@@ -53,7 +53,16 @@
         $location.path('/');
       };
 
-      this.thisUser = {};
+      this.thisUser = function() {
+        var me = {
+          url: 'https://pacific-hamlet-4796.herokuapp.com/me',
+          headers: {
+            'Authorization': $rootScope.token
+          },
+          method: 'GET'
+        };
+        return $http(me);
+      };
 
       this.getUser = function(){
         // Defines AJAX params for users
