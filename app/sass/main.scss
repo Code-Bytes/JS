@@ -575,7 +575,7 @@ strong {
 }
 
 .pBorder {
-  border-left: solid 1px RGBA(31, 80, 128, 1);
+  // border-left: solid 1px RGBA(31, 80, 128, 1);
 }
 
 //Vote Section///
@@ -668,6 +668,10 @@ footer {
   font-size: 13px;
   color: RGBA(143, 144, 138, 1);
   padding: 5px;
+}
+
+hr {
+  border: solid 1px RGBA(240, 240, 240, 1);
 }
 
 .footBottom {
