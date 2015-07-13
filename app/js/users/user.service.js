@@ -24,7 +24,6 @@
             $location.path('/');
           })
           .catch(function(response) {
-            // console.log(response.data);
           });
       };
 
@@ -79,8 +78,6 @@
         };
         return $http(postReq);
       };
-
-
 
     }
 
