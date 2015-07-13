@@ -524,7 +524,6 @@ input[type="radio"] {
   position: absolute;
   top: -5px;
   left: 100px;
-  // border: red 1px solid;
 }
 
 .botCover {
@@ -539,8 +538,8 @@ input[type="radio"] {
 .postDivider {
   position: absolute;
   bottom: -15px;
-  left: 150px;
-  width: 80%;
+  left: 210px;
+  width: 70%;
   height: 1px;
   background-color: RGBA(240, 240, 240, 1);
   margin-bottom: 60px;
@@ -565,6 +564,10 @@ strong {
 .thumbTime {
   font-size: 13px;
   float: right;
+}
+
+.pBorder {
+  border-left: solid 1px RGBA(31, 80, 128, 1);
 }
 
 //Vote Section///
