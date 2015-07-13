@@ -9,7 +9,7 @@
 
       var id = $stateParams.id;
 
-      var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      // var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
       // Get all posts then filter
       PostService.getPosts();
