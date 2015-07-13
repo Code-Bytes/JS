@@ -235,6 +235,7 @@ input[type="radio"] {
   position: absolute;
   top: 0;
   right: 0;
+  height: 100vh;
 }
 
 .sidebar {
@@ -537,7 +538,7 @@ input[type="radio"] {
 
 .postDivider {
   position: absolute;
-  bottom: -15px;
+  bottom: -20px;
   left: 210px;
   width: 70%;
   height: 1px;
