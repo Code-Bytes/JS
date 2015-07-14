@@ -3,15 +3,15 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$sce',
+  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$sce', '$location',
 
-    function (PostService, UserService, $scope, $rootScope, $stateParams, $sce) {
+    function (PostService, UserService, $scope, $rootScope, $stateParams, $sce, $location) {
 
       var postId = $stateParams.id;
 
       var currentUserId;
       UserService.thisUser().success(function (data) {
-        currentUserId = data.id;
+        currentUserId = data.user.id;
       });
 
       // var currentUser = JSON.parse(localStorage.getItem("currentUser"));
