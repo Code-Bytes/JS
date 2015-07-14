@@ -5,11 +5,12 @@
       <h3><a href="#">{{ post.title }}</a></h3>
 
       <h6>Written by user <a href="#">{{ post.creator }}</a> {{ post.created_at | date:'medium' }}</h6>
-      <div></div>
-
-        <div class="row" ng-bind-html="gistHtml('b663fed3c2df4a799c96')"></div>
-  <!--       <code class="large-10 columns" data-gist-id="b663fed3c2df4a799c96"></code> -->
       <br>
+
+      <div class="row" ng-bind-html="gistHtml('b663fed3c2df4a799c96')"></div>
+
+      <br>
+
       <div class="row">
         <div class="large-10 columns">
           <p>{{ post.content }}</p>

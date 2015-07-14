@@ -10,7 +10,7 @@
       var token = $auth.getToken();
 
       var isLoggedIn = function() {
-        if ($auth.getToken() !== null){
+        if (token !== null){
           return true;
         } else {
           return false;
@@ -22,7 +22,7 @@
           .then(function(response) {
             $window.localStorage.currentUser = JSON.stringify(response.data.user);
             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-            $rootScope.token = $auth.getToken();
+            $rootScope.token = token;
             $location.path('/');
           })
           .catch(function(response) {
@@ -54,14 +54,13 @@
       };
 
       this.thisUser = function() {
-        var me = {
+        return $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/me',
           headers: {
-            'Authorization': $rootScope.token
+            'Authorization': token
           },
           method: 'GET'
-        };
-        return $http(me);
+        });
       };
 
       this.getUser = function(){
@@ -70,7 +69,7 @@
         var userReq = {
           url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id,
           headers: {
-            'Authorization': $rootScope.token
+            'Authorization': token
           },
           method: 'GET'
         };
@@ -91,7 +90,7 @@
         var postReq = {
           url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id + '/posts',
           headers: {
-            'Authorization': $rootScope.token
+            'Authorization': token
           },
           method: 'GET'
         };
