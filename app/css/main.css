@@ -448,25 +448,12 @@ strong {
 .voteDiv i:hover {
   box-shadow: 2px 2px 2px 2px RGBA(20, 141, 184, 1); }
 
-<<<<<<< HEAD
-.iconDiv {
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  border: 3px solid RGBA(31, 80, 128, 1);
-  background-color: RGBA(240, 240, 240, 1);
-  position: absolute;
-  top: 20px;
-  left: 100px; }
-
 .gist * {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
 
 .gist .gist-file:first-child {
   margin-top: 1em; }
 
-=======
->>>>>>> devMeade
 .foot {
   float: right;
   display: inline-block;

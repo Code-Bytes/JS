@@ -18,7 +18,6 @@
         },
       };
 
-
 // Start Add Post Methods
       //Post Constructor
       var Post = function(options) {
@@ -45,28 +44,18 @@
         var getReq = feedReq;
         getReq.method = 'GET';
         $http(getReq).success( function (data) {
-          _.each(data, function(x){
-        // Defines AJAX params for users
-            var userReq = {
-              url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + x.user_id,
-              headers: {
-                'Authorization': token
-              },
-            };
-            var getReq = userReq;
+          console.log(data.posts);
+          _.each(data.posts, function(x){
+
             getReq.method = 'GET';
-            $http(getReq).success(function(data){
-              x.creator = data.username;
-              x.avatar = data.avatar;
+
               var postTime = x.created_at;
               x.time = function(){
                 return moment(postTime, "YYYYMMDD").fromNow();
               };
 
-            });
-
           });
-          $rootScope.$broadcast('PostsReceived', data);
+          $rootScope.$broadcast('PostsReceived', data.posts.reverse());
 
         });
       };

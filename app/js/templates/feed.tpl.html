@@ -36,8 +36,8 @@
       <div class="large-11 columns pBorder">
         <div class="postBorder"></div>
         <div class="postHead">
-          <img class="postAvatar" ng-src="{{ post.avatar }}"/>
-          <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.creator }}</a>
+          <img class="postAvatar" ng-src="{{ post.user.avatar }}"/>
+          <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.user.username }}</a>
           <span class="thumbTime">{{ post.time() }}</span>
         </div>
 
