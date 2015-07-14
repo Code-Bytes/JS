@@ -51,7 +51,7 @@
       // };
 
       $scope.deletePost = function() {
-        PostService.removePost(postId).then(function() {
+        PostService.removePost(postId).success(function() {
           // Route Home
           $location.path('/');
         });
