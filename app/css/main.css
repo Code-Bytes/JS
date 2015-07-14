@@ -379,28 +379,6 @@ input[type="radio"] {
   padding-left: 150px;
   position: relative; }
 
-.treeLine {
-  border-left: 3px solid RGBA(31, 80, 128, 1);
-  height: 100%;
-  position: absolute;
-  left: 134px; }
-
-.topCover {
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  position: absolute;
-  top: -5px;
-  left: 100px; }
-
-.botCover {
-  width: 50px;
-  height: 120px;
-  background-color: white;
-  position: absolute;
-  bottom: 0px;
-  left: 100px; }
-
 .postDivider {
   position: absolute;
   bottom: -20px;
@@ -411,41 +389,58 @@ input[type="radio"] {
   margin-bottom: 60px; }
 
 .postAvatar {
-  width: 20px;
-  height: 20px;
+  width: 45px;
+  height: 45px;
   border-radius: 100%; }
+
+.postUser {
+  margin-left: 5px; }
 
 strong {
   display: block;
   font-size: 20px; }
 
-.thumbText {
-  font-size: 13px;
-  margin-bottom: 10px; }
+.userDate {
+  display: block; }
 
 .thumbTime {
-  font-size: 13px;
-  float: right; }
+  position: absolute;
+  color: RGBA(157, 157, 157, 1);
+  font-size: 11px;
+  top: 30px;
+  left: 70px; }
 
-.voteDiv {
-  height: 50px;
-  border-radius: 100px;
-  text-align: center; }
+.postHead {
+  display: block; }
+
+.postTitle {
+  color: black;
+  font-size: 24px;
+  font-style: bold; }
+
+.thumbText {
+  font-size: 13px; }
+
+.pBorder {
+  border-left: solid 1px RGBA(31, 80, 128, 1);
+  position: relative;
+  display: block; }
 
 .voteDivTop {
   position: absolute;
-  text-align: center;
-  top: 3px;
-  left: 18px; }
+  top: 30px;
+  left: -25px; }
 
 .voteDivBot {
   position: absolute;
   text-align: center;
-  bottom: 0px;
-  left: 18px; }
+  top: 70px;
+  left: -25px; }
 
 .votes {
-  margin-top: 30px; }
+  position: absolute;
+  top: 50px;
+  left: -21px; }
 
 .voteDiv i {
   border-radius: 100%; }
@@ -453,6 +448,7 @@ strong {
 .voteDiv i:hover {
   box-shadow: 2px 2px 2px 2px RGBA(20, 141, 184, 1); }
 
+<<<<<<< HEAD
 .iconDiv {
   height: 40px;
   width: 40px;
@@ -469,6 +465,8 @@ strong {
 .gist .gist-file:first-child {
   margin-top: 1em; }
 
+=======
+>>>>>>> devMeade
 .foot {
   float: right;
   display: inline-block;
