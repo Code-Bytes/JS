@@ -35,7 +35,6 @@
       };
 //End Add Post Methods
 
-
 //Start Methods to Get Post and User info for feed
 
       // Get array of posts
@@ -46,8 +45,6 @@
         $http(getReq).success( function (data) {
           console.log(data.posts);
           _.each(data.posts, function(x){
-
-            getReq.method = 'GET';
 
               var postTime = x.created_at;
               x.time = function(){
