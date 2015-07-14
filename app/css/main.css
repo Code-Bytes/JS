@@ -182,7 +182,7 @@ input[type="radio"] {
   display: block;
   top: 65px;
   margin: 0;
-  height: 76.5vh; }
+  height: 72vh; }
 
 .sidebar {
   float: right; }
@@ -481,6 +481,7 @@ strong {
   display: inline-block; }
 
 footer {
+  overflow: auto;
   padding-bottom: 20px; }
 
 .fDivider {
