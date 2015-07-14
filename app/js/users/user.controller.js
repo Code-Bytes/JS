@@ -12,7 +12,7 @@
       $scope.getUser = UserService.getUser;
 
       $scope.getUser().success(function(data){
-        $scope.thisUser = data;
+        $scope.thisUser = data.user;
       });
 
       $scope.getPosts = UserService.getPosts;
@@ -20,9 +20,16 @@
       $scope.postNumber = 0;
 
       $scope.getPosts().success(function(data){
-        $scope.userPosts = data;
-        _.each(data, function(){
+        $scope.userPosts = data.users;
+        console.log($scope.userPosts);
+
+        _.each($scope.userPosts, function(x){
           $scope.postNumber ++;
+          var postTime = x.created_at;
+          x.time = function(){
+            return moment(postTime, "YYYYMMDD").fromNow();
+          };
+
         });
       });
 

@@ -86,7 +86,7 @@
           }
         };
         var id = idFunc();
-        console.log(id);
+
         var postReq = {
           url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id + '/posts',
           headers: {
