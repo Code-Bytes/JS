@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams',
+  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$sce',
 
-    function (PostService, UserService, $scope, $rootScope, $stateParams) {
+    function (PostService, UserService, $scope, $rootScope, $stateParams, $sce) {
 
       var id = $stateParams.id;
 
@@ -16,7 +16,6 @@
 
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.posts = data;
-        console.log($scope.posts[2].title);
 
         // Filter for clicked post creator id
         data.filter( function(x) {
@@ -27,6 +26,11 @@
         });
 
       });
+
+      $scope.gistHtml = function (gistId) {
+        var gistMarkup = '<code data-gist-highlight-line="1-5" class="large-10 columns" data-gist-id="' + gistId +'"></code>';
+        return $sce.trustAsHtml(gistMarkup);
+      };
 
       $scope.isCurrentUser = function() {
         // UserService.thisUser().success(function() {
