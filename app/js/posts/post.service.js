@@ -43,13 +43,13 @@
         var getReq = feedReq;
         getReq.method = 'GET';
         $http(getReq).success( function (data) {
-          console.log(data.posts);
+
           _.each(data.posts, function(x){
 
-              var postTime = x.created_at;
-              x.time = function(){
-                return moment(postTime, "YYYYMMDD").fromNow();
-              };
+            var postTime = x.created_at;
+            x.time = function(){
+              return moment(postTime, "YYYYMMDD").fromNow();
+            };
 
           });
           $rootScope.$broadcast('PostsReceived', data.posts.reverse());

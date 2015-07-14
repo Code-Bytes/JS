@@ -24,6 +24,7 @@
             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
             $rootScope.token = token;
             $location.path('/');
+            $route.reload();
           })
           .catch(function(response) {
           });
@@ -31,6 +32,7 @@
 
       this.getAvatar = function() {
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        console.log(isLoggedIn());
         if (isLoggedIn() === true) {
           return $sce.trustAsHtml('<img class="avatar" src="' + currentUser.avatar + '">');
         } else {
@@ -51,6 +53,7 @@
         delete $window.localStorage.currentUser;
         $rootScope.token = null;
         $location.path('/');
+        $route.reload();
       };
 
       this.thisUser = function() {
@@ -64,6 +67,7 @@
       };
 
       this.getUser = function(){
+
         // Defines AJAX params for users
         var id = $stateParams.id;
         var userReq = {
@@ -77,6 +81,7 @@
       };
 
       this.getPosts = function(){
+
         // Defines AJAX params for users
         var idFunc = function(){
           if ($stateParams.id === undefined){

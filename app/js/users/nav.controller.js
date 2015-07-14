@@ -9,7 +9,7 @@
     function (UserService, $scope, $auth) {
 
       $scope.githubLogin = function() {
-        UserService.ghLogin();
+        return UserService.ghLogin();
       };
 
       $scope.isAuthenticated = function() {
@@ -17,6 +17,7 @@
       };
 
       $scope.avatar = function(){
+        console.log('scope avatar');
         return UserService.getAvatar();
       };
 
