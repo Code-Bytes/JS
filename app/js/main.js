@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  var endpoint = 'https://pacific-hamlet-4796.herokuapp.com/auth/';
+  var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
 
   angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist-embed'])
 
   .constant('HEROKU', {
-    URL: 'https://pacific-hamlet-4796.herokuapp.com/auth/',
+    URL: baseEndpoint + 'auth/',
     CONFIG: {
       headers: {
        'token' : ''
@@ -92,11 +92,10 @@
       $authProvider.platform = 'browser'; // or 'mobile'
       $authProvider.storage = 'localStorage'; // or 'sessionStorage'
 
-      $authProvider.loginUrl = endpoint + 'login';
-      // $authProvider.signupUrl = endpoint + 'signup';
+      $authProvider.loginUrl = baseEndpoint + 'auth/login';
 
       $authProvider.github({
-        url: endpoint + 'github',
+        url: baseEndpoint + 'auth/github',
         authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
         scope: [],
