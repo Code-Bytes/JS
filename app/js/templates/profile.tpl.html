@@ -43,7 +43,7 @@
     <div class="large-12 columns profilePosts">
       <div>
         <span class="profileFeed">Posted:</span>
-        <span class="profileFeed">{{ post.created_at | date:'medium' }}</span>
+        <span class="profileFeed">{{ post.time() }}</span>
       </div>
       <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
     </div>
