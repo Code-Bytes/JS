@@ -28,7 +28,7 @@
       });
 
       $scope.gistHtml = function (gistId) {
-        var gistMarkup = '<code class="large-10 columns" data-gist-id="' + gistId +'"></code>';
+        var gistMarkup = '<code data-gist-highlight-line="1-5" class="large-10 columns" data-gist-id="' + gistId +'"></code>';
         return $sce.trustAsHtml(gistMarkup);
       };
 
