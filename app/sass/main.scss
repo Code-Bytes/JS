@@ -237,6 +237,14 @@ input[type="radio"] {
   right: 0;
 }
 
+.panel {
+  position: fixed;
+  display: block;
+  top: 65px;
+  margin: 0;
+  height: 76.5vh;
+}
+
 .sidebar {
   float: right;
 }
@@ -377,7 +385,6 @@ input[type="radio"] {
 /// About Tech ///
 //////////////////
 
-
 .abouttech {
   border: 1px dotted grey;
 }
@@ -387,7 +394,6 @@ input[type="radio"] {
 /////////////////
 
 .profile {
-  // border: 1px RGBA(143, 144, 138, 1) solid;
   text-align: center;
 }
 
@@ -396,10 +402,8 @@ input[type="radio"] {
   height: 180px;
   background-color: RGBA(211, 214, 219, 1);
   border-radius: 100%;
-  // border: RGBA(145, 146, 140, 1) solid 1px;
   overflow: hidden;
   margin: 50px auto 10px auto;
-  // padding: 5px;
 }
 
 .profPortrait {
@@ -509,7 +513,7 @@ input[type="radio"] {
 }
 
 .feedpost {
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   padding-left: 150px;
   position: relative;
 }
@@ -521,14 +525,32 @@ input[type="radio"] {
   left: 134px;
 }
 
+.topCover {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  top: -5px;
+  left: 100px;
+}
+
+.botCover {
+  width: 50px;
+  height: 120px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+}
+
 .postDivider {
   position: absolute;
-  bottom: 0;
-  left: 150px;
-  width: 80%;
+  bottom: -20px;
+  left: 210px;
+  width: 70%;
   height: 1px;
   background-color: RGBA(240, 240, 240, 1);
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .postAvatar {
@@ -550,6 +572,10 @@ strong {
 .thumbTime {
   font-size: 13px;
   float: right;
+}
+
+.pBorder {
+  // border-left: solid 1px RGBA(31, 80, 128, 1);
 }
 
 //Vote Section///
@@ -654,6 +680,10 @@ footer {
   font-size: 13px;
   color: RGBA(143, 144, 138, 1);
   padding: 5px;
+}
+
+hr {
+  border: solid 1px RGBA(240, 240, 240, 1);
 }
 
 .footBottom {
