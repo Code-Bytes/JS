@@ -58,6 +58,11 @@
             $http(getReq).success(function(data){
               x.creator = data.username;
               x.avatar = data.avatar;
+              var postTime = x.created_at;
+              x.time = function(){
+                return moment(postTime, "YYYYMMDD").fromNow();
+              };
+
             });
 
           });

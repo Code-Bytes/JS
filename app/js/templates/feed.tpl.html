@@ -16,23 +16,17 @@
 
   <!-- Feed Beginning -->
   <div class="large-7 columns feed">
-    <div class="treeLine"></div>
-    <div class="topCover"></div>
-    <div class="botCover"></div>
-
 
     <!-- Post Template -->
     <div class="row feedpost" ng-repeat="post in feed">
-      <div class="iconDiv">
 
-      </div>
       <!-- Voting Section -->
       <div class="large-1 columns small-3">
         <div class="voteDiv">
           <div class="voteDivTop">
             <i class="fa fa-arrow-up"></i>
           </div>
-          <div class="votes"><span>1</span></div>
+          <span class="votes">1</span>
           <div class="voteDivBot">
             <i class="fa fa-arrow-down"></i>
           </div>
@@ -40,16 +34,20 @@
       </div>
       <!-- Post Itself -->
       <div class="large-11 columns pBorder">
-        <div>
+        <div class="postBorder"></div>
+        <div class="postHead">
           <img class="postAvatar" ng-src="{{ post.avatar }}"/>
           <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.creator }}</a>
-          <span class="thumbTime">{{ post.created_at | date:'short' }}</span>
+          <span class="thumbTime">{{ post.time() }}</span>
         </div>
-        <p class="thumbText"><strong><a href="#/post/{{ post.id }}">{{ post.title }}</a></strong>{{ post.content }}</p>
+
+        <a class="postTitle" href="#/post/{{ post.id }}">{{ post.title }}</a>
+        <p class="thumbText">{{ post.content }}</p>
 
       </div>
       <div class="postDivider"></div>
-    </div> <!-- End Post -->
+    </div>
+    <!-- End Post -->
 
   </div> <!-- End feed -->
 
