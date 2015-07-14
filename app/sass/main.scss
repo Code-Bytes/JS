@@ -242,7 +242,7 @@ input[type="radio"] {
   display: block;
   top: 65px;
   margin: 0;
-  height: 76.5vh;
+  height: 72vh;
 }
 
 .sidebar {
@@ -653,6 +653,7 @@ strong {
 }
 
 footer {
+  overflow: auto;
   padding-bottom: 20px;
 }
 
