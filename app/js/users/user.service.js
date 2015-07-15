@@ -17,7 +17,7 @@
       };
       var idFunc = function(){
           if ($stateParams.id === undefined){
-            return user.user_id;
+            return user().user_id;
           } else {
             return $stateParams.id;
           }
@@ -96,6 +96,8 @@
       this.getPosts = function(){
 
         var id = idFunc();
+
+        console.log(id);
 
         var postReq = {
           url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id + '/posts',
