@@ -57,8 +57,15 @@
         });
       };
 
-      this.updatePost = function() {
-
+      this.editPost = function(postId, post) {
+        return $http({
+          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postId,
+          headers: {
+            'Authorization': token
+          },
+          method: 'PUT',
+          data: post
+        });
       };
 
       this.removePost = function(postId) {

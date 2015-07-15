@@ -45,6 +45,11 @@
           templateUrl: 'js/templates/singlepost.tpl.html',
           controller: 'SinglePostController'
         })
+        .state('editpost', {
+          url: '/edit/:id',
+          templateUrl: 'js/templates/editpost.tpl.html',
+          controller: 'SinglePostController'
+        })
         .state('aboutteam', {
           url: '/aboutteam',
           templateUrl: 'js/templates/aboutteam.tpl.html',

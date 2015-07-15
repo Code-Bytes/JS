@@ -1,7 +1,7 @@
 <form class="apppostform">
   <div class="row addpost"> <!-- Post Title -->
     <div class="large-12 columns">
-        <input id="titleInput" ng-model="post.title" type="text" placeholder="Title"/>
+        <input id="titleInput" ng-model="post.title" type="text" value="{{ post.title }}"/>
     </div>
   </div> <!-- End Post Title -->
 
@@ -90,16 +90,16 @@
 
   <div class="row addpost"> <!-- Gist Url -->
     <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.gist" placeholder="Gist Url"></textarea>
+        <textarea id="postInput" ng-model="post.gist" value="{{ post.gist }}"></textarea>
     </div>
   </div> <!-- End Gist Url -->
 
   <div class="row addpost"> <!-- Post Content -->
     <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.content" placeholder="Post Details"></textarea>
+        <textarea id="postInput" ng-model="post.content" value="{{ post.content }}"></textarea>
     </div>
   </div> <!-- End Post Content -->
 
-  <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>
+  <a href="#" class="button tiny radius addpostbtn" ng-click="updatePost(post)">Update</a>
 
 </form>
