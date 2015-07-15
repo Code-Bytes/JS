@@ -8,6 +8,9 @@
     function ($http, $location, $auth, $window, $rootScope, $sce, $stateParams) {
 
       var token = $auth.getToken();
+      var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      console.log(currentUser);
+
       var user = function(){
         if (token !== undefined) {
           return JSON.parse($window.localStorage.currentUser);
@@ -39,15 +42,14 @@
             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
             $rootScope.token = token;
             $location.path('/');
-
           })
           .catch(function(response) {
           });
       };
 
       this.getAvatar = function() {
-        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser !== null) {
           return $sce.trustAsHtml('<img class="avatar" src="' + currentUser.avatar + '">');
         } else {
@@ -56,7 +58,9 @@
       };
 
       this.avatarUrl = function() {
-        if (token  !== undefined){
+
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser !== null){
           return '/#/myprofile';
         } else {
           return '/#/login';

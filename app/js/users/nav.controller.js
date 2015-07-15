@@ -15,14 +15,17 @@
       $scope.isAuthenticated = function() {
         return $auth.isAuthenticated();
       };
+      $scope.isAuthenticated();
 
       $scope.avatar = function(){
         return UserService.getAvatar();
       };
+      $scope.avatar();
 
       $scope.avatarLink = function(){
         return UserService.avatarUrl();
       };
+      $scope.avatarLink();
 
       $scope.logout = function() {
         return UserService.logOut();
