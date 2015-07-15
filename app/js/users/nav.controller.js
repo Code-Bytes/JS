@@ -17,7 +17,6 @@
       };
 
       $scope.avatar = function(){
-        console.log('scope avatar');
         return UserService.getAvatar();
       };
 
