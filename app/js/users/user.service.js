@@ -15,6 +15,7 @@
           return null;
         }
       };
+
       var idFunc = function(){
           if ($stateParams.id === undefined){
             return user().user_id;
@@ -55,7 +56,7 @@
       };
 
       this.avatarUrl = function() {
-        if (isLoggedIn() === true){
+        if (token  !== undefined){
           return '/#/myprofile';
         } else {
           return '/#/login';
