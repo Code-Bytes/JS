@@ -208,8 +208,11 @@ input[type="radio"] {
 }
 
 .addpostbtn {
-  margin-top: 10px;
-  margin-left: 10px;
+  // margin-top: 10px;
+  // margin-left: 10px;
+  // temporary fix? button was too far to left
+  margin-top: 20px;
+  margin-left: 140px;
 }
 
 #titleInput {
