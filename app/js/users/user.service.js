@@ -8,7 +8,13 @@
     function ($http, $location, $auth, $window, $rootScope, $sce, $stateParams) {
 
       var token = $auth.getToken();
-      var user = JSON.parse($window.localStorage.currentUser);
+      var user = function(){
+        if (token !== undefined) {
+          return JSON.parse($window.localStorage.currentUser);
+        } else {
+          return null;
+        }
+      };
       var idFunc = function(){
           if ($stateParams.id === undefined){
             return user.user_id;
@@ -32,7 +38,7 @@
             $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
             $rootScope.token = token;
             $location.path('/');
-            $route.reload();
+
           })
           .catch(function(response) {
           });
@@ -41,7 +47,7 @@
       this.getAvatar = function() {
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-        if (isLoggedIn() === true) {
+        if (currentUser !== null) {
           return $sce.trustAsHtml('<img class="avatar" src="' + currentUser.avatar + '">');
         } else {
           return $sce.trustAsHtml('<i class="fa fa-user fa-2x portrait"></i>');
@@ -61,7 +67,6 @@
         delete $window.localStorage.currentUser;
         $rootScope.token = null;
         $location.path('/');
-        $route.reload();
       };
 
       this.thisUser = function() {
