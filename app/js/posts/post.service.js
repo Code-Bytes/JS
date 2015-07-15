@@ -9,10 +9,11 @@
 
       //Gets User Token
       var token = $auth.getToken();
+      var postUrl = 'https://pacific-hamlet-4796.herokuapp.com/posts/';
 
       // Defines AJAX params for posts
       var feedReq = {
-        url: 'https://pacific-hamlet-4796.herokuapp.com/posts/',
+        url: postUrl,
         headers: {
           'Authorization': token
         },
@@ -59,7 +60,7 @@
 
       this.editPost = function(postId, post) {
         return $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postId,
+          url: postUrl + postId,
           headers: {
             'Authorization': token
           },
@@ -70,7 +71,7 @@
 
       this.removePost = function(postId) {
         return $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postId,
+          url: postUrl + postId,
           headers: {
             'Authorization': token
           },
@@ -78,10 +79,39 @@
         });
       };
 
+//Comment Methods
+      //Comment Constructor
+      var Comment = function(options) {
+        this.content = options.content;
+      };
+
+      // Add a new post
+      this.addNewComment = function(comment, postId) {
+        return $http({
+          url: postUrl + postId + '/comments',
+          headers: {
+            'Authorization': token
+          },
+          method: 'POST',
+          data: new Comment(comment)
+        });
+      };
+
+      this.getComments = function() {
+        return $http({
+          url: postUrl + postId + '/comments',
+          headers: {
+            'Authorization': token
+          },
+          method: 'GET'
+        });
+      };
+
+
 //Voting Methods
       this.upvote = function(id){
         $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + id + '/like',
+          url: postUrl + id + '/like',
           headers: {
             'Authorization': token
           },
@@ -91,14 +121,13 @@
 
       this.downvote = function(id){
         $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + id + '/dislike',
+          url: postUrl + id + '/dislike',
           headers: {
             'Authorization': token
           },
           method: 'PUT'
         });
       };
-
 
     }
 

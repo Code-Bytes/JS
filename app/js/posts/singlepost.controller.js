@@ -18,7 +18,6 @@
 
       // Get all posts then filter
       PostService.getPosts();
-
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.posts = data;
 
@@ -28,9 +27,7 @@
             $scope.post = x;
             $scope.postCreatorId = x.user_id;
           }
-
         });
-
       });
 
       $scope.isCurrentUser = function() {
@@ -52,6 +49,13 @@
         PostService.removePost(postId).success(function() {
           // Route Home
           $location.path('/');
+        });
+      };
+
+      $scope.addComment = function(comment) {
+        PostService.addNewComment(comment, postId).success(function() {
+          console.log('comment successfully sent!');
+          $scope.comment = {};
         });
       };
     }

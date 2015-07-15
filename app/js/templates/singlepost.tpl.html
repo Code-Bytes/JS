@@ -4,10 +4,10 @@
     <article>
       <h3><a href="#">{{ post.title }}</a></h3>
 
-      <h6>Written by user <a href="#">{{ post.creator }}</a> {{ post.created_at | date:'medium' }}</h6>
+      <h6 ng-if="(post.created_at === post.updated_at)">Written by <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a> at {{ post.created_at | date:'medium' }}</h6>
+      <h6 ng-if="(post.created_at !== post.updated_at)">Updated by <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a> at {{ post.updated_at | date:'medium' }}</h6>
 
       <gist id="b663fed3c2df4a799c96"></gist>
-
       <br>
 
       <div class="row">
@@ -21,17 +21,22 @@
       <a href="#/edit/{{ post.id }}" class="button tiny radius">Edit</a>
       <a href="#" class="button tiny radius" ng-click="deletePost()">Delete</a>
     </div>
+
+    <form class="addcomment"> <!-- Add Comment -->
+      <textarea id="commentInput" ng-model="comment.content" placeholder="Add your comment"></textarea>
+      <br>
+      <a href="#" class="button tiny radius addcommentbtn" ng-click="addComment(comment)">Submit</a>
+    </form>
+
   </div>
-
-
 
 
   <aside class="large-3 columns">
     <h5>Similar Posts:</h5>
     <ul class="side-nav" ng-repeat="post in posts">
       <li><a href="#/post/{{ post.id }}">{{ post.title }}</a></li>
-      <li><span>Created: {{ post.created_at | date:'short' }}<span></li>
-      <li><span>{{ post.creator }}<span></li>
+      <li><span>Created: {{ post.created_at | date:'short' }}</span></li>
+      <li><span>{{ post.user.username }}</span></li>
     </ul>
   </aside>
 </div>
