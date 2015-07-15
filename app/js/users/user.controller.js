@@ -21,7 +21,6 @@
 
       $scope.getPosts().success(function(data){
         $scope.userPosts = data.users;
-        console.log($scope.userPosts);
 
         _.each($scope.userPosts, function(x){
           $scope.postNumber ++;
