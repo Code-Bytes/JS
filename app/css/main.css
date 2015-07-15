@@ -452,6 +452,11 @@ strong {
 .downVoted {
   box-shadow: 0 0 1em blue; }
 
+.spAvatar {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px; }
+
 .gist * {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }
 
