@@ -18,6 +18,10 @@
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.feed = data;
 
+      $scope.upvote = PostService.upvote;
+
+      $scope.downvote = PostService.downvote;
+
 
       });
 

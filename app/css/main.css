@@ -441,13 +441,16 @@ strong {
 .votes {
   position: absolute;
   top: 50px;
-  left: -21px; }
+  left: -22px; }
 
 .voteDiv i {
-  border-radius: 100%; }
+  cursor: pointer; }
 
-.voteDiv i:hover {
-  box-shadow: 2px 2px 2px 2px RGBA(20, 141, 184, 1); }
+.upVoted {
+  box-shadow: 0 0 1em gold; }
+
+.downVoted {
+  box-shadow: 0 0 1em blue; }
 
 .gist * {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace; }

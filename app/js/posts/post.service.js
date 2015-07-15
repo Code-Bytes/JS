@@ -71,6 +71,28 @@
         });
       };
 
+//Voting Methods
+      this.upvote = function(id){
+        $http({
+          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + id + '/like',
+          headers: {
+            'Authorization': token
+          },
+          method: 'PUT'
+        });
+      };
+
+      this.downvote = function(id){
+        $http({
+          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + id + '/dislike',
+          headers: {
+            'Authorization': token
+          },
+          method: 'PUT'
+        });
+      };
+
+
     }
 
   ]);
