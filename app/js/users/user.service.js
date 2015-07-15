@@ -8,6 +8,14 @@
     function ($http, $location, $auth, $window, $rootScope, $sce, $stateParams) {
 
       var token = $auth.getToken();
+      var user = JSON.parse($window.localStorage.currentUser);
+      var idFunc = function(){
+          if ($stateParams.id === undefined){
+            return user.user_id;
+          } else {
+            return $stateParams.id;
+          }
+        };
 
       var isLoggedIn = function() {
         if (token !== null){
@@ -32,7 +40,7 @@
 
       this.getAvatar = function() {
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        console.log(isLoggedIn());
+
         if (isLoggedIn() === true) {
           return $sce.trustAsHtml('<img class="avatar" src="' + currentUser.avatar + '">');
         } else {
@@ -69,7 +77,7 @@
       this.getUser = function(){
 
         // Defines AJAX params for users
-        var id = $stateParams.id;
+        var id = idFunc();
         var userReq = {
           url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id,
           headers: {
@@ -82,14 +90,6 @@
 
       this.getPosts = function(){
 
-        // Defines AJAX params for users
-        var idFunc = function(){
-          if ($stateParams.id === undefined){
-            return token.id;
-          } else {
-            return $stateParams.id;
-          }
-        };
         var id = idFunc();
 
         var postReq = {
