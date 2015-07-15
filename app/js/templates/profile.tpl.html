@@ -3,16 +3,16 @@
 
     <div class="profilePortraitDiv">
       <!-- <i class="fa fa-user fa-5x profPortrait"></i> -->
-      <img src="{{ currentUser.avatar }}">
+      <img src="{{ currentUser().avatar }}">
     </div>
 
-    <span class="profileTitle">{{ currentUser.username }}</span>
+    <span class="profileTitle">{{ currentUser().username }}</span>
     <br>
-    <span>{{ currentUser.company }}</span>
+    <span>{{ currentUser().company }}</span>
     <br>
-    <span>{{ currentUser.location }}</span>
+    <span>{{ currentUser().location }}</span>
     <br>
-    <a href="{{ currentUser.blog }}">{{ currentUser.blog }}</a>
+    <a href="{{ currentUser().blog }}">{{ currentUser().blog }}</a>
 
     <div class="spaceDiv"></div>
 
@@ -29,7 +29,7 @@
 
       <div class="profSection profLinks">
         <span>LINKS</span>
-        <a href="{{ currentUser.url }}"><i class="fa fa-github-square"></i></a>
+        <a href="{{ currentUser().url }}"><i class="fa fa-github-square"></i></a>
         <a href=""><i class="fa fa-linkedin-square"></i></a>
       </div>
     </div>

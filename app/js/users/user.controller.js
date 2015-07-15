@@ -7,7 +7,13 @@
 
     function ($scope, UserService, $auth, $window, $location) {
 
-      $scope.currentUser = JSON.parse($window.localStorage.currentUser);
+      $scope.currentUser = function(){
+        if ($auth.isAuthenticated() === true) {
+          return JSON.parse($window.localStorage.currentUser);
+        } else {
+          return undefined;
+        }
+      };
 
       $scope.getUser = UserService.getUser;
 
