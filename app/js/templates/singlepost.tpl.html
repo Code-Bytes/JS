@@ -19,7 +19,7 @@
     </article>
 
     <div ng-if="isCurrentUser()">
-      <a href="#" class="button tiny radius" ng-click="editPost()">Edit</a>
+      <a href="#/edit/{{ post.id }}" class="button tiny radius">Edit</a>
       <a href="#" class="button tiny radius" ng-click="deletePost()">Delete</a>
     </div>
   </div>

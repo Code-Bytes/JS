@@ -46,9 +46,12 @@
         }
       };
 
-      // $scope.editPost = function() {
-
-      // };
+      $scope.updatePost = function(post) {
+        PostService.editPost(postId, post).success(function() {
+          // Route Home
+          $location.path('/');
+        });
+      };
 
       $scope.deletePost = function() {
         PostService.removePost(postId).success(function() {
