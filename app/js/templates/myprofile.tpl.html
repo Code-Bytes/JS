@@ -19,7 +19,7 @@
     <div class="stats">
       <div class="profSection posts">
         <span>POSTS</span>
-        <span id="postNumber">77</span>
+        <span id="postNumber">{{ postNumber }}</span>
       </div>
 
       <div class=" profSection codeBits">
@@ -30,7 +30,8 @@
       <div class="profSection profLinks">
         <span>LINKS</span>
         <a href="{{ currentUser().url }}"><i class="fa fa-github-square"></i></a>
-        <a href=""><i class="fa fa-linkedin-square"></i></a>
+        <a ng-if="currentUser().email" href="mailto:{{ currentUser().email }}"><i class="fa fa-envelope-square"></i></a>
+        <a ng-if="!currentUser().email" href="#" title="No email address"><i class="fa fa-envelope-square"></i></a>
       </div>
     </div>
   </div>

@@ -62,7 +62,7 @@
         })
         .state('profile', {
           url: '/myprofile',
-          templateUrl: 'js/templates/profile.tpl.html',
+          templateUrl: 'js/templates/myprofile.tpl.html',
           controller: 'UserController'
         })
         .state('userprofile', {
