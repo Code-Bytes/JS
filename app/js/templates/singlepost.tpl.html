@@ -5,12 +5,11 @@
       <h3><a href="#">{{ post.title }}</a></h3>
 
       <h6 ng-if="(post.created_at === post.updated_at)">
-        <img class="spAvatar" src="{{post.user.avatar}}">
+        <img class="spAvatar" ng-src="{{post.user.avatar}}">
         <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a>
         {{ post.time() }}</h6>
       <h6 ng-if="(post.created_at !== post.updated_at)">Updated by <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a> at {{ post.updated_at | date:'medium' }}</h6>
 
-      <gist id="b663fed3c2df4a799c96"></gist>
       <br>
 
       <div class="row">

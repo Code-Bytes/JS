@@ -173,6 +173,15 @@ input[type="radio"] {
   font-style: bold;
   color: RGBA(143, 144, 138, 1); }
 
+#gistInput {
+  border: none;
+  box-shadow: none;
+  font-style: bold;
+  color: RGBA(143, 144, 138, 1); }
+
+.tagPostHead {
+  font-size: 18px; }
+
 .feedFilter {
   position: absolute;
   top: 0;

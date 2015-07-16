@@ -18,6 +18,9 @@
             $scope.post = {};
           });
       };
+
+      //Pulls tags from StackExchange
+      $scope.getTags = PostService.getTags();
     }
 
   ]);

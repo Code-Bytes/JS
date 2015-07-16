@@ -1,27 +1,35 @@
 <form class="apppostform">
-  <div class="row addpost"> <!-- Post Title -->
+
+  <!-- Title Input -->
+  <div class="row addpost">
     <div class="large-12 columns">
         <input id="titleInput" ng-model="post.title" type="text" placeholder="Title"/>
     </div>
-  </div> <!-- End Post Title -->
+  </div>
 
-<!--    <div class="row addpost">
-    <div class="large-6 medium-7 columns"> Select programming language -->
-      <!-- <label>Select Language(s): -->
- <!--        <select>
-          <option value="Ruby">Ruby</option>
-          <option value="Python">Python</option>
-          <option value="JavaScript">JavaScript</option>
-          <option value="CPlusPlus">C++</option>
-          <option value="CSharp">C#</option>
-          <option value="ObjectiveC">Objective-C</option>
-          <option value="Python">Python</option>
-          <option value="SQL">SQL</option>
-          <option value="PHP">PHP</option>
-          <option value="Java">Java</option>
-          <option value="C">C</option>
-        </select> -->
-<!--       </label>
+  <!-- Gist Url -->
+  <div class="row addpost">
+    <div class="large-12 columns">
+      <input id="gistInput" ng-model="post.gist" type="text" placeholder="Gist ID"/>
+    </div>
+  </div>
+
+  <!-- Post Content -->
+  <div class="row addpost">
+    <div class="large-12 columns">
+        <textarea id="postInput" ng-model="post.content" placeholder="Post Details"></textarea>
+    </div>
+  </div>
+
+
+  <!-- Tag Section -->
+
+  <div class="row addpost">
+    <div class="tagPostHeadDiv">
+      <label class="tagPostHead">Tag Your Post:</label>
+      <span class="tagPostWhy"></span>
+    </div>
+    <div class="large-6 medium-7 columns">
       <div class="checkbox">
         <input type="checkbox" name="lang" value="Ruby" id="langRuby"><label for="langRuby">Ruby</label>
       </div>
@@ -52,10 +60,11 @@
       <div class="checkbox">
         <input type="checkbox" name="lang" value="C" id="langC"><label for="langC">C</label>
       </div>
-    </div> --> <!-- End select programming language -->
+    </div>
+    <!-- End select programming language -->
 
-    <!-- <div class="large-4 medium-5 columns">  --><!-- Select expertise level -->
-      <!-- <label>Select Expertise Level:</label>
+    <div class="large-4 medium-5 columns">
+      <label>Select Expertise Level:</label>
       <div class="radiobtn">
         <input type="radio" name="expertiselvl" value="noob" id="nooblvl"><label for="nooblvl">Noob</label>
       </div>
@@ -68,38 +77,15 @@
       <div class="radiobtn">
         <input type="radio" name="expertiselvl" value="expert" id="expertlvl"><label for="expertlvl">Expert</label>
       </div>
-    </div> --> <!-- End elect expertise level -->
+    </div> <!-- End elect expertise level -->
 
-    <!-- <div class="large-2 medium-0 columns"></div>
+    <div class="large-2 medium-0 columns"></div>
 
   </div>
- -->
 
-  <!-- <div class="row addpost"> --> <!-- Gist Selection -->
-    <!-- <div class="large-12 columns">
-      <label>Select Gist:
-        <select>
-          <option value="gist1">Gist 1</option>
-          <option value="gist2">Gist 2</option>
-          <option value="gist3">Gist 3</option>
-          <option value="gist4">Gist 4</option>
-        </select>
-      </label>
-    </div>
-  </div> --> <!-- End Gist Selection -->
-
-  <div class="row addpost"> <!-- Gist Url -->
-    <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.gist" placeholder="Gist Url"></textarea>
-    </div>
-  </div> <!-- End Gist Url -->
-
-  <div class="row addpost"> <!-- Post Content -->
-    <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.content" placeholder="Post Details"></textarea>
-    </div>
-  </div> <!-- End Post Content -->
-
+  <!-- Submit Button -->
   <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>
 
 </form>
+
+

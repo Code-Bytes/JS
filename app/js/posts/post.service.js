@@ -129,6 +129,17 @@
         });
       };
 
+//Tag Methods
+      this.getTags = function(){
+        $http({
+          url: 'https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow',
+          headers: {
+            'Authorization': token
+          },
+          method: 'GET'
+        });
+      };
+
     }
 
   ]);
