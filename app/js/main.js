@@ -25,7 +25,7 @@
           templateUrl: 'js/templates/login.tpl.html',
           controller: 'NavController'
         })
-        .state('home', {
+        .state('feed', {
           url: '/',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'

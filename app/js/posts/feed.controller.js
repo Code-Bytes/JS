@@ -7,11 +7,12 @@
 
     function (PostService, $scope, $rootScope) {
 
-      // $rootScope.postId; // Unsure why this is here?
-
-      // $scope.header = {
-      //   "Authorization": $rootScope.token
-      // };
+      $scope.isLoggedIn = function () {
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser) {
+          return true;
+        }
+      };
 
       PostService.getPosts();
 
