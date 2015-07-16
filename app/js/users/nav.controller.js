@@ -17,12 +17,12 @@
       };
       $scope.isAuthenticated();
 
-      $scope.avatar = function(){
+      $scope.avatar = function() {
         return UserService.getAvatar();
       };
       $scope.avatar();
 
-      $scope.avatarLink = function(){
+      $scope.avatarLink = function() {
         return UserService.avatarUrl();
       };
       $scope.avatarLink();

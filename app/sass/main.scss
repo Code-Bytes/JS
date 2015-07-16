@@ -246,7 +246,7 @@ input[type="radio"] {
   display: block;
   top: 65px;
   margin: 0;
-  height: 72vh;
+  min-height: 72vh;
 }
 
 .sidebar {
@@ -277,6 +277,7 @@ input[type="radio"] {
 
 .aboutheader {
   text-align: center;
+  margin-top: 10px;
 }
 
 .team-member {
@@ -470,6 +471,11 @@ input[type="radio"] {
   border-right: 1px solid RGBA(240, 240, 240, 1);
 }
 
+.recentPosts {
+  max-width: 600px;
+  margin: 0px 250px;
+}
+
 .recentPostsDivider {
   width: 100%;
   height: 1px;
@@ -637,6 +643,22 @@ strong {
   border-radius: 100%;
   height: 40px;
   width: 40px;
+}
+
+.feedcomment {
+  &:hover .editOrDelete {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+.commenterInfo {
+  display: inline-block;
+}
+
+.editOrDelete {
+  float: right;
+  display: none;
 }
 
 //////////////////////////////////////////////////////////////////////////

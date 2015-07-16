@@ -9,26 +9,32 @@
 
       var postId = $stateParams.id;
 
-      var currentUserId;
+      // var currentUserId;
       UserService.thisUser().success(function (data) {
-        currentUserId = data.user.id;
+        $scope.currentUserId = data.user.id;
       });
 
       $scope.isCurrentUser = function() {
-        if (currentUserId === $scope.postCreatorId) {
+        if ($scope.currentUserId === $scope.postCreatorId) {
           return true;
-        } else {
-          return false;
+        // } else {
+        //   return false;
         }
       };
 
-      // var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      $scope.isLoggedIn = function () {
+        var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser) {
+          return true;
+        // } else {
+        //   return false;
+        }
+      };
 
       // Get all posts then filter
       PostService.getPosts();
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.posts = data;
-
         // Filter for clicked post  id
         data.filter( function(x) {
           if (x.id == postId) {
@@ -56,7 +62,6 @@
 
       PostService.getComments(postId).success(function(data) {
         $scope.comments = data.comments;
-        console.log($scope.comments);
       });
 
       $scope.addComment = function(comment) {

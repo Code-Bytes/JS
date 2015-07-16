@@ -11,7 +11,7 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="css/main.css">
-<!--   <link rel="stylesheet" href="css/medium.css" media="(min-width: 426px)"> -->
+  <link rel="stylesheet" href="css/medium.css" media="(max-width: 1024px)">
   <link rel="stylesheet" href="css/mobile.css" media="(max-width: 425px)">
 </head>
 
@@ -24,9 +24,11 @@
       <a class="link" href="#/topposts">Top Posts</a><span ng-if="!isAuthenticated()">|</span>
       <a class="link" href="#/login" ng-if="!isAuthenticated()">Getting Started</a>
       <a class="postLink" href="#/addpost">
-        <span class="add">&#123;</span>
-        <span class="add">++</span>
-        <span class="add">&#125;</span>
+        <div class="addPost" ng-if="isAuthenticated()">
+          <span class="add">&#123;</span>
+          <span class="add">++</span>
+          <span class="add">&#125;</span>
+        </div>
       </a>
 
      <div class="ddPoint">
