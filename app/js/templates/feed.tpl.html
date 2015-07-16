@@ -38,7 +38,8 @@
         <div class="postHead">
           <img class="postAvatar" ng-src="{{ post.user.avatar }}"/>
           <a href="#/profile/{{ post.user_id }}" class="postUser">{{ post.user.username }}</a>
-          <span class="thumbTime">{{ post.time() }}</span>
+          <span class="thumbTime" ng-if="(post.created_at === post.updated_at)">{{ post.createdAtTime() }}</span>
+          <span class="thumbTime" ng-if="(post.created_at !== post.updated_at)">{{ post.updatedAtTime() }} <em>(Updated)</em></span>
         </div>
 
         <a class="postTitle" href="#/post/{{ post.id }}">{{ post.title }}</a>

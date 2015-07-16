@@ -47,9 +47,14 @@
 
           _.each(data.posts, function(x){
 
-            var postTime = x.created_at;
-            x.time = function(){
-              return moment(postTime, "YYYYMMDD").fromNow();
+            var createdTime = x.created_at;
+            x.createdAtTime = function(){
+              return moment(createdTime, "YYYYMMDD").fromNow();
+            };
+
+            var updatedTime = x.updated_at;
+            x.updatedAtTime = function(){
+              return moment(updatedTime, "YYYYMMDD").fromNow();
             };
 
           });
@@ -97,7 +102,7 @@
         });
       };
 
-      this.getComments = function() {
+      this.getComments = function(postId) {
         return $http({
           url: postUrl + postId + '/comments',
           headers: {

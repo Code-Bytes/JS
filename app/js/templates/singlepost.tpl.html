@@ -4,11 +4,12 @@
     <article>
       <h3><a href="#">{{ post.title }}</a></h3>
 
-      <h6 ng-if="(post.created_at === post.updated_at)">
-        <img class="spAvatar" src="{{post.user.avatar}}">
+      <div>
+        <img class="spAvatar" ng-src="{{ post.user.avatar }}">
         <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a>
-        {{ post.time() }}</h6>
-      <h6 ng-if="(post.created_at !== post.updated_at)">Updated by <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a> at {{ post.updated_at | date:'medium' }}</h6>
+        <span ng-if="(post.created_at === post.updated_at)">{{ post.createdAtTime() }}</span>
+        <span ng-if="(post.created_at !== post.updated_at)">{{ post.updatedAtTime() }} <em>(Updated)</em></span>
+      </div>
 
       <gist id="b663fed3c2df4a799c96"></gist>
       <br>
@@ -25,11 +26,23 @@
       <a href="#" class="button tiny radius" ng-click="deletePost()">Delete</a>
     </div>
 
+    <hr><br>
+
     <form class="addcomment"> <!-- Add Comment -->
       <textarea id="commentInput" ng-model="comment.content" placeholder="Add your comment"></textarea>
       <br>
       <a href="#" class="button tiny radius addcommentbtn" ng-click="addComment(comment)">Submit</a>
     </form>
+
+    <div class="row feedcomment" ng-repeat="comment in comments">
+      <div class="commentHead">
+        <img class="commentAvatar" ng-src="{{ comment.user.avatar }}"/>
+        <a href="#/profile/{{ comment.user.id }}" class="postUser">{{ comment.user.username }}</a>
+        <span>{{ comment.time() }}</span>
+      </div>
+
+      <p>{{ comment.content }}</p>
+    </div>
 
   </div>
 

@@ -14,6 +14,14 @@
         currentUserId = data.user.id;
       });
 
+      $scope.isCurrentUser = function() {
+        if (currentUserId === $scope.postCreatorId) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+
       // var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
       // Get all posts then filter
@@ -30,14 +38,6 @@
         });
       });
 
-      $scope.isCurrentUser = function() {
-        if (currentUserId === $scope.postCreatorId) {
-          return true;
-        } else {
-          return false;
-        }
-      };
-
       $scope.updatePost = function(post) {
         PostService.editPost(postId, post).success(function() {
           // Route Home
@@ -51,6 +51,13 @@
           $location.path('/');
         });
       };
+
+      // Get all comments
+
+      PostService.getComments(postId).success(function(data) {
+        $scope.comments = data.comments;
+        console.log($scope.comments);
+      });
 
       $scope.addComment = function(comment) {
         PostService.addNewComment(comment, postId).success(function() {
