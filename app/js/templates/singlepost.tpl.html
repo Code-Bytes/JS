@@ -4,6 +4,7 @@
     <article>
       <h3><a href="#">{{ post.title }}</a></h3>
 
+
       <div>
         <img class="spAvatar" ng-src="{{ post.user.avatar }}">
         <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a>
@@ -11,7 +12,6 @@
         <span ng-if="(post.created_at !== post.updated_at)">{{ post.updatedAtTime() }} <em>(Updated)</em></span>
       </div>
 
-      <gist id="b663fed3c2df4a799c96"></gist>
       <br>
 
       <div class="row">
