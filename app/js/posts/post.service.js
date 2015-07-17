@@ -8,8 +8,9 @@
     function ($http, $rootScope, $auth) {
 
       //Gets User Token
-      var token = $auth.getToken();
-      var postUrl = 'https://pacific-hamlet-4796.herokuapp.com/posts/';
+      var token       = $auth.getToken(),
+          postUrl     = 'https://pacific-hamlet-4796.herokuapp.com/posts/',
+          commentUrl  = 'https://pacific-hamlet-4796.herokuapp.com/comments/';
 
       // Defines AJAX params for posts
       var feedReq = {
@@ -58,8 +59,8 @@
             };
 
           });
+          // $rootScope.$broadcast('PostsReceived', data.posts.reverse());
           $rootScope.$broadcast('PostsReceived', data.posts.reverse());
-
         });
       };
 
@@ -112,6 +113,16 @@
         });
       };
 
+      this.addNewReply = function(reply, commentId) {
+        return $http({
+          url: commentUrl + commentId + '/reply',
+          headers: {
+            'Authorization': token
+          },
+          method: 'POST',
+          data: new Comment(reply)
+        });
+      };
 
 //Voting Methods
       this.upvote = function(id){
