@@ -77,17 +77,8 @@
         });
       };
 
-      // Reply form - Was advised to put logic for reply form toggle in controller not in template
-      // however, toggle happens on all comments, instead of just the one user clicks reply for
-      // $scope.showForm = false;
-
-      // $scope.toggleForm = function() {
-      //   $scope.showForm = !$scope.showForm;
-      // };
-
       // Initialize comment form on scope
       // $scope.replyForm = {};
-
 
       $scope.addReply = function(reply, commentId) {
         PostService.addNewReply(reply, commentId).success(function() {

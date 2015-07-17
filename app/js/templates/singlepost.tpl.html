@@ -45,7 +45,7 @@
           <img class="commentAvatar" ng-src="{{ comment.user.avatar }}"/>
           <a href="#/profile/{{ comment.user.id }}" class="postUser">{{ comment.user.username }}</a>
         </div>
-        <div class="editOrDelete" ng-if="(comment.user.id === currentUserId)">
+        <div class="editOrDelete" ng-if="(comment.user.id === currentUserId) && isLoggedIn()">
           <span ng-click="editorEnabled=!editorEnabled"><i class="fa fa-pencil-square-o"></i></span>
           <span ng-click="deleteComment(comment.id, $index)"><i class="fa fa-minus-square-o"></i></span>
         </div>
@@ -63,7 +63,7 @@
       </div>
       <!-- toggleForm() -->
 
-      <a href="#" class="button tiny radius addreplybtn" ng-click="showForm = !showForm"><i class="fa fa-reply"></i></a>
+      <a href="" class="button tiny radius addreplybtn" ng-click="showForm = !showForm"><i class="fa fa-reply"></i></a>
 
       <form class="large-12 columns addRep" ng-show="showForm" ng-if="isLoggedIn()" ng-submit="addReply(reply, comment.id)" name="replyForm"> <!-- Reply Form -->
         <textarea id="commentInput" ng-model="reply.content" placeholder="Got a reply?"></textarea>
