@@ -632,6 +632,10 @@ strong {
 
 //Poster info
 
+.commentHead {
+  margin-top: 10px;
+}
+
 .spAvatar {
   border-radius: 100%;
   height: 50px;
@@ -644,6 +648,10 @@ strong {
 
 .gist .gist-file:first-child {
   margin-top: 1em;
+}
+
+.replyForm {
+  margin-bottom: 1em;
 }
 
 //Commenter Info
@@ -668,6 +676,12 @@ strong {
   float: right;
   display: none;
 }
+
+// .submitreplybtn {
+//   &:active .addRep form {
+//     display: none;
+//   }
+// }
 
 //////////////////////////////////////////////////////////////////////////
 /////Footer//////

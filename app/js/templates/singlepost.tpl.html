@@ -28,31 +28,48 @@
 
     <hr><br>
 
-    <form class="addcomment" ng-if="isLoggedIn()"> <!-- Add Comment -->
+    <form class="addComm" ng-if="isLoggedIn()" name="commentForm"> <!-- Add Comment -->
       <textarea id="commentInput" ng-model="comment.content" placeholder="Add your comment"></textarea>
       <br>
       <a href="#" class="button tiny radius addcommentbtn" ng-click="addComment(comment)">Submit</a>
     </form> <!-- End Add Comment -->
 
-    <div class="addcomment" ng-if="!isLoggedIn()"> <!-- User Not Logged In - Comment Area -->
+    <div class="addComment" ng-if="!isLoggedIn()"> <!-- User Not Logged In - Comment Area -->
       <p><a href="#/login">Log in</a> through Github to start commenting!</p>
     </div> <!-- End User Not Logged In - Comment Area -->
 
 
     <div class="row feedcomment" ng-repeat="comment in comments">
-      <div class="commentHead">
+      <div class="commentHead"> <!-- Comment Head -->
         <div class="commenterInfo">
           <img class="commentAvatar" ng-src="{{ comment.user.avatar }}"/>
           <a href="#/profile/{{ comment.user.id }}" class="postUser">{{ comment.user.username }}</a>
         </div>
         <div class="editOrDelete" ng-if="(comment.user.id === currentUserId)">
-          <span><i class="fa fa-pencil-square-o"></i></span>
-          <span><i class="fa fa-minus-square-o"></i></span>
+          <span ng-click="editorEnabled=!editorEnabled"><i class="fa fa-pencil-square-o"></i></span>
+          <span ng-click="deleteComment(comment.id, $index)"><i class="fa fa-minus-square-o"></i></span>
         </div>
-      </div>
+      </div> <!-- End Comment Head -->
 
-      <p>{{ comment.content }}</p>
-      <a href="#">
+      <!-- Comment Content -->
+      <p ng-hide="editorEnabled">{{ comment.content }}</p>
+
+      <div ng-show="editorEnabled">
+        <form class="editComm" name="commentForm"> <!-- Edit Comment -->
+          <textarea ng-model="comment.content" value="{{ comment.content }}"></textarea>
+          <br>
+          <a href="#" class="button tiny radius editcommentbtn" ng-click="editComment(comment, comment.id)">Submit</a>
+        </form> <!-- End Edit Comment -->
+      </div>
+      <!-- toggleForm() -->
+
+      <a href="#" class="button tiny radius addreplybtn" ng-click="showForm = !showForm"><i class="fa fa-reply"></i></a>
+
+      <form class="large-12 columns addRep" ng-show="showForm" ng-if="isLoggedIn()" ng-submit="addReply(reply, comment.id)" name="replyForm"> <!-- Reply Form -->
+        <textarea id="commentInput" ng-model="reply.content" placeholder="Got a reply?"></textarea>
+        <br>
+        <button class="tiny radius submitreplybtn">Submit</button>
+      </form> <!-- End Reply Form -->
     </div>
 
   </div>

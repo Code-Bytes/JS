@@ -35,7 +35,7 @@
       PostService.getPosts();
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.posts = data;
-        // Filter for clicked post  id
+        // Filter for clicked post id
         data.filter( function(x) {
           if (x.id == postId) {
             $scope.post = x;
@@ -59,17 +59,61 @@
       };
 
       // Get all comments
-
       PostService.getComments(postId).success(function(data) {
         $scope.comments = data.comments;
+        console.log($scope.comments);
       });
+
+      // Initialize comment form on scope
+      // $scope.commentForm = {};
 
       $scope.addComment = function(comment) {
         PostService.addNewComment(comment, postId).success(function() {
           console.log('comment successfully sent!');
-          $scope.comment = {};
+          // $scope.comment = '';
+          // $scope.commentForm.$setPristine();
+          // var master = { content: '' };
+          // $scope.comment = angular.copy(master);
         });
       };
+
+      // Reply form - Was advised to put logic for reply form toggle in controller not in template
+      // however, toggle happens on all comments, instead of just the one user clicks reply for
+      // $scope.showForm = false;
+
+      // $scope.toggleForm = function() {
+      //   $scope.showForm = !$scope.showForm;
+      // };
+
+      // Initialize comment form on scope
+      // $scope.replyForm = {};
+
+
+      $scope.addReply = function(reply, commentId) {
+        PostService.addNewReply(reply, commentId).success(function() {
+          console.log(commentId);
+          console.log('added reply!');
+          $scope.comments.push(reply);
+          // $scope.reply = '';
+        });
+      };
+
+      $scope.updateComment = function(comment, commentId) {
+        console.log('clicked on edit button');
+        PostService.editComment(comment, commentId).success(function() {
+          console.log('successfully updated comment');
+        });
+      };
+
+      $scope.deleteComment = function(commentId, index) {
+        PostService.removeComment(commentId).success(function() {
+          console.log('delete successful');
+          $scope.comments.splice(index,1);
+          // Route Home
+          // $location.path('/');
+        });
+      };
+
     }
 
   ]);
