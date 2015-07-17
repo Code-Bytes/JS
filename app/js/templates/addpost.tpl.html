@@ -7,6 +7,24 @@
     </div>
   </div>
 
+  <div class="row addpost">
+    <div class="large-12 columns">
+      <label class="expertise">Select Expertise Level:</label>
+      <div class="radiobtn">
+        <input type="radio" name="expertiselvl" value="noob" id="nooblvl"><label for="nooblvl">Noob</label>
+      <!-- </div> -->
+      <!-- <div class="radiobtn"> -->
+        <input type="radio" name="expertiselvl" value="intermed" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
+      <!-- </div> -->
+      <!-- <div class="radiobtn"> -->
+        <input type="radio" name="expertiselvl" value="advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
+      <!-- </div> -->
+      <!-- <div class="radiobtn"> -->
+        <input type="radio" name="expertiselvl" value="expert" id="expertlvl"><label for="expertlvl">Expert</label>
+      </div>
+    </div>
+  </div>
+
   <!-- Gist Url -->
   <div class="row addpost">
     <div class="large-12 columns">
@@ -21,67 +39,20 @@
     </div>
   </div>
 
-
   <!-- Tag Section -->
-
   <div class="row addpost">
-    <div class="tagPostHeadDiv">
-      <label class="tagPostHead">Tag Your Post:</label>
-      <span class="tagPostWhy"></span>
-    </div>
-    <div class="large-6 medium-7 columns">
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="Ruby" id="langRuby"><label for="langRuby">Ruby</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="Python" id="langPython"><label for="langPython">Python</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="JavaScript" id="langJS"><label for="langJS">JavaScript</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="CPlusPlus" id="langCPlusPlus"><label for="langCPlusPlus">C++</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="CSharp" id="langCSharp"><label for="langCSharp">C#</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="ObjectiveC" id="langObjectiveC"><label for="langObjectiveC">Objective-C</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="SQL" id="langSQL"><label for="langSQL">SQL</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="PHP" id="langPHP"><label for="langPHP">PHP</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="Java" id="langJava"><label for="langJava">Java</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" name="lang" value="C" id="langC"><label for="langC">C</label>
+    <div class="large-12 columns xp">
+      <div angucomplete-alt id="tags" placeholder="Add tags" maxlength="50" pause="100" selected-object="selectedCountry" local-data="getTags" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight">
       </div>
     </div>
-    <!-- End select programming language -->
-
-    <div class="large-4 medium-5 columns">
-      <label>Select Expertise Level:</label>
-      <div class="radiobtn">
-        <input type="radio" name="expertiselvl" value="noob" id="nooblvl"><label for="nooblvl">Noob</label>
-      </div>
-      <div class="radiobtn">
-        <input type="radio" name="expertiselvl" value="intermed" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
-      </div>
-      <div class="radiobtn">
-        <input type="radio" name="expertiselvl" value="advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
-      </div>
-      <div class="radiobtn">
-        <input type="radio" name="expertiselvl" value="expert" id="expertlvl"><label for="expertlvl">Expert</label>
-      </div>
-    </div> <!-- End elect expertise level -->
-
-    <div class="large-2 medium-0 columns"></div>
-
   </div>
+  <div class="result">
+    <div ng-show="selectedCountry">
+      You selected <span class="bold-span">{{selectedCountry.originalObject.name}}</span> which has a country code of <span class="bold-span">{{selectedCountry.originalObject.code}}</span>
+    </div>
+  </div>
+
+
 
   <!-- Submit Button -->
   <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>

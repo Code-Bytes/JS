@@ -166,16 +166,31 @@
         });
       };
 
-//Tag Methods
+//Pulls tags
+
       this.getTags = function(){
-        $http({
-          url: 'https://api.stackexchange.com/2.2/tags?order=desc&sort=popular&site=stackoverflow',
+         $http({
+          url: 'https://pacific-hamlet-4796.herokuapp.com/tags',
           headers: {
             'Authorization': token
           },
           method: 'GET'
-        });
+        })
+         .success(function(data){
+          var tagArray = [];
+          _.each(data.tags, function(x){
+            tagArray.push(x.name);
+
+          });
+          console.log(tagArray);
+          return tagArray;
+         });
       };
+
+
+
+
+
 
     }
 
