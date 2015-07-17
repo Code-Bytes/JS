@@ -124,6 +124,16 @@
         });
       };
 
+      this.removeComment = function(commentId) {
+        return $http({
+          url: commentUrl + commentId,
+          headers: {
+            'Authorization': token
+          },
+          method: 'DELETE'
+        });
+      };
+
 //Voting Methods
       this.upvote = function(id){
         $http({

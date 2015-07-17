@@ -97,6 +97,13 @@
         });
       };
 
+      $scope.deleteComment = function(commentId) {
+        PostService.removeComment(commentId).success(function() {
+          console.log('delete successful');
+          // Route Home
+          // $location.path('/');
+        });
+      };
 
     }
 
