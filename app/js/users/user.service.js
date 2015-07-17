@@ -9,8 +9,6 @@
 
       var token = $auth.getToken();
       var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-      console.log(currentUser);
-
       var user = function(){
         if (token !== undefined) {
           return JSON.parse($window.localStorage.currentUser);

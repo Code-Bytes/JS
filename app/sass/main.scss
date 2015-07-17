@@ -239,6 +239,30 @@ input[type="radio"] {
   font-size: 18px;
 }
 
+input[type="text"] {
+  border-style: none;
+  box-shadow: none;
+}
+
+#tags_dropdown {
+  overflow-y: auto;
+  max-height: 150px;
+}
+
+.expertise {
+  cursor: default;
+}
+
+.radiobtn input, label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.xp {
+
+}
+
+
 ///////////////////////////////////////////////////////////////////////////
 ///// Filter /////
 //////////////////
