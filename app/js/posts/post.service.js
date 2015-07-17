@@ -124,6 +124,17 @@
         });
       };
 
+      this.editComment = function(comment, commentId) {
+        return $http({
+          url: commentUrl + commentId,
+          headers: {
+            'Authorization': token
+          },
+          method: 'PUT',
+          data: comment
+        });
+      };
+
       this.removeComment = function(commentId) {
         return $http({
           url: commentUrl + commentId,

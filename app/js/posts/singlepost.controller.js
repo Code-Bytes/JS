@@ -93,13 +93,22 @@
         PostService.addNewReply(reply, commentId).success(function() {
           console.log(commentId);
           console.log('added reply!');
+          $scope.comments.push(reply);
           // $scope.reply = '';
         });
       };
 
-      $scope.deleteComment = function(commentId) {
+      $scope.updateComment = function(comment, commentId) {
+        console.log('clicked on edit button');
+        PostService.editComment(comment, commentId).success(function() {
+          console.log('successfully updated comment');
+        });
+      };
+
+      $scope.deleteComment = function(commentId, index) {
         PostService.removeComment(commentId).success(function() {
           console.log('delete successful');
+          $scope.comments.splice(index,1);
           // Route Home
           // $location.path('/');
         });
