@@ -40,17 +40,12 @@
   </div>
 
   <!-- Tag Section -->
-  <div class="row addpost">
-    <div class="large-12 columns xp">
-      <div angucomplete-alt id="tags" placeholder="Add tags" maxlength="50" pause="100" selected-object="selectedCountry" local-data="getTags" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight">
-      </div>
-    </div>
-  </div>
-  <div class="result">
-    <div ng-show="selectedCountry">
-      You selected <span class="bold-span">{{selectedCountry.originalObject.name}}</span> which has a country code of <span class="bold-span">{{selectedCountry.originalObject.code}}</span>
-    </div>
-  </div>
+    <tags-input ng-model="tags">
+      <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+
+
+
 
 
 
