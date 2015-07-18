@@ -27,7 +27,8 @@
     "angular-messages": "~1.4.2",
     "moment": "~2.10.3",
     "angular-gist": "~1.0.0",
-    "angucomplete-alt": "~1.0.7"
+    "angucomplete-alt": "~1.0.7",
+    "ng-tags-input": "3.0.0"
   },
   "devDependencies": {
     "mocha": "~2.2.5",

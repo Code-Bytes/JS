@@ -20,11 +20,14 @@
         },
       };
 
-// Start Add Post Methods
+    // Start Add Post Methods
       //Post Constructor
       var Post = function(options) {
         this.title = options.title;
         this.content = options.content;
+        this.tags = options.tags.map(function(tag) {
+          return tag.text;
+        }).join(',');
       };
 
       // Add a new post
@@ -35,10 +38,9 @@
         console.log(postReq);
         return $http(postReq);
       };
-//End Add Post Methods
 
-//Start Methods to Get Post and User info for feed
 
+    //Start Methods to Get Post and User info for feed
       // Get array of posts
       this.getPosts = function() {
 
@@ -57,9 +59,8 @@
             x.updatedAtTime = function(){
               return moment(updatedTime, "YYYYMMDD").fromNow();
             };
-
           });
-          // $rootScope.$broadcast('PostsReceived', data.posts.reverse());
+
           $rootScope.$broadcast('PostsReceived', data.posts.reverse());
         });
       };
@@ -85,7 +86,7 @@
         });
       };
 
-//Comment Methods
+    //Comment Methods
       //Comment Constructor
       var Comment = function(options) {
         this.content = options.content;
@@ -145,7 +146,7 @@
         });
       };
 
-//Voting Methods
+    //Voting Methods
       this.upvote = function(id){
         $http({
           url: postUrl + id + '/like',
@@ -166,31 +167,19 @@
         });
       };
 
-//Pulls tags
+    //Pulls tags
 
       this.getTags = function(){
-         $http({
+
+         return $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/tags',
           headers: {
             'Authorization': token
           },
           method: 'GET'
-        })
-         .success(function(data){
-          var tagArray = [];
-          _.each(data.tags, function(x){
-            tagArray.push(x.name);
+        });
 
-          });
-          console.log(tagArray);
-          return tagArray;
-         });
       };
-
-
-
-
-
 
     }
 
