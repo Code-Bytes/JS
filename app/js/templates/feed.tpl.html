@@ -47,6 +47,11 @@
         <a class="postTitle" href="#/post/{{ post.id }}">{{ post.title }}</a>
         <p class="thumbText">{{ post.content }}</p>
         <p>{{ post.numberOfComments }} comments</p>
+        <span>Tags:</span>
+        <div ng-repeat="tag in post.tags">
+          <span>{{ tag }}</span>
+        </div>
+
 
       </div>
       <div class="postDivider"></div>
