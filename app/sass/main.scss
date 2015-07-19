@@ -35,7 +35,7 @@ nav span {
 }
 
 .logo {
-  margin-left: 15px;
+  margin-left: 20px;
   margin-right: 30px;
 }
 
@@ -273,16 +273,17 @@ input[type="text"] {
 ///// Filter /////
 //////////////////
 
-.feedFilter {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+// .feedFilter {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// }
 
 .panel {
   position: fixed;
+  top: 0;
+  right: 0;
   display: block;
-  float: right;
   top: 65px;
   margin: 0;
   min-height: 72vh;
@@ -321,7 +322,7 @@ input[type="text"] {
 .feedSortSelect {
   width: 100px;
   position: absolute;
-  left: 80%;
+  left: 71%;
   height: 30px;
   font-size: 10px;
 }
@@ -338,6 +339,10 @@ input[type="text"] {
 .radiobtn {
   display: inline-block;
   // font-size: 0.65em;
+}
+
+.xpDivider {
+  margin-top: 30px;
 }
 
 .xpFilterBtn {
@@ -364,7 +369,7 @@ input[type="text"] {
 
 .tagList {
   display: block;
-  height: 180px;
+  height: 220px;
 }
 
 .tagDiv {
