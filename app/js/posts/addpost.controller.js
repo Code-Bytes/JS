@@ -31,9 +31,9 @@
       // Gets searchable tags from backend
       $scope.loadTags = function(query) {
         return $http.get('https://pacific-hamlet-4796.herokuapp.com/tags?search=' + query);
-      }
+      };
 
-    };
+    }
 
   ]);
 
