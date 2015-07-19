@@ -226,6 +226,18 @@ input[type="text"] {
 .panel {
   border: none; }
 
+.tagDiv {
+  background-color: RGBA(254, 254, 254, 1);
+  display: inline-block;
+  border-radius: 3px;
+  float: left;
+  margin: 5px; }
+
+.tagText {
+  padding: 7px;
+  color: RGBA(102, 102, 102, 1);
+  font-size: 12px; }
+
 .aboutheader {
   text-align: center;
   margin-top: 10px; }

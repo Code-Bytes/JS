@@ -169,7 +169,7 @@
 
     //Pulls tags
 
-      this.getTags = function(){
+      this.getAllTags = function(){
 
          return $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/tags',

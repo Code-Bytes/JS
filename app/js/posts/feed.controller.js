@@ -47,6 +47,15 @@
 
       });
 
+      $scope.getAllTags = PostService.getAllTags;
+
+      $scope.getAllTags().success(function(data){
+        $scope.tags = data;
+        $scope.number = 30;
+        console.log($scope.tags);
+      });
+
+
     }
 
   ]);
