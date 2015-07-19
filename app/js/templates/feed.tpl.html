@@ -60,7 +60,10 @@
     </div>
 
     <h4 class="filterby tagSearchHead">Search for subject tags:</h4>
-    <input id="tagSearch" type="text">
+    <!-- Tag Section -->
+    <tags-input ng-model="searchTags">
+      <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
 
     <!-- Filter by expertise level -->
     <h4 class="filterby">Filter by Complexity:</h4>

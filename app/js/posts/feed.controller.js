@@ -16,7 +16,16 @@
         }
       };
 
+      $scope.feedParams = PostService.feedParams;
+
       PostService.getPosts();
+
+      $scope.searchTags = [];
+
+      // Gets searchable tags from backend
+      $scope.loadTags = function(query) {
+        return $http.get('https://pacific-hamlet-4796.herokuapp.com/tags?search=' + query);
+      };
 
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.feed = data;
