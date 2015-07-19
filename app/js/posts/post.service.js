@@ -174,15 +174,13 @@
     //Pulls tags
 
       this.getAllTags = function(){
-
-         return $http({
+        return $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/tags',
           headers: {
             'Authorization': token
           },
           method: 'GET'
         });
-
       };
 
     }
