@@ -7,20 +7,26 @@
 
     function (PostService, $scope, $location, $http) {
 
+      //Array of tag objects
+      $scope.tags = [];
+      $scope.xp = {
+        text: ''
+      };
+
       //New Post Method
       $scope.addPost = function (newPost) {
+        $scope.tags.push($scope.xp);
+        console.log($scope.tags);
+
         newPost.tags = $scope.tags;
         PostService.addNewPost(newPost)
           .success(function () {
 
             // Route Home
-            $location.path('/');
-            $scope.post = {};
+            // $location.path('/');
+            // $scope.post = {};
           });
         };
-
-      //Array of tag objects
-       $scope.tags = [];
 
       // Gets searchable tags from backend
       $scope.loadTags = function(query) {

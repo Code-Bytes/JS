@@ -31,7 +31,7 @@
           controller: 'FeedController'
         })
         .state('queriedFeed', {
-          url: '/:tagParams',
+          url: '/search/:tagParams',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })

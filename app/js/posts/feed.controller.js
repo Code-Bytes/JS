@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth',
+  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams',
 
-    function (PostService, $scope, $rootScope, $http, $auth) {
+    function (PostService, $scope, $rootScope, $http, $auth, $stateParams) {
 
       $scope.token = $auth.getToken();
 
@@ -16,11 +16,11 @@
         }
       };
 
-      $scope.feedParams = function(params) {
 
-      };
 
-      PostService.getPosts($scope.feedParams());
+      console.log($stateParams);
+
+      PostService.getPosts({ "tags": $stateParams });
 
       $scope.searchTags = [];
 

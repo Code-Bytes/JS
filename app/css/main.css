@@ -193,9 +193,15 @@ input[type="text"] {
 .expertise {
   cursor: default; }
 
-.radiobtn input, label {
+.radiobtn input {
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle;
+  float: left; }
+
+.radiobtn label {
+  display: inline-block;
+  vertical-align: middle;
+  float: left; }
 
 .feedFilter {
   position: absolute;
@@ -485,6 +491,10 @@ strong {
   border-left: solid 1px RGBA(31, 80, 128, 1);
   position: relative;
   display: block; }
+
+.tagLabel {
+  display: inline-block;
+  float: left; }
 
 .voteDivTop {
   position: absolute;

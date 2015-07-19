@@ -10,18 +10,19 @@
   <div class="row addpost">
     <div class="large-12 columns">
       <label class="expertise">Select Expertise Level:</label>
-      <div class="radiobtn">
-        <input type="radio" name="expertiselvl" value="noob" id="nooblvl"><label for="nooblvl">Noob</label>
-      <!-- </div> -->
-      <!-- <div class="radiobtn"> -->
-        <input type="radio" name="expertiselvl" value="intermed" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
-      <!-- </div> -->
-      <!-- <div class="radiobtn"> -->
-        <input type="radio" name="expertiselvl" value="advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
-      <!-- </div> -->
-      <!-- <div class="radiobtn"> -->
-        <input type="radio" name="expertiselvl" value="expert" id="expertlvl"><label for="expertlvl">Expert</label>
-      </div>
+        <div class="radiobtn">
+          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
+        </div>
+        <div class="radiobtn">
+          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Intermediate" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
+        </div>
+        <div class="radiobtn">
+          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
+        </div>
+        <div class="radiobtn">
+          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Expert" id="expertlvl"><label for="expertlvl">Expert</label>
+        </div>
+
     </div>
   </div>
 
@@ -40,9 +41,13 @@
   </div>
 
   <!-- Tag Section -->
-    <tags-input ng-model="tags">
-      <auto-complete source="loadTags($query)"></auto-complete>
-    </tags-input>
+    <div class="row addpost">
+      <div class="large-12 columns">
+        <tags-input ng-model="tags" class="tagsInput">
+          <auto-complete source="loadTags($query)"></auto-complete>
+        </tags-input>
+      </div>
+    </div>
 
 
 

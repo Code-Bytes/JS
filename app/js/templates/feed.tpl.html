@@ -33,10 +33,14 @@
         <a class="postTitle" href="#/post/{{ post.id }}">{{ post.title }}</a>
         <p class="thumbText">{{ post.content }}</p>
         <p>{{ post.numberOfComments }} comments</p>
-        <span>Tags:</span>
-        <div ng-repeat="tag in post.tags">
-          <span>{{ tag }}</span>
-        </div>
+
+          <span class="tagLabel">Tags:</span>
+          <div ng-repeat="tag in post.tags">
+            <div class="tagDiv">
+              <span class="tagText">{{ tag }}</span>
+            </div>
+          </div>
+
 
 
       </div>
@@ -70,16 +74,16 @@
     <!-- Filter by expertise level -->
     <h4 class="filterby">Filter by Complexity:</h4>
     <div class="radiobtn">
-      <input type="radio" name="expertiselvl" value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
+      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
     </div>
     <div class="radiobtn">
-      <input type="radio" name="expertiselvl" value="Intermediate" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
+      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Intermediate" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
     </div>
     <div class="radiobtn">
-      <input type="radio" name="expertiselvl" value="Advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
+      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
     </div>
     <div class="radiobtn">
-      <input type="radio" name="expertiselvl" value="Expert" id="expertlvl"><label for="expertlvl">Expert</label>
+      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Expert" id="expertlvl"><label for="expertlvl">Expert</label>
     </div>
 
     <br/><br/>
