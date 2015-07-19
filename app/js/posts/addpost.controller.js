@@ -23,8 +23,8 @@
           .success(function () {
 
             // Route Home
-            // $location.path('/');
-            // $scope.post = {};
+            $location.path('/');
+            $scope.post = {};
           });
         };
 
