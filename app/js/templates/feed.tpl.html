@@ -1,18 +1,4 @@
 <div class="feedView">
-<!-- <div ng-if="isAuthenticated() && currentUser.username">
-  <div class="row">
-  </div>
-</div> -->
-
-<!-- <div ng-if="!isAuthenticated()">
-  <div>
-    <h2>CodeBytes</h2>
-    <p>This is developer social network is powered by <strong>Satellizer</strong>. To continue, please log in with your Github account</p>
-    <p>
-      <a class="btn btn-lg btn-success" href="#/login"><i class="ion-log-in"></i> Log in</a>
-    </p>
-  </div>
-</div> -->
 
   <!-- Feed Beginning -->
   <div class="large-7 columns feed">
@@ -65,18 +51,19 @@
   <div class="panel"> <!-- Panel -->
 
     <h4 class="filterby">Popular tags:</h4>
-    <div class="tagList" ng-repeat="tag in tags | limitTo: number">
-      <div class="tagDiv">
-        <span class="tagText">{{ tag.text }}</span>
+    <div class="tagList">
+      <div ng-repeat="tag in tags | limitTo: number">
+        <div class="tagDiv">
+          <span class="tagText">{{ tag.text }}</span>
+        </div>
       </div>
     </div>
 
     <h4 class="filterby tagSearchHead">Search for subject tags:</h4>
+    <input id="tagSearch" type="text">
 
-
-
-
-    <label>CodeByter Expertise Level:</label> <!-- Filter by expertise level -->
+    <!-- Filter by expertise level -->
+    <h4 class="filterby">Filter by Complexity:</h4>
     <div class="radiobtn">
       <input type="radio" name="expertiselvl" value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
     </div>

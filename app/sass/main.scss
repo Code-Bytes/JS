@@ -307,8 +307,8 @@ input[type="text"] {
 
 .tagList {
   display: block;
+  height: 210px;
 }
-
 
 .tagDiv {
   background-color: RGBA(254, 254, 254, 1);
@@ -317,16 +317,26 @@ input[type="text"] {
   float: left;
   margin: 5px;
   border: 1px solid RGBA(239, 239, 239, 1);
+  cursor: pointer;
+}
+
+.tagDiv:hover {
+  background-color: RGBA(232, 241, 234, 1);
 }
 
 .tagText {
-  padding: 7px;
+  padding: 10px;
   color: RGBA(102, 102, 102, 1);
   font-size: 12px;
 }
 
 .tagSearchHead {
   margin-top: 15px;
+}
+
+#tagSearch {
+  border: 1px solid RGBA(239, 239, 239, 1);
+  border-radius: 3px;
 }
 
 
