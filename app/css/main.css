@@ -559,11 +559,11 @@ strong {
 .voteDiv i {
   cursor: pointer; }
 
-.upVoted {
-  box-shadow: 0 0 1em gold; }
+.upVote {
+  color: gold; }
 
-.downVoted {
-  box-shadow: 0 0 1em blue; }
+.downVote {
+  color: blue; }
 
 .commentHead {
   margin-top: 10px; }

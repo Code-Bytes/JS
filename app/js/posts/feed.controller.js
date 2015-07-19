@@ -36,6 +36,8 @@
 
         _.each($scope.feed, function(postInFeed){
 
+
+
           $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postInFeed.id + '/comments',
           headers: {
@@ -61,6 +63,23 @@
         $scope.tags = data;
         $scope.number = 30;
       });
+
+      $scope.upVoted = function(vote){
+        if (vote === true) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+
+      $scope.downVoted = function(vote){
+        if (vote === false) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+
 
 
     }

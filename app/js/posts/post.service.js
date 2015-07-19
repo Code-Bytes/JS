@@ -50,6 +50,7 @@
         var getReq = feedReq;
         getReq.method = 'GET';
         $http(getReq).success( function (data) {
+            console.log(data);
 
           _.each(data.posts, function(x){
 
