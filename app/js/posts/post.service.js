@@ -169,28 +169,31 @@
 //Pulls tags
 
       this.getTags = function(){
-         $http({
+        //  $http({
+        //   url: 'https://pacific-hamlet-4796.herokuapp.com/tags',
+        //   headers: {
+        //     'Authorization': token
+        //   },
+        //   method: 'GET'
+        // })
+        //  .success(function(data){
+        //   var tagArray = [];
+        //   _.each(data.tags, function(x){
+        //     tagArray.push(x.name);
+
+        //   });
+        //   console.log(tagArray);
+        //   return tagArray;
+
+
+        return $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/tags',
           headers: {
             'Authorization': token
           },
           method: 'GET'
-        })
-         .success(function(data){
-          var tagArray = [];
-          _.each(data.tags, function(x){
-            tagArray.push(x.name);
-
-          });
-          console.log(tagArray);
-          return tagArray;
-         });
+        });
       };
-
-
-
-
-
 
     }
 

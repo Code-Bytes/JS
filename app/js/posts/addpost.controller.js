@@ -20,26 +20,20 @@
       };
 
       //Pulls tags from StackExchange
-      $scope.getTags = function(){
-        PostService.getTags();
-      //     .success(function(){
-      //       var tagArray = [];
-      //       _.each(data.tags, function(x){
-      //         tagArray.push(x.name);
-      //     });
-      //     console.log(tagArray);
-      //     return tagArray;
 
-      // });
+      var tags = [];
 
+      $scope.getTags = function() {
+        PostService.getTags().success(function(data) {
+          // _.each(data.tags, function(x) {
+          //   tags.push(x.name);
+          console.log('get tags');
+          // });
+        });
+        console.log(tags);
+        return(tags);
       };
-
-      $scope.getTags();
-
-
-
-      }
-
+    }
 
   ]);
 
