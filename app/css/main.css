@@ -240,6 +240,13 @@ input[type="text"] {
   top: 0;
   left: 0; }
 
+.feedSortSelect {
+  width: 100px;
+  position: absolute;
+  left: 80%;
+  height: 30px;
+  font-size: 10px; }
+
 .filterby {
   font-size: 1.2em;
   clear: both; }
@@ -248,8 +255,7 @@ input[type="text"] {
   width: 45%; }
 
 .radiobtn {
-  display: inline-block;
-  font-size: 0.65em; }
+  display: inline-block; }
 
 .xpFilterBtn {
   background-color: RGBA(254, 254, 254, 1);
@@ -271,7 +277,7 @@ input[type="text"] {
 
 .tagList {
   display: block;
-  height: 210px; }
+  height: 180px; }
 
 .tagDiv {
   background-color: RGBA(254, 254, 254, 1);
@@ -294,7 +300,7 @@ input[type="text"] {
   margin-top: 15px; }
 
 .tagSearch {
-  margin-bottom: 15px; }
+  margin-bottom: 0px; }
 
 #tagSearch {
   border: 1px solid RGBA(239, 239, 239, 1);

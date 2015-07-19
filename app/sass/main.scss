@@ -316,6 +316,14 @@ input[type="text"] {
   left: 0;
 }
 
+.feedSortSelect {
+  width: 100px;
+  position: absolute;
+  left: 80%;
+  height: 30px;
+  font-size: 10px;
+}
+
 .filterby {
   font-size: 1.2em;
   clear: both;
@@ -327,7 +335,7 @@ input[type="text"] {
 
 .radiobtn {
   display: inline-block;
-  font-size: 0.65em;
+  // font-size: 0.65em;
 }
 
 .xpFilterBtn {
@@ -354,7 +362,7 @@ input[type="text"] {
 
 .tagList {
   display: block;
-  height: 210px;
+  height: 180px;
 }
 
 .tagDiv {
@@ -382,7 +390,7 @@ input[type="text"] {
 }
 
 .tagSearch {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 #tagSearch {
