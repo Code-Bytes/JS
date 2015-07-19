@@ -3,7 +3,7 @@
 
   var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
 
-  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'angucomplete-alt'])
+  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput'])
 
   .constant('HEROKU', {
     URL: baseEndpoint + 'auth/',
@@ -27,6 +27,11 @@
         })
         .state('feed', {
           url: '/',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('queriedFeed', {
+          url: '/search/:tagParams',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })

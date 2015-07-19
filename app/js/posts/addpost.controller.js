@@ -3,14 +3,23 @@
 
   angular.module('CodeBytes')
 
-  .controller('AddPostController', ['PostService', '$scope', '$location',
+  .controller('AddPostController', ['PostService', '$scope', '$location', '$http',
 
-    function (PostService, $scope, $location) {
+    function (PostService, $scope, $location, $http) {
+
+      //Array of tag objects
+      $scope.tags = [];
+      $scope.xp = {
+        text: ''
+      };
 
       //New Post Method
-      $scope.addPost = function (x) {
+      $scope.addPost = function (newPost) {
+        $scope.tags.push($scope.xp);
+        console.log($scope.tags);
 
-        PostService.addNewPost(x)
+        newPost.tags = $scope.tags;
+        PostService.addNewPost(newPost)
           .success(function () {
 
             // Route Home
@@ -19,21 +28,12 @@
           });
       };
 
-      //Pulls tags from StackExchange
+      // Gets searchable tags from backend
+      $scope.loadTags = function(query) {
+        return $http.get('https://pacific-hamlet-4796.herokuapp.com/tags?search=' + query);
+      }
 
-      var tags = [];
-
-      $scope.getTags = function() {
-        PostService.getTags().success(function(data) {
-          // _.each(data.tags, function(x) {
-          //   tags.push(x.name);
-          console.log('get tags');
-          // });
-        });
-        console.log(tags);
-        return(tags);
-      };
-    }
+    };
 
   ]);
 
