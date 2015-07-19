@@ -54,7 +54,16 @@
 <div class="large-4 feedFilter">
   <div class="panel"> <!-- Panel -->
 
-    <h4 class="filterby">Popular tags:</h4>
+    <div class="filterPostsDivider">
+      <div class="filterHeadDiv"><span class="filterHead">SORT BY</span></div>
+    </div>
+
+
+
+
+    <div class="filterPostsDivider">
+      <div class="filterHeadDiv"><span class="filterHead">POPULAR TAGS</span></div>
+    </div>
     <div class="tagList">
       <div ng-repeat="tag in tags | limitTo: number">
         <a href="#/search/{{ tag.text }}">
@@ -65,25 +74,29 @@
       </div>
     </div>
 
-    <h4 class="filterby tagSearchHead">Search for subject tags:</h4>
+    <div class="filterPostsDivider">
+      <div class="filterHeadDiv"><span class="filterHead">SEARCH TAGS</span></div>
+    </div>
     <!-- Tag Section -->
-    <tags-input ng-model="searchTags">
+    <tags-input ng-model="searchTags" class="tagSearch">
       <auto-complete source="loadTags($query)"></auto-complete>
     </tags-input>
 
     <!-- Filter by expertise level -->
-    <h4 class="filterby">Filter by Complexity:</h4>
-    <div class="radiobtn">
+    <div class="filterPostsDivider">
+      <div class="filterHeadDiv"><span class="filterHead">XP LEVEL</span></div>
+    </div>
+    <div class="radiobtn xpFilterBtn">
+      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="All" id="expertlvl"><label for="expertlvl">All</label>
+    </div>
+    <div class="radiobtn xpFilterBtn">
       <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
     </div>
-    <div class="radiobtn">
-      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Intermediate" id="intermedlvl"><label for="intermedlvl">Intermediate</label>
+    <div class="radiobtn xpFilterBtn">
+      <input class="radio" ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Intermediate" id="intermedlvl"><label for="intermedlvl">Junior</label>
     </div>
-    <div class="radiobtn">
-      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Advanced" id="advancedlvl"><label for="advancedlvl">Advanced</label>
-    </div>
-    <div class="radiobtn">
-      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Expert" id="expertlvl"><label for="expertlvl">Expert</label>
+    <div class="radiobtn xpFilterBtn">
+      <input ng-model="xp.text" type="radio" name="expertiselvl" ng-value="Expert" id="expertlvl"><label for="expertlvl">Senior</label>
     </div>
 
     <br/><br/>
