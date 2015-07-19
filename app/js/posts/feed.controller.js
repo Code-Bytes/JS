@@ -22,7 +22,7 @@
         $scope.feed = data;
 
         _.each($scope.feed, function(postInFeed){
-          postInFeed.numberOfComments = 0;
+
           $http({
           url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postInFeed.id + '/comments',
           headers: {
@@ -31,7 +31,7 @@
           method: 'GET'
           })
           .success(function(data){
-
+            postInFeed.numberOfComments = 0;
             _.each(data.comments, function(commentsOnPost){
               postInFeed.numberOfComments ++;
             });
