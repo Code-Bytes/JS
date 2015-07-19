@@ -39,13 +39,11 @@
         return $http(postReq);
       };
 
-
     //Start Methods to Get Post and User info for feed
 
-      // Set feed filter and sort parameters
-      this.feedParams = function(){
+      // Tag selectors
 
-      }
+
       // Get array of posts
       this.getPosts = function() {
 

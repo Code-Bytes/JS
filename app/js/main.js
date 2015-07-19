@@ -30,6 +30,11 @@
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
+        .state('queriedFeed', {
+          url: '/:tagParams',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
         .state('topPosts', {
           url: '/topposts',
           templateUrl: 'js/templates/topposts.tpl.html',

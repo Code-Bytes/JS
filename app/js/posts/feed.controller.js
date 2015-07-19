@@ -16,11 +16,15 @@
         }
       };
 
-      $scope.feedParams = PostService.feedParams;
+      $scope.feedParams = function(params) {
 
-      PostService.getPosts();
+      };
+
+      PostService.getPosts($scope.feedParams());
 
       $scope.searchTags = [];
+
+
 
       // Gets searchable tags from backend
       $scope.loadTags = function(query) {
@@ -47,21 +51,15 @@
           });
         });
 
-        console.log($scope.feed);
-
       $scope.upvote = PostService.upvote;
-
       $scope.downvote = PostService.downvote;
-
 
       });
 
       $scope.getAllTags = PostService.getAllTags;
-
       $scope.getAllTags().success(function(data){
         $scope.tags = data;
         $scope.number = 30;
-        console.log($scope.tags);
       });
 
 
