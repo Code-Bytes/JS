@@ -16,12 +16,9 @@
       //New Post Method
       $scope.addPost = function (newPost) {
         $scope.tags.push($scope.xp);
-        console.log($scope.tags);
-
         newPost.tags = $scope.tags;
         PostService.addNewPost(newPost)
           .success(function () {
-            console.log(newPost);
 
             // Route Home
             $location.path('/');

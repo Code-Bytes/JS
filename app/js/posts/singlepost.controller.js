@@ -40,6 +40,7 @@
           if (x.id == postId) {
             $scope.post = x;
             console.log($scope.post);
+            console.log($scope.post.gist_id);
             $scope.postCreatorId = x.user_id;
           }
         });
@@ -87,9 +88,7 @@
       // Get all comments
       PostService.getComments(postId).success(function(data) {
         $scope.comments = data.comments;
-        console.log($scope.comments);
         $scope.commentTree = unflatten($scope.comments);
-        console.log($scope.commentTree);
       });
 
       // Initialize comment form on scope
