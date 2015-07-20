@@ -10,12 +10,12 @@
       <div class="large-1 columns small-3">
         <div class="voteDiv">
           <div class="voteDivTop">
-            <i ng-if="isLoggedIn()" ng-class="upVoted( post.voted_for) ? 'upVote' : 'nothing'" ng-click="upvote( post.id )" class="fa fa-arrow-up"></i>
+            <i ng-if="isLoggedIn()" ng-class="upVoted(post.voted_for) ? 'upVote' : 'nothing'" ng-click="upvote(post)" class="fa fa-arrow-up"></i>
             <i ng-if="!isLoggedIn()" class="fa fa-arrow-up" title="Log in to vote by clicking on Getting Started!"></i>
           </div>
           <span class="votes">{{ post.cached_votes_score }}</span>
           <div class="voteDivBot">
-            <i ng-if="isLoggedIn()" ng-class="downVoted(post.voted_for) ? 'downVote' : 'nothing'" ng-click="downvote( post.id )" class="fa fa-arrow-down"></i>
+            <i ng-if="isLoggedIn()" ng-class="downVoted(post.voted_for) ? 'downVote' : 'nothing'" ng-click="downvote(post)" class="fa fa-arrow-down"></i>
             <i ng-if="!isLoggedIn()" class="fa fa-arrow-down" title="Log in to vote by clicking on Getting Started!"></i>
           </div>
         </div>

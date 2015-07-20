@@ -10,7 +10,8 @@
       //Gets User Token
       var token       = $auth.getToken(),
           postUrl     = 'https://pacific-hamlet-4796.herokuapp.com/posts/',
-          commentUrl  = 'https://pacific-hamlet-4796.herokuapp.com/comments/';
+          commentUrl  = 'https://pacific-hamlet-4796.herokuapp.com/comments/',
+          tagUrl      = 'https://pacific-hamlet-4796.herokuapp.com/tags';
 
       // Defines AJAX params for posts
       var feedReq = {
@@ -172,7 +173,7 @@
 
       this.getAllTags = function(){
         return $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/tags',
+          url: tagUrl,
           headers: {
             'Authorization': token
           },
