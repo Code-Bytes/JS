@@ -36,6 +36,7 @@
           if (x.id == postId) {
             $scope.post = x;
             console.log($scope.post);
+            console.log($scope.post.gist_id);
             $scope.postCreatorId = x.user_id;
           }
         });

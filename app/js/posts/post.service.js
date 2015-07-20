@@ -25,6 +25,7 @@
       var Post = function(options) {
         this.title = options.title;
         this.content = options.content;
+        this.gist_id = options.gist_id;
         this.tags = options.tags.map(function(tag) {
           return tag.text;
         }).join(',');
@@ -44,10 +45,11 @@
 
       // Get array of posts
       this.getPosts = function() {
+
         var getReq = feedReq;
         getReq.method = 'GET';
         getReq.params = $stateParams;
-        console.log(getReq);
+
         $http(getReq).success( function (data) {
 
           _.each(data.posts, function(x){
