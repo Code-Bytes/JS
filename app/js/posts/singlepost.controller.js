@@ -27,10 +27,6 @@
         }
       };
 
-<<<<<<< HEAD
-      // // Get all posts then filter
-=======
->>>>>>> 6162ec3a12f018ae187f45bd963e3e7368bd3c0a
       $scope.getPost = PostService.getPost;
 
       $scope.getPost($stateParams.id)
@@ -38,24 +34,17 @@
           $scope.post = data.post;
           console.log($scope.post);
           $scope.postCreatorId = data.user_id;
-          $scope.gistId = data.post.gist_id;
+          $scope.gistId = $scope.post.gist_id;
           $scope.quantity = 10;
         });
-
-      // $scope.getPost = function(post) {
-      //   PostService.getPost(post.id)
-      //     .success(function(data) {
-      //       $scope.post = data.post;
-      //       console.log($scope.post);
-      //       $scope.postCreatorId = data.user_id;
-      //       $scope.gistId = $scope.post.gist_id;
-      //       $scope.quantity = 10;
-      //     });
-      // };
 
       $scope.importGist = function(){
         $scope.htmlString = '<gist id="' + $scope.gistId + '"></gist>';
         $sce.trustAsHtml($scope.htmlString);
+      };
+
+      $scope.testing = function (x) {
+        console.log(x);
       };
 
       $scope.updatePost = function(post) {
