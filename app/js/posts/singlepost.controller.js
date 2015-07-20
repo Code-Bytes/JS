@@ -43,6 +43,10 @@
         $sce.trustAsHtml($scope.htmlString);
       };
 
+      $scope.testing = function (x) {
+        console.log(x);
+      };
+
       $scope.updatePost = function(post) {
         PostService.editPost(postId, post).success(function() {
           // Route Home
