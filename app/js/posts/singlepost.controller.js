@@ -17,8 +17,6 @@
       $scope.isCurrentUser = function() {
         if ($scope.currentUserId === $scope.postCreatorId) {
           return true;
-        // } else {
-        //   return false;
         }
       };
 
@@ -26,8 +24,6 @@
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
           return true;
-        // } else {
-        //   return false;
         }
       };
 
@@ -75,7 +71,7 @@
           if(parent.id === null) {
             tree = children;
           } else {
-            parent['children'] = children;
+            parent.children = children;
           }
           _.each(children, function(child) {
             unflatten(array, child);
@@ -87,9 +83,7 @@
       // Get all comments
       PostService.getComments(postId).success(function(data) {
         $scope.comments = data.comments;
-        console.log($scope.comments);
         $scope.commentTree = unflatten($scope.comments);
-        console.log($scope.commentTree);
       });
 
       // Initialize comment form on scope
@@ -110,7 +104,6 @@
 
       $scope.addReply = function(reply, commentId) {
         PostService.addNewReply(reply, commentId).success(function() {
-          console.log(commentId);
           console.log('added reply!');
           $scope.comments.push(reply);
           // $scope.reply = '';
