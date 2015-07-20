@@ -20,6 +20,7 @@
         }
       };
 
+
       $scope.isLoggedIn = function () {
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
@@ -32,8 +33,7 @@
       $scope.getPost($stateParams.id)
         .success(function(data){
           $scope.post = data.post;
-          console.log($scope.post);
-          $scope.postCreatorId = data.user_id;
+          $scope.postCreatorId = $scope.post.user_id;
           $scope.gistId = $scope.post.gist_id;
           $scope.quantity = 10;
         });
