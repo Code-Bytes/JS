@@ -21,6 +21,7 @@
         newPost.tags = $scope.tags;
         PostService.addNewPost(newPost)
           .success(function () {
+            console.log(newPost);
 
             // Route Home
             $location.path('/');

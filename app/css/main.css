@@ -565,6 +565,8 @@ strong {
 
 .commentsAndReplies {
   list-style: none; }
+  .commentsAndReplies li {
+    margin-left: 20px; }
 
 .commentHead {
   margin-top: 10px; }
