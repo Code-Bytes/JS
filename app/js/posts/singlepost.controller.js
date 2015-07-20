@@ -27,7 +27,10 @@
         }
       };
 
+<<<<<<< HEAD
       // // Get all posts then filter
+=======
+>>>>>>> 6162ec3a12f018ae187f45bd963e3e7368bd3c0a
       $scope.getPost = PostService.getPost;
 
       $scope.getPost($stateParams.id)

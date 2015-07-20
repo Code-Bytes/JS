@@ -61,7 +61,7 @@
     <div class="filterPostsDivider">
       <div class="filterHeadDiv"><span class="filterHead">SORT BY</span></div>
       <select class="feedSortSelect" name="select">
-        <option value="top">Top</option>
+        <option selected value="top">Top</option>
         <option value="new" selected>New</option>
       </select>
     </div>
@@ -83,7 +83,7 @@
     </div>
 
     <div class="filterPostsDivider">
-      <div class="filterHeadDiv"><span class="filterHead">SEARCH TAGS</span></div>
+      <div class="filterHeadDiv"><span class="filterHead">MULTIPLE TAGS</span></div>
     </div>
     <!-- Tag Section -->
     <tags-input ng-model="searchTags" class="tagSearch">
@@ -93,7 +93,7 @@
     <div class="filterPostsDivider xpDivider">
       <div class="filterHeadDiv"><span class="filterHead">XP LEVEL</span></div>
       <select class="feedSortSelect" name="select">
-        <option value="all">All</option>
+        <option selected value="all">All</option>
         <option value="noob" selected>Noob</option>
         <option value="junior" selected>Junior</option>
         <option value="senior" selected>Senior</option>
@@ -102,7 +102,7 @@
 
     <br/><br/>
 
-    <button class="tiny radius">Submit</button>
+    <button ng-click="search(searchTags)" class="tiny radius">Submit</button>
 
   </div> <!-- End panel -->
   </div> <!-- End filter sidebar -->

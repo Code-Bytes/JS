@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams',
+  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams', '$location',
 
-    function (PostService, $scope, $rootScope, $http, $auth, $stateParams) {
+    function (PostService, $scope, $rootScope, $http, $auth, $stateParams, $location) {
 
       $scope.token = $auth.getToken();
 
@@ -16,13 +16,16 @@
         }
       };
 
-      // console.log($stateParams);
-
       PostService.getPosts();
-
       $scope.searchTags = [];
 
-
+      // Queries backend for posts containing any of multiple tags
+      $scope.search = function(){
+        var searchParams = $scope.searchTags.map(function(tag) {
+          return tag.text;
+        }).join(',');
+        $location.path('/search/' + searchParams);
+      };
 
       // Gets searchable tags from backend
       $scope.loadTags = function(query) {
