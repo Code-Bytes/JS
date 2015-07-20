@@ -19,6 +19,10 @@
           <p>{{ post.content }}</p>
         </div>
       </div>
+
+      <gist id="{{ post.gist_id }}"></gist>
+
+
     </article>
 
     <div ng-if="isCurrentUser()">
@@ -38,49 +42,17 @@
       <p><a href="#/login">Log in</a> through Github to start commenting!</p>
     </div> <!-- End User Not Logged In - Comment Area -->
 
-
-    <div class="row feedcomment" ng-repeat="comment in comments">
-      <div class="commentHead"> <!-- Comment Head -->
-        <div class="commenterInfo">
-          <img class="commentAvatar" ng-src="{{ comment.user.avatar }}"/>
-          <a href="#/profile/{{ comment.user.id }}" class="postUser">{{ comment.user.username }}</a>
-        </div>
-        <div class="editOrDelete" ng-if="(comment.user.id === currentUserId) && isLoggedIn()">
-          <span ng-click="editorEnabled=!editorEnabled"><i class="fa fa-pencil-square-o"></i></span>
-          <span ng-click="deleteComment(comment.id, $index)"><i class="fa fa-minus-square-o"></i></span>
-        </div>
-      </div> <!-- End Comment Head -->
-
-      <!-- Comment Content -->
-      <p ng-hide="editorEnabled">{{ comment.content }}</p>
-
-      <div ng-show="editorEnabled">
-        <form class="editComm" name="commentForm"> <!-- Edit Comment -->
-          <textarea ng-model="comment.content" value="{{ comment.content }}"></textarea>
-          <br>
-          <a href="#" class="button tiny radius editcommentbtn" ng-click="editComment(comment, comment.id)">Submit</a>
-        </form> <!-- End Edit Comment -->
-      </div>
-      <!-- toggleForm() -->
-
-      <a href="" class="button tiny radius addreplybtn" ng-click="showForm = !showForm"><i class="fa fa-reply"></i></a>
-
-      <form class="large-12 columns addRep" ng-show="showForm" ng-if="isLoggedIn()" ng-submit="addReply(reply, comment.id)" name="replyForm"> <!-- Reply Form -->
-        <textarea id="commentInput" ng-model="reply.content" placeholder="Got a reply?"></textarea>
-        <br>
-        <button class="tiny radius submitreplybtn">Submit</button>
-      </form> <!-- End Reply Form -->
-    </div>
-
+    <collection collection='commentTree'></collection>
   </div>
 
 
   <aside class="large-3 columns">
     <h5>Similar Posts:</h5>
-    <ul class="side-nav" ng-repeat="post in posts">
+    <ul class="side-nav" ng-repeat="post in posts | limitTo:quantity">
       <li><a href="#/post/{{ post.id }}">{{ post.title }}</a></li>
       <li><span>Created: {{ post.created_at | date:'short' }}</span></li>
       <li><span>{{ post.user.username }}</span></li>
     </ul>
   </aside>
+
 </div>
