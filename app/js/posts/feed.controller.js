@@ -51,10 +51,26 @@
           });
         });
 
-      $scope.upvote = PostService.upvote;
-      $scope.downvote = PostService.downvote;
-
       });
+
+
+      $scope.upvote = function (post) {
+
+        PostService.upvote(post.id)
+          .success ( function (data) {
+            post.cached_votes_score = data.post.cached_votes_score;
+            post.voted_for = true;
+          });
+      };
+
+      $scope.downvote = function (post) {
+
+        PostService.downvote(post.id)
+          .success (function (data) {
+            post.cached_votes_score = data.post.cached_votes_score;
+            post.voted_for = false;
+          });
+      };
 
       $scope.getAllTags = PostService.getAllTags;
       $scope.getAllTags().success(function(data){
@@ -78,7 +94,14 @@
         }
       };
 
+      // Pagination
 
+      $scope.totalItems = 64;
+      $scope.currentPage = 4;
+
+      $scope.setPage = function (pageNo) {
+        $scope.currentPage = pageNo;
+      };
 
     }
 
