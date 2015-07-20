@@ -28,6 +28,7 @@
         this.tags = options.tags.map(function(tag) {
           return tag.text;
         }).join(',');
+        this.gist_id = options.gist_id;
       };
 
       // Add a new post
@@ -35,7 +36,6 @@
         var postReq = feedReq;
         postReq.method = 'POST';
         postReq.data = new Post(post);
-        console.log(postReq);
         return $http(postReq);
       };
 
@@ -44,14 +44,11 @@
 
       // Get array of posts
       this.getPosts = function() {
-        console.log($stateParams);
-
         var getReq = feedReq;
         getReq.method = 'GET';
         getReq.params = $stateParams;
         console.log(getReq);
         $http(getReq).success( function (data) {
-            console.log(data);
 
           _.each(data.posts, function(x){
 
@@ -153,7 +150,7 @@
 
     //Voting Methods
       this.upvote = function(id){
-        $http({
+        return $http({
           url: postUrl + id + '/like',
           headers: {
             'Authorization': token
@@ -163,7 +160,7 @@
       };
 
       this.downvote = function(id){
-        $http({
+        return $http({
           url: postUrl + id + '/dislike',
           headers: {
             'Authorization': token
