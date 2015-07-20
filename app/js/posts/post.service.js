@@ -183,6 +183,16 @@
         });
       };
 
+      this.getPost = function(id){
+        return $http({
+          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + id,
+          headers: {
+            'Authorization': token
+          },
+          method: 'GET'
+        });
+      };
+
     }
 
   ]);
