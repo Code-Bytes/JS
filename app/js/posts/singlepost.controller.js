@@ -27,24 +27,7 @@
         }
       };
 
-      // // Get all posts then filter
-      // PostService.getPosts();
-      // $rootScope.$on('PostsReceived', function (event, data) {
-      //   $scope.posts = data;
-      //   // Filter for clicked post id
-      //   data.filter( function(x) {
-      //     if (x.id == postId) {
-      //       $scope.post = x;
-      //       $scope.postCreatorId = x.user_id;
-      //       $scope.gistId = $scope.post.gist_id;
-      //     }
-      //   });
-      //   $scope.quantity = 10;
-      // });
-
       $scope.getPost = PostService.getPost;
-
-
 
       $scope.getPost($stateParams.id)
         .success(function(data){

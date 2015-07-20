@@ -94,7 +94,7 @@
     </div>
 
     <div class="filterPostsDivider">
-      <div class="filterHeadDiv"><span class="filterHead">SEARCH TAGS</span></div>
+      <div class="filterHeadDiv"><span class="filterHead">MULTIPLE TAGS</span></div>
     </div>
     <!-- Tag Section -->
     <tags-input ng-model="searchTags" class="tagSearch">
@@ -113,7 +113,7 @@
 
     <br/><br/>
 
-    <button class="tiny radius">Submit</button>
+    <button ng-click="search(searchTags)" class="tiny radius">Submit</button>
 
   </div> <!-- End panel -->
   </div> <!-- End filter sidebar -->
