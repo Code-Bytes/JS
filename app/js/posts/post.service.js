@@ -48,7 +48,7 @@
 
         var getReq = feedReq;
         getReq.method = 'GET';
-        getReq.data = $stateParams;
+        getReq.params = $stateParams;
         console.log(getReq);
         $http(getReq).success( function (data) {
             console.log(data);
