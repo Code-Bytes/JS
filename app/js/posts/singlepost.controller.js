@@ -35,8 +35,9 @@
         data.filter( function(x) {
           if (x.id == postId) {
             $scope.post = x;
-            console.log($scope.post);
             $scope.postCreatorId = x.user_id;
+            $scope.gistId = x.gist_id;
+            console.log($scope.gistId);
           }
         });
         $scope.quantity = 10;

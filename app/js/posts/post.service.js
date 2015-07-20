@@ -47,7 +47,6 @@
         var getReq = feedReq;
         getReq.method = 'GET';
         getReq.params = $stateParams;
-        console.log(getReq);
         $http(getReq).success( function (data) {
 
           _.each(data.posts, function(x){
