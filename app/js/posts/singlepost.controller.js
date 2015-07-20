@@ -58,10 +58,36 @@
         });
       };
 
+      // Function to create comment/reply tree
+
+      var unflatten = function(array, parent, tree) {
+
+        tree = typeof tree !== 'undefined' ? tree : [];
+        parent = typeof parent !== 'undefined' ? parent : { id: null };
+
+        var children = _.filter(array, function(child) {
+          return child.parent_id == parent.id;
+        });
+
+        if(!_.isEmpty(children)) {
+          if(parent.id === null) {
+            tree = children;
+          } else {
+            parent['children'] = children;
+          }
+          _.each(children, function(child) {
+            unflatten(array, child);
+          });
+        }
+        return tree;
+      };
+
       // Get all comments
       PostService.getComments(postId).success(function(data) {
         $scope.comments = data.comments;
         console.log($scope.comments);
+        $scope.commentTree = unflatten($scope.comments);
+        console.log($scope.commentTree);
       });
 
       // Initialize comment form on scope
@@ -107,6 +133,37 @@
 
     }
 
-  ]);
+  ])
+
+  .directive('collection', function () {
+    return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+        collection: '='
+      },
+      template: '<ul><member ng-repeat="member in collection" member="member"></member></ul>'
+    };
+  })
+
+  .directive('member', function ($compile) {
+    return {
+      restrict: 'E',
+      replace: true,
+      scope: {
+        member: '='
+      },
+      templateUrl: '../js/templates/comments.tpl.html',
+      // template: '<li><img ng-src="{{member.user.avatar}}"/> {{member.user.username}} {{member.content}}</li>',
+      link: function (scope, element, attrs) {
+              var collectionSt = "<collection collection='member.children'></collection>";
+              if (angular.isArray(scope.member.children)) {
+                $compile(collectionSt)(scope, function(cloned, scope) {
+                  element.append(cloned);
+                });
+              }
+            }
+    };
+  });
 
 }());

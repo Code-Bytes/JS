@@ -564,6 +564,9 @@ strong {
 .downVote {
   color: blue; }
 
+.commentsAndReplies {
+  list-style: none; }
+
 .commentHead {
   margin-top: 10px; }
 
