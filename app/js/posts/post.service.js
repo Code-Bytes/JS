@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .service('PostService', ['$http', '$rootScope', '$auth',
+  .service('PostService', ['$http', '$rootScope', '$auth', '$stateParams',
 
-    function ($http, $rootScope, $auth) {
+    function ($http, $rootScope, $auth, $stateParams) {
 
       //Gets User Token
       var token       = $auth.getToken(),
@@ -41,14 +41,15 @@
 
     //Start Methods to Get Post and User info for feed
 
-      // Tag selectors
-
 
       // Get array of posts
       this.getPosts = function() {
+        console.log($stateParams);
 
         var getReq = feedReq;
         getReq.method = 'GET';
+        getReq.data = $stateParams;
+        console.log(getReq);
         $http(getReq).success( function (data) {
             console.log(data);
 
@@ -65,7 +66,7 @@
             };
           });
 
-          $rootScope.$broadcast('PostsReceived', data.posts.reverse());
+          $rootScope.$broadcast('PostsReceived', data.posts);
         });
       };
 

@@ -16,11 +16,9 @@
         }
       };
 
+      // console.log($stateParams);
 
-
-      console.log($stateParams);
-
-      PostService.getPosts({ "tags": $stateParams });
+      PostService.getPosts();
 
       $scope.searchTags = [];
 
