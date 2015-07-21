@@ -3,7 +3,7 @@
 
   var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
 
-  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput', 'angularUtils.directives.dirPagination'])
+  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput'])
 
   .constant('HEROKU', {
     URL: baseEndpoint + 'auth/',
@@ -15,7 +15,7 @@
   })
 
   .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
-    function ($stateProvider, $urlRouterProvider, $authProvider, paginationTemplateProvider) {
+    function ($stateProvider, $urlRouterProvider, $authProvider) {
 
       $urlRouterProvider.otherwise('/');
 
@@ -118,9 +118,6 @@
         type: '2.0',
         popupOptions: { width: 1020, height: 618 }
       });
-
-      // Pagination template path
-      // paginationTemplateProvider.setPath('path/to/dirPagination.tpl.html');
 
     }
 
