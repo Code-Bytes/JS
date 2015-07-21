@@ -57,12 +57,12 @@
 
             var createdTime = x.created_at;
             x.createdAtTime = function(){
-              return moment(createdTime, "YYYYMMDD").fromNow();
+              return moment(createdTime, "").fromNow();
             };
 
             var updatedTime = x.updated_at;
             x.updatedAtTime = function(){
-              return moment(updatedTime, "YYYYMMDD").fromNow();
+              return moment(updatedTime, "").fromNow();
             };
           });
 

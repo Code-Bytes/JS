@@ -58,17 +58,7 @@
 <div class="large-4 feedFilter">
   <div class="panel"> <!-- Panel -->
 
-    <div class="filterPostsDivider">
-      <div class="filterHeadDiv"><span class="filterHead">SORT BY</span></div>
-      <select class="feedSortSelect">
-        <option selected>Top</option>
-        <option value="new">New</option>
-      </select>
-    </div>
-
-
-
-
+    <!-- Popular Tags -->
     <div class="filterPostsDivider">
       <div class="filterHeadDiv"><span class="filterHead">POPULAR TAGS</span></div>
     </div>
@@ -82,6 +72,8 @@
       </div>
     </div>
 
+    <!--Manual Param Entry -->
+
     <div class="filterPostsDivider">
       <div class="filterHeadDiv"><span class="filterHead">MULTIPLE TAGS</span></div>
     </div>
@@ -92,17 +84,23 @@
 
     <div class="filterPostsDivider xpDivider">
       <div class="filterHeadDiv"><span class="filterHead">XP LEVEL</span></div>
-      <select class="feedSortSelect">
-        <option selected>All</option>
+      <select ng-model="xpParam" class="feedSortSelect">
+        <option value="" selected>All</option>
         <option value="noob">Noob</option>
         <option value="junior">Junior</option>
         <option value="senior">Senior</option>
       </select>
     </div>
 
-    <br/><br/>
+    <div class="filterPostsDivider">
+      <div class="filterHeadDiv"><span class="filterHead">SORT BY</span></div>
+      <select ng-model="sort" class="feedSortSelect">
+        <option value="top" selected>Top</option>
+        <option value="new">New</option>
+      </select>
+    </div>
 
-    <button ng-click="search(searchTags)" class="tiny radius">Submit</button>
+    <button ng-click="search()" class="tiny radius">Submit</button>
 
   </div> <!-- End panel -->
   </div> <!-- End filter sidebar -->

@@ -1,4 +1,4 @@
-(function () {
+  (function () {
   'use strict';
 
   angular.module('CodeBytes')
@@ -18,13 +18,16 @@
 
       PostService.getPosts();
       $scope.searchTags = [];
+      $scope.xpParam = '';
+      $scope.sortParam = '';
 
       // Queries backend for posts containing any of multiple tags
       $scope.search = function(){
-        var searchParams = $scope.searchTags.map(function(tag) {
+        var tagParams = $scope.searchTags.map(function(tag) {
           return tag.text;
         }).join(',');
-        $location.path('/search/' + searchParams);
+        tagParams = tagParams + ',' + $scope.xpParam;
+        $location.url('/search?params=' + tagParams + '/' + $scope.sortParam);
       };
 
       // Gets searchable tags from backend

@@ -35,6 +35,11 @@
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
+        .state('sortedFeed', {
+          url: '/search?params=:tags/:sort',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
         .state('topPosts', {
           url: '/topposts',
           templateUrl: 'js/templates/topposts.tpl.html',

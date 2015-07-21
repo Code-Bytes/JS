@@ -33,6 +33,8 @@
       $scope.getPost($stateParams.id)
         .success(function(data){
           $scope.post = data.post;
+          console.log($scope.post);
+          $scope.post.whenCreated = moment($scope.post.created_at, "").fromNow();
           $scope.postCreatorId = $scope.post.user_id;
           $scope.gistId = $scope.post.gist_id;
           $scope.quantity = 10;

@@ -8,8 +8,9 @@
       <div>
         <img class="spAvatar" ng-src="{{ post.user.avatar }}">
         <a href="#/profile/{{ post.user.id }}">{{ post.user.username }}</a>
-        <span ng-if="(post.created_at === post.updated_at)">{{ post.createdAtTime() }}</span>
-        <span ng-if="(post.created_at !== post.updated_at)">{{ post.updatedAtTime() }} <em>(Updated)</em></span>
+      <!--   <span ng-if="(post.created_at === post.updated_at)">{{ post.whenCreated() }}</span> -->
+      <span>{{ post.whenCreated}}</span>
+  <!--       <span ng-if="(post.created_at !== post.updated_at)">{{ post.updatedAtTime() }} <em>(Updated)</em></span> -->
       </div>
 
       <br>
@@ -25,7 +26,7 @@
 
       <!-- <gist id="c290b0a928027e9b4e76"></gist> -->
 
-      <gist gid="{{ post.gist_id }}"></gist>
+      <!-- <gist gid="{{ post.gist_id }}"></gist> -->
       <!-- <gist id="{{ gistId }}"></gist> -->
       <div>{{ post.gist_id }}</div>
 <!--       <gist id="c290b0a928027e9b4e76"></gist>
