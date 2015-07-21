@@ -3,7 +3,7 @@
 
   angular.module('CodeBytes')
 
-  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams', '$location',
+  .controller('PopularTagController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams', '$location',
 
     function (PostService, $scope, $rootScope, $http, $auth, $stateParams, $location) {
 
@@ -16,20 +16,18 @@
         }
       };
 
-      PostService.getPosts();
+      PostService.getPopPosts();
       $scope.searchTags = [];
       $scope.xpParam = '';
-      $scope.sort = '';
+      $scope.sort= '';
 
       // Queries backend for posts containing any of multiple tags
-      $scope.search = function(){
+      $scope.searchPop = function(){
         var tagParams = $scope.searchTags.map(function(tag) {
           return tag.text;
         }).join(',');
         tagParams = tagParams + ',' + $scope.xpParam;
-        console.log(tagParams);
-        console.log($scope.sort);
-        PostService.getPosts(tagParams, $scope.sort);
+        $location.path('/search/' + tagParams);
       };
 
       // Gets searchable tags from backend
