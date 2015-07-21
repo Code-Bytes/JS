@@ -65,52 +65,6 @@
         return tree;
       };
 
-      // Get all comments
-      PostService.getComments(postId).success(function(data) {
-        $scope.comments = data.comments;
-        $scope.commentTree = unflatten($scope.comments);
-      });
-
-      // Initialize comment form on scope
-      // $scope.commentForm = {};
-
-      $scope.addComment = function(comment) {
-        PostService.addNewComment(comment, postId).success(function() {
-          console.log('comment successfully sent!');
-          // $scope.comment = '';
-          // $scope.commentForm.$setPristine();
-          // var master = { content: '' };
-          // $scope.comment = angular.copy(master);
-        });
-      };
-
-      // Initialize comment form on scope
-      // $scope.replyForm = {};
-
-      $scope.addReply = function(reply, commentId) {
-        PostService.addNewReply(reply, commentId).success(function() {
-          console.log('added reply!');
-          $scope.comments.push(reply);
-          // $scope.reply = '';
-        });
-      };
-
-      $scope.updateComment = function(comment, commentId) {
-        console.log('clicked on edit button');
-        PostService.editComment(comment, commentId).success(function() {
-          console.log('successfully updated comment');
-        });
-      };
-
-      $scope.deleteComment = function(commentId, index) {
-        PostService.removeComment(commentId).success(function() {
-          console.log('delete successful');
-          $scope.comments.splice(index,1);
-          // Route Home
-          // $location.path('/');
-        });
-      };
-
     }
 
   ])
@@ -138,9 +92,8 @@
 
         var postId = $stateParams.id;
 
-        UserService.thisUser().success(function (data) {
-          $scope.currentUserId = data.user.id;
-        });
+        $scope.postCreatorId = $scope.post.user_id;
+        $scope.gistId = $scope.post.gist_id;
 
         $scope.isCurrentUser = function() {
           if ($scope.currentUserId === $scope.postCreatorId) {
@@ -155,15 +108,7 @@
           }
         };
 
-        $scope.deletePost = function() {
-          PostService.removePost(postId).success(function() {
-            // Route Home
-            $location.path('/');
-          });
-        };
-
         // Function to create comment/reply tree
-
         var unflatten = function(array, parent, tree) {
 
           tree = typeof tree !== 'undefined' ? tree : [];
