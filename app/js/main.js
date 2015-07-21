@@ -3,7 +3,7 @@
 
   var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
 
-  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput', 'mm.foundation'])
+  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput', 'bgf.paginateAnything'])
 
   .constant('HEROKU', {
     URL: baseEndpoint + 'auth/',

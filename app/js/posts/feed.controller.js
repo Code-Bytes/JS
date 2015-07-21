@@ -40,14 +40,12 @@
 
         _.each($scope.feed, function(postInFeed){
 
-
-
           $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postInFeed.id + '/comments',
-          headers: {
-            'Authorization': $scope.token
-          },
-          method: 'GET'
+            url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postInFeed.id + '/comments',
+            headers: {
+              'Authorization': $scope.token
+            },
+            method: 'GET'
           })
           .success(function(data){
             postInFeed.numberOfComments = 0;
@@ -56,7 +54,6 @@
             });
           });
         });
-
       });
 
 
@@ -102,8 +99,15 @@
 
       // Pagination
 
-      $scope.totalItems = 64;
-      $scope.currentPage = 4;
+      // $rootScope.$on('PostsReceived', function (event, data) {
+      //   $scope.totalItems = data.length;
+      //   console.log($scope.totalItems);
+      //   $scope.currentPage = 1;
+      // });
+
+
+      $scope.totalItems = 100;
+      $scope.currentPage = 1;
 
       $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
