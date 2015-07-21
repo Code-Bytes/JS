@@ -48,7 +48,12 @@
         .state('post', {
           url: '/post/:id',
           templateUrl: 'js/templates/singlepost.tpl.html',
-          controller: 'SinglePostController'
+          controller: 'SinglePostController',
+          resolve: {
+            singlePostResolve: function (PostService, $stateParams) {
+              return PostService.getPost($stateParams.id);
+            }
+          }
         })
         .state('editpost', {
           url: '/edit/:id',

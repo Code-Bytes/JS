@@ -3,11 +3,18 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$sce', '$location',
+  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$sce', '$location', 'singlePostResolve',
 
-    function (PostService, UserService, $scope, $rootScope, $stateParams, $sce, $location) {
+    function (PostService, UserService, $scope, $rootScope, $stateParams, $sce, $location, singlePostResolve) {
 
       var postId = $stateParams.id;
+
+      // Loading gist
+      $scope.post = singlePostResolve.data.post;
+      $scope.post.whenCreated = moment($scope.post.created_at, "").fromNow();
+      $scope.postCreatorId = $scope.post.user_id;
+      $scope.gistId = $scope.post.gist_id;
+      $scope.quantity = 10;
 
       // var currentUserId;
       UserService.thisUser().success(function (data) {
@@ -26,23 +33,6 @@
         if (currentUser) {
           return true;
         }
-      };
-
-      $scope.getPost = PostService.getPost;
-
-      $scope.getPost($stateParams.id)
-        .success(function(data){
-          $scope.post = data.post;
-          console.log($scope.post);
-          $scope.post.whenCreated = moment($scope.post.created_at, "").fromNow();
-          $scope.postCreatorId = $scope.post.user_id;
-          $scope.gistId = $scope.post.gist_id;
-          $scope.quantity = 10;
-        });
-
-      $scope.importGist = function(){
-        $scope.htmlString = '<gist id="' + $scope.gistId + '"></gist>';
-        $sce.trustAsHtml($scope.htmlString);
       };
 
       $scope.testing = function (x) {
