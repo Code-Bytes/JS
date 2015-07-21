@@ -3,9 +3,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$sce', '$location', 'singlePostResolve',
+  .controller('SinglePostController', ['PostService', 'UserService', '$scope', '$rootScope', '$stateParams', '$location', 'singlePostResolve',
 
-    function (PostService, UserService, $scope, $rootScope, $stateParams, $sce, $location, singlePostResolve) {
+    function (PostService, UserService, $scope, $rootScope, $stateParams, $location, singlePostResolve) {
 
       var postId = $stateParams.id;
 
@@ -27,23 +27,11 @@
         }
       };
 
-
       $scope.isLoggedIn = function () {
         var currentUser = JSON.parse(localStorage.getItem("currentUser"));
         if (currentUser) {
           return true;
         }
-      };
-
-      $scope.testing = function (x) {
-        console.log(x);
-      };
-
-      $scope.updatePost = function(post) {
-        PostService.editPost(postId, post).success(function() {
-          // Route Home
-          $location.path('/');
-        });
       };
 
       $scope.deletePost = function() {

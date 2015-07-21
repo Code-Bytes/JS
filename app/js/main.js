@@ -15,7 +15,7 @@
   })
 
   .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
-    function ($stateProvider, $urlRouterProvider, $authProvider) {
+    function ($stateProvider, $urlRouterProvider, $authProvider, paginationTemplateProvider) {
 
       $urlRouterProvider.otherwise('/');
 
@@ -58,7 +58,7 @@
         .state('editpost', {
           url: '/edit/:id',
           templateUrl: 'js/templates/editpost.tpl.html',
-          controller: 'SinglePostController'
+          controller: 'EditPostController'
         })
         .state('aboutteam', {
           url: '/aboutteam',
@@ -119,8 +119,8 @@
         popupOptions: { width: 1020, height: 618 }
       });
 
-
-
+      // Pagination template path
+      // paginationTemplateProvider.setPath('path/to/dirPagination.tpl.html');
 
     }
 
