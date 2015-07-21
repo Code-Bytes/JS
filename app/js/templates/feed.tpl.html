@@ -4,7 +4,7 @@
   <div class="large-8 columns feed">
 
     <!-- Post Template -->
-    <div class="row feedpost" ng-repeat="post in feed">
+    <div class="row feedpost" dir-paginate="post in feed | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="postsPagination">
 
       <!-- Voting Section -->
       <div class="large-1 columns small-3">
@@ -47,15 +47,20 @@
     <!-- End Post -->
 
 
-    <div class="pagination-centered"> <!-- Pagination -->
+   <!-- <div class="pagination-centered">
       <pagination total-items="totalItems" page="currentPage"></pagination>
-    </div> <!-- End Pagination -->
+    </div> --> <!-- Pagination --> <!-- End Pagination -->
 
 
-    <bgf-pagination
+<!--     <bgf-pagination
       collection="someVariable"
       url="'http://api.server.com/stuff'">
     </bgf-pagination>
+ -->
+
+    <div class="text-center">
+      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html" pagination-id="postsPagination"></dir-pagination-controls>
+    </div>
 
   </div> <!-- End feed -->
 

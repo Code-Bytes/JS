@@ -98,21 +98,13 @@
       };
 
       // Pagination
-
-      // $rootScope.$on('PostsReceived', function (event, data) {
-      //   $scope.totalItems = data.length;
-      //   console.log($scope.totalItems);
-      //   $scope.currentPage = 1;
-      // });
-
-
-      $scope.totalItems = 100;
       $scope.currentPage = 1;
+      $scope.pageSize = 10;
+      $scope.posts = [];
 
-      $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
+      $scope.pageChangeHandler = function(num) {
+        console.log('posts page changed to ' + num);
       };
-
     }
 
   ]);
