@@ -43,9 +43,39 @@
 
     //Start Methods to Get Post and User info for feed
 
+      // Get array of posts
+      this.getPosts = function(tagParam, sortParam) {
+
+        var getReq = feedReq;
+        getReq.method = 'GET';
+        var params = {
+          tags: tagParam,
+          sort: sortParam
+        };
+        getReq.params = params;
+        console.log(params);
+
+        $http(getReq).success( function (data) {
+
+          _.each(data.posts, function(x){
+
+            var createdTime = x.created_at;
+            x.createdAtTime = function(){
+              return moment(createdTime, "").fromNow();
+            };
+
+            var updatedTime = x.updated_at;
+            x.updatedAtTime = function(){
+              return moment(updatedTime, "").fromNow();
+            };
+          });
+
+          $rootScope.$broadcast('PostsReceived', data.posts);
+        });
+      };
 
       // Get array of posts
-      this.getPosts = function() {
+      this.getPopPosts = function() {
 
         var getReq = feedReq;
         getReq.method = 'GET';

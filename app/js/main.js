@@ -31,19 +31,14 @@
           controller: 'FeedController'
         })
         .state('queriedFeed', {
-          url: '/search/:tags',
+          url: '/search/:params',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
-        .state('sortedFeed', {
-          url: '/search?params=:tags/:sort',
+        .state('popPosts', {
+          url: '/poptags/:tags',
           templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
-        .state('topPosts', {
-          url: '/topposts',
-          templateUrl: 'js/templates/topposts.tpl.html',
-          controller: 'FeedController'
+          controller: 'PopularTagController'
         })
         .state('addpost', {
           url: '/addpost',
