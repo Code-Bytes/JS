@@ -196,12 +196,13 @@
         // $scope.commentForm = {};
 
         $scope.addComment = function(comment) {
-          PostService.addNewComment(comment, postId).success(function() {
-            console.log('comment successfully sent!');
-            // $scope.comment = '';
-            // $scope.commentForm.$setPristine();
-            // var master = { content: '' };
-            // $scope.comment = angular.copy(master);
+
+          $rootScope.$on('Comment:Added', function () {
+            PostService.getComments(postId).success(function(data) {
+              console.log('comment successfully sent!');
+              $scope.comments = data.comments;
+              $scope.commentTree = unflatten($scope.comments);
+            });
           });
         };
 
@@ -212,6 +213,7 @@
           PostService.addNewReply(reply, commentId).success(function() {
             console.log('added reply!');
             $scope.comments.push(reply);
+            $rootScope.$broadcast('Comment:Added', reply);
             // $scope.reply = '';
           });
         };
@@ -232,7 +234,6 @@
           });
         };
       },
-      // template: '<li><img ng-src="{{member.user.avatar}}"/> {{member.user.username}} {{member.content}}</li>',
       link: function (scope, element, attrs) {
               var collectionSt = "<collection collection='member.children'></collection>";
               if (angular.isArray(scope.member.children)) {

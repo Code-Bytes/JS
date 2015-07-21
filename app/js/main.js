@@ -3,7 +3,7 @@
 
   var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
 
-  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput'])
+  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput', 'angularUtils.directives.dirPagination'])
 
   .constant('HEROKU', {
     URL: baseEndpoint + 'auth/',
@@ -118,6 +118,9 @@
         type: '2.0',
         popupOptions: { width: 1020, height: 618 }
       });
+
+
+
 
     }
 
