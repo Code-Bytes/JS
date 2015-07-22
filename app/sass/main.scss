@@ -226,6 +226,22 @@ input[type="radio"] {
   font-size: 32px;
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
+  text-align: right;
+}
+
+.addPostDivider {
+  border-top: 1px RGBA(240, 240, 240, 1) solid;
+
+}
+
+.addPostDiv {
+  display: inline-block;
+  float: right;
+}
+
+.inputDiv {
+  display: inline-block;
+  float: right;
 }
 
 #postInput {
@@ -269,10 +285,6 @@ input[type="text"] {
   display: inline-block;
   vertical-align: middle;
   float: left;
-}
-
-.xp {
-
 }
 
 
@@ -366,7 +378,7 @@ input[type="text"] {
 
 .tagList {
   display: block;
-  height: 180px;
+  height: 160px;
 }
 
 .tagDiv {

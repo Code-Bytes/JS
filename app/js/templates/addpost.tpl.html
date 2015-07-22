@@ -2,23 +2,31 @@
 
   <!-- Title Input -->
   <div class="row addpost">
-    <div class="large-12 columns">
-        <input id="titleInput" ng-model="post.title" type="text" placeholder="Title"/>
+    <div class="large-8 columns">
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv large-2">
+          <span class="filterHead">TITLE</span>
+        </div>
+        <div class="inputDiv large-10">
+          <input id="titleInput" ng-model="post.title" type="text" placeholder="Title"/>
+        </div>
+      </div>
     </div>
   </div>
 
+
+
   <div class="row addpost">
-    <div class="large-12 columns">
-      <label class="expertise">Select Expertise Level:</label>
-        <div class="radiobtn">
-          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
-        </div>
-        <div class="radiobtn">
-          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Intermediate" id="intermedlvl"><label for="intermedlvl">Junior</label>
-        </div>
-        <div class="radiobtn">
-          <input ng-model="xp.text" type="radio" name="expertiselvl" value="Advanced" id="advancedlvl"><label for="advancedlvl">Senior</label>
-        </div>
+    <div class="large-4 columns">
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv addPostDiv"><span class="filterHead">XP LEVEL</span></div>
+          <select ng-model="xpParam" class="feedSortSelect">
+            <option value="" selected>All</option>
+            <option value="noob">Noob</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+          </select>
+      </div>
     </div>
   </div>
 

@@ -102,7 +102,7 @@
       $scope.getAllTags = PostService.getAllTags;
       $scope.getAllTags().success(function(data){
         $scope.tags = data;
-        $scope.number = 25;
+        $scope.number = 20;
       });
 
       $scope.upVoted = function(vote){

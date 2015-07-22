@@ -171,7 +171,19 @@ input[type="radio"] {
   box-shadow: none;
   font-size: 32px;
   font-style: bold;
-  color: RGBA(143, 144, 138, 1); }
+  color: RGBA(143, 144, 138, 1);
+  text-align: right; }
+
+.addPostDivider {
+  border-top: 1px RGBA(240, 240, 240, 1) solid; }
+
+.addPostDiv {
+  display: inline-block;
+  float: right; }
+
+.inputDiv {
+  display: inline-block;
+  float: right; }
 
 #postInput {
   border: none;
@@ -281,7 +293,7 @@ input[type="text"] {
 
 .tagList {
   display: block;
-  height: 180px; }
+  height: 160px; }
 
 .tagDiv {
   background-color: RGBA(254, 254, 254, 1);
