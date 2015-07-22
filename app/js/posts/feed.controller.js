@@ -20,16 +20,20 @@
       $scope.searchTags = [];
       $scope.xpParam = '';
       $scope.sort = '';
+      $scope.pageNo = '1';
+
+      $scope.changePage = function(pageNum) {
+        $scope.pageNo = pageNum.toString();
+        PostService.getPosts(undefined, undefined, $scope.pageNo);
+      };
 
       // Queries backend for posts containing any of multiple tags
-      $scope.search = function(){
+      $scope.search = function() {
         var tagParams = $scope.searchTags.map(function(tag) {
           return tag.text;
         }).join(',');
         tagParams = tagParams + ',' + $scope.xpParam;
-        console.log(tagParams);
-        console.log($scope.sort);
-        PostService.getPosts(tagParams, $scope.sort);
+        PostService.getPosts(tagParams, $scope.sort, $scope.pageNo);
       };
 
       // Gets searchable tags from backend
@@ -109,6 +113,15 @@
       };
     }
 
-  ]);
-
+  ])
+  .directive('toggleClass', function() {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs) {
+        element.bind('click', function() {
+          element.toggleClass(attrs.toggleClass);
+        });
+      }
+    };
+  });
 }());

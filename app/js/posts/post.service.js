@@ -43,29 +43,30 @@
 
     //Start Methods to Get Post and User info for feed
 
-      // Get array of posts
-      this.getPosts = function(tagParam, sortParam) {
+      // Get array of posts by tag/s and sorting
+      this.getPosts = function(tagParam, sortParam, pageNo) {
 
         var getReq = feedReq;
         getReq.method = 'GET';
         var params = {
           tags: tagParam,
-          sort: sortParam
+          sort: sortParam,
+          page: pageNo
         };
         getReq.params = params;
         console.log(params);
 
         $http(getReq).success( function (data) {
 
-          _.each(data.posts, function(x){
+          _.each(data.posts, function(x) {
 
             var createdTime = x.created_at;
-            x.createdAtTime = function(){
+            x.createdAtTime = function() {
               return moment(createdTime, "").fromNow();
             };
 
             var updatedTime = x.updated_at;
-            x.updatedAtTime = function(){
+            x.updatedAtTime = function() {
               return moment(updatedTime, "").fromNow();
             };
           });
