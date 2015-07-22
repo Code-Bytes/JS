@@ -3,6 +3,13 @@
   <!-- Feed Beginning -->
   <div class="large-8 columns feed">
 
+    <div class="row feedpost nullSearch" ng-if="dataReturned()">
+      <div>
+        <p>Oops!</p>
+        <p>Your search returned no results</p>
+      </div>
+    </div>
+
     <!-- Post Template -->
     <div class="row feedpost" dir-paginate="post in feed | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="postsPagination">
 
@@ -63,18 +70,18 @@
     </div>
     <div class="tagList">
       <div ng-repeat="tag in tags | limitTo: number">
-        <a href="#/poptags/{{ tag.text }}">
-          <div class="tagDiv">
+        <!-- <a href="#/poptags/{{ tag.text }}"> -->
+          <div ng-click="addTag( tag )"class="tagDiv">
             <span class="tagText">{{ tag.text }}</span>
           </div>
-        </a>
+        <!-- </a> -->
       </div>
     </div>
 
     <!--Manual Param Entry -->
 
     <div class="filterPostsDivider">
-      <div class="filterHeadDiv"><span class="filterHead">MULTIPLE TAGS</span></div>
+      <div class="filterHeadDiv"><span class="filterHead">SELECTED TAGS</span></div>
     </div>
     <!-- Tag Section -->
     <tags-input ng-model="searchTags" class="tagSearch">
@@ -99,7 +106,10 @@
       </select>
     </div>
 
-    <button ng-click="search()" class="tiny radius">Submit</button>
+    <button ng-click="search()" class="tiny radius searchBtn">Submit</button>
+
+    <button ng-click="reset()" class="tiny radius searchBtn">Reset</button>
+
 
   </div> <!-- End panel -->
   </div> <!-- End filter sidebar -->

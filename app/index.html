@@ -21,7 +21,7 @@
   <nav ng-controller="NavController">
     <div class="topSpace"></div>
     <div class="navDiv">
-      <a class="logo" href="#/">CodeBytes</a>
+      <a ng-click="reset()" class="logo" href="#/">CodeBytes</a>
       <a class="link" href="#/login" ng-if="!isAuthenticated()">Getting Started</a>
       <a class="postLink" href="#/addpost">
         <div class="addPost" ng-if="isAuthenticated()">

@@ -4,9 +4,9 @@
 
   angular.module('CodeBytes')
 
-  .controller('NavController', ['UserService','$scope', '$auth',
+  .controller('NavController', ['UserService','$scope', '$auth', '$window',
 
-    function (UserService, $scope, $auth) {
+    function (UserService, $scope, $auth, $window) {
 
       $scope.githubLogin = function() {
         return UserService.ghLogin();
@@ -29,6 +29,10 @@
 
       $scope.logout = function() {
         return UserService.logOut();
+      };
+
+      $scope.reset = function(){
+        $window.location.reload();
       };
 
     }

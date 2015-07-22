@@ -19,17 +19,23 @@
       PostService.getPosts();
       $scope.searchTags = [];
       $scope.xpParam = '';
-      $scope.sort = '';
+      $scope.sort = 'top';
 
       // Queries backend for posts containing any of multiple tags
       $scope.search = function(){
+
         var tagParams = $scope.searchTags.map(function(tag) {
           return tag.text;
         }).join(',');
         tagParams = tagParams + ',' + $scope.xpParam;
-        console.log(tagParams);
-        console.log($scope.sort);
         PostService.getPosts(tagParams, $scope.sort);
+      };
+
+      $scope.reset = function(){
+        $scope.searchTags = [];
+        $scope.xpParam = '';
+        $scope.sort = 'top';
+        PostService.getPosts();
       };
 
       // Gets searchable tags from backend
@@ -39,6 +45,13 @@
 
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.feed = data;
+        console.log($scope.feed);
+
+        $scope.dataReturned = function(){
+          if ($scope.feed.length < 1) {
+            return true;
+          }
+        };
 
         _.each($scope.feed, function(postInFeed){
 
@@ -57,6 +70,10 @@
           });
         });
       });
+
+      $scope.addTag = function(tag){
+        $scope.searchTags.push(tag);
+      };
 
 
       $scope.upvote = function (post) {
@@ -80,7 +97,7 @@
       $scope.getAllTags = PostService.getAllTags;
       $scope.getAllTags().success(function(data){
         $scope.tags = data;
-        $scope.number = 30;
+        $scope.number = 25;
       });
 
       $scope.upVoted = function(vote){

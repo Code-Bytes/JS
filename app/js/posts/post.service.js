@@ -53,24 +53,25 @@
           sort: sortParam
         };
         getReq.params = params;
-        console.log(params);
 
         $http(getReq).success( function (data) {
+          console.log(data);
+          if (data !== null) {
+            _.each(data.posts, function(x){
 
-          _.each(data.posts, function(x){
+              var createdTime = x.created_at;
+              x.createdAtTime = function(){
+                return moment(createdTime, "").fromNow();
+              };
 
-            var createdTime = x.created_at;
-            x.createdAtTime = function(){
-              return moment(createdTime, "").fromNow();
-            };
+              var updatedTime = x.updated_at;
+              x.updatedAtTime = function(){
+                return moment(updatedTime, "").fromNow();
+              };
+            });
 
-            var updatedTime = x.updated_at;
-            x.updatedAtTime = function(){
-              return moment(updatedTime, "").fromNow();
-            };
-          });
-
-          $rootScope.$broadcast('PostsReceived', data.posts);
+            $rootScope.$broadcast('PostsReceived', data.posts);
+          }
         });
       };
 
