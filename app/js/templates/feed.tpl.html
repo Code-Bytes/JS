@@ -11,7 +11,7 @@
     </div>
 
     <!-- Post Template -->
-    <div class="row feedpost" dir-paginate="post in feed | filter:q | itemsPerPage: pageSize" current-page="currentPage" pagination-id="postsPagination">
+    <div class="row feedpost" ng-repeat="post in feed">
 
       <!-- Voting Section -->
       <div class="large-1 columns small-3">
@@ -53,9 +53,23 @@
     </div>
     <!-- End Post -->
 
-<!--     <div class="text-center">
-      <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="path/to/dirPagination.tpl.html" pagination-id="postsPagination"></dir-pagination-controls>
-    </div> -->
+    <div class="pagination-centered">
+      <ul class="pagination" ng-model="pageNo" >
+        <li class="arrow unavailable"><a href="">&laquo;</a></li>
+        <li toggle-class="current"><a href="#/" ng-click="changePage(1)">1</a></li>
+        <li toggle-class="current"><a href="#/2" ng-click="changePage(2)">2</a></li>
+        <li toggle-class="current"><a href="#/3" ng-click="changePage(3)">3</a></li>
+        <li toggle-class="current"><a href="#/4" ng-click="changePage(4)">4</a></li>
+        <li toggle-class="current"><a href="#/5" ng-click="changePage(5)">5</a></li>
+        <li toggle-class="current"><a href="#/6" ng-click="changePage(6)">6</a></li>
+        <li toggle-class="current"><a href="#/7" ng-click="changePage(7)">7</a></li>
+        <li toggle-class="current"><a href="#/8" ng-click="changePage(8)">8</a></li>
+        <!-- <li class="unavailable"><a href="">&hellip;</a></li> -->
+        <li><a href="#/9">9</a></li>
+        <li><a href="#/10">10</a></li>
+        <li class="arrow"><a href="">&raquo;</a></li>
+      </ul>
+    </div>
 
   </div> <!-- End feed -->
 

@@ -43,14 +43,15 @@
 
     //Start Methods to Get Post and User info for feed
 
-      // Get array of posts
-      this.getPosts = function(tagParam, sortParam) {
+      // Get array of posts by tag/s and sorting
+      this.getPosts = function(tagParam, sortParam, pageNo) {
 
         var getReq = feedReq;
         getReq.method = 'GET';
         var params = {
           tags: tagParam,
-          sort: sortParam
+          sort: sortParam,
+          page: pageNo
         };
         getReq.params = params;
 

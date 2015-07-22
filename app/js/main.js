@@ -3,7 +3,7 @@
 
   var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
 
-  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput', 'angularUtils.directives.dirPagination'])
+  angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput'])
 
   .constant('HEROKU', {
     URL: baseEndpoint + 'auth/',
@@ -15,7 +15,7 @@
   })
 
   .config([ '$stateProvider', '$urlRouterProvider', '$authProvider',
-    function ($stateProvider, $urlRouterProvider, $authProvider, paginationTemplateProvider) {
+    function ($stateProvider, $urlRouterProvider, $authProvider) {
 
       $urlRouterProvider.otherwise('/');
 
@@ -27,6 +27,31 @@
         })
         .state('feed', {
           url: '/',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('feed2', {
+          url: '/2',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('feed3', {
+          url: '/3',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('feed4', {
+          url: '/4',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('feed5', {
+          url: '/5',
+          templateUrl: 'js/templates/feed.tpl.html',
+          controller: 'FeedController'
+        })
+        .state('feed6', {
+          url: '/6',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
@@ -113,8 +138,8 @@
         url: baseEndpoint + 'auth/github',
         authorizationEndpoint: 'https://github.com/login/oauth/authorize',
         redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
-        scope: [],
-        scopeDelimiter: ' ',
+        scope: ['user'],
+        scopeDelimiter: ',',
         type: '2.0',
         popupOptions: { width: 1020, height: 618 }
       });

@@ -608,8 +608,9 @@ input[type="text"] {
 }
 
 .recentPosts {
+  overflow: hidden;
   max-width: 600px;
-  margin: 0px 250px;
+  margin: auto;
 }
 
 .recentPostsDivider {

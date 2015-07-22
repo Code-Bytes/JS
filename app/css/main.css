@@ -454,8 +454,9 @@ input[type="text"] {
   border-right: 1px solid RGBA(240, 240, 240, 1); }
 
 .recentPosts {
+  overflow: hidden;
   max-width: 600px;
-  margin: 0px 250px; }
+  margin: auto; }
 
 .recentPostsDivider {
   width: 100%;
