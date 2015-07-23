@@ -24,7 +24,7 @@
 // display beneath filter
 .pushdown {
   display: block;
-  height: 57vh;
+  height: 60vh;
 }
 
 .feed {
@@ -36,11 +36,19 @@
   padding-left: 30px;
 }
 
-// Add Post View
-.inputDiv {
-  margin-left: 0;
+.feedSortSelect {
+  left: 80%;
 }
 
-#titleInput {
-  margin-left: 0;
+// Add/Edit Post View
+.apppostform {
+  margin: 20px 30px;
+}
+
+
+// My Profile
+.recentPosts {
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
 }

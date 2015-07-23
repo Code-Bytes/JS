@@ -885,10 +885,12 @@ strong {
   vertical-align: middle;
   // float: right;
   display: inline-block;
+  max-width: 62%;
 }
 
 .copy {
   display: inline-block;
+  max-width: 38%;
 }
 
 footer {

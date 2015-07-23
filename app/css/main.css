@@ -665,10 +665,12 @@ strong {
 
 .poweredBy {
   vertical-align: middle;
-  display: inline-block; }
+  display: inline-block;
+  max-width: 62%; }
 
 .copy {
-  display: inline-block; }
+  display: inline-block;
+  max-width: 38%; }
 
 footer {
   overflow: auto;

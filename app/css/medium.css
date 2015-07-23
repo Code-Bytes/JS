@@ -17,7 +17,7 @@
 
 .pushdown {
   display: block;
-  height: 57vh; }
+  height: 60vh; }
 
 .feed {
   float: left; }
@@ -26,8 +26,13 @@
   float: left;
   padding-left: 30px; }
 
-.inputDiv {
-  margin-left: 0; }
+.feedSortSelect {
+  left: 80%; }
 
-#titleInput {
-  margin-left: 0; }
+.apppostform {
+  margin: 20px 30px; }
+
+.recentPosts {
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto; }
