@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var baseEndpoint = 'https://pacific-hamlet-4796.herokuapp.com/';
+  var baseEndpoint = 'https://cryptic-ridge-4186.herokuapp.com';
 
   angular.module('CodeBytes', ['ui.router', 'ngMessages', 'satellizer', 'gist', 'ngTagsInput', 'angularUtils.directives.dirPagination'])
 
