@@ -165,14 +165,16 @@ input[type="radio"] {
 .addpost label {
   margin-top: 15px; }
 
+.addpostbtn {
+  margin-top: 40px; }
+
 #titleInput {
   border: none;
   box-shadow: none;
   font-size: 32px;
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
-  text-align: right;
-  margin-left: 138px; }
+  text-align: right; }
 
 .addPostDivider {
   border-top: 1px RGBA(240, 240, 240, 1) solid; }
@@ -183,7 +185,6 @@ input[type="radio"] {
 
 .inputDiv {
   display: inline-block;
-  margin-left: 100px;
   float: right; }
 
 #postInput {
@@ -197,8 +198,7 @@ input[type="radio"] {
   border: none;
   box-shadow: none;
   font-style: bold;
-  color: RGBA(143, 144, 138, 1);
-  margin-left: 47px; }
+  color: RGBA(143, 144, 138, 1); }
 
 .tagPostHead {
   font-size: 18px; }
@@ -213,6 +213,11 @@ input[type="text"] {
 #tags_dropdown {
   overflow-y: auto;
   max-height: 150px; }
+
+.tagsDiv {
+  display: inline-block;
+  float: right;
+  margin-top: -40px; }
 
 .expertise {
   cursor: default; }

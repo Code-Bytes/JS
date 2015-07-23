@@ -2,6 +2,7 @@
   position: relative;
 }
 
+// Feed view
 .recentPosts {
   margin: 0 10px;
 }
@@ -19,6 +20,8 @@
   height: 14vh;
 }
 
+// Needed to make sure posts
+// display beneath filter
 .pushdown {
   display: block;
   height: 57vh;
@@ -31,4 +34,13 @@
 .feedpost {
   float: left;
   padding-left: 30px;
+}
+
+// Add Post View
+.inputDiv {
+  margin-left: 0;
+}
+
+#titleInput {
+  margin-left: 0;
 }

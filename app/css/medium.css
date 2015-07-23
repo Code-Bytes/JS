@@ -25,3 +25,9 @@
 .feedpost {
   float: left;
   padding-left: 30px; }
+
+.inputDiv {
+  margin-left: 0; }
+
+#titleInput {
+  margin-left: 0; }

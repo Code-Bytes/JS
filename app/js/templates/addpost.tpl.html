@@ -2,12 +2,12 @@
 
   <!-- Title Input -->
   <div class="row addpost">
-    <div class="large-8 columns">
+    <div class="large-10 columns">
       <div class="filterPostsDivider addPostDivider">
-        <div class="filterHeadDiv large-2">
+        <div class="filterHeadDiv large-2 columns">
           <span class="filterHead">TITLE</span>
         </div>
-        <div class="inputDiv large-12">
+        <div class="inputDiv large-10 columns">
           <input id="titleInput" ng-model="post.title" type="text"/>
         </div>
       </div>
@@ -31,12 +31,12 @@
     </div>
 
     <!-- Gist Url -->
-    <div class="large-7 columns">
+    <div class="large-8 columns">
       <div class="filterPostsDivider addPostDivider">
-        <div class="filterHeadDiv large-2">
+        <div class="filterHeadDiv large-2 columns">
           <span class="filterHead">GIST ID</span>
         </div>
-        <div class="inputDiv large-10">
+        <div class="inputDiv large-10 columns">
           <input id="gistInput" ng-model="post.gist_id" type="text"/>
         </div>
       </div>
@@ -47,10 +47,10 @@
   <div class="row addpost">
     <div class="large-12 columns">
       <div class="filterPostsDivider addPostDivider">
-        <div class="filterHeadDiv large-2">
+        <div class="filterHeadDiv large-2 columns">
           <span class="filterHead">POST DETAILS</span>
         </div>
-        <div class="inputDiv large-10">
+        <div class="inputDiv large-10 columns">
           <textarea id="postInput" ng-model="post.content"></textarea>
         </div>
       </div>
@@ -61,10 +61,10 @@
     <div class="row addpost">
       <div class="large-12 columns">
         <div class="filterPostsDivider addPostDivider">
-          <div class="filterHeadDiv large-2">
+          <div class="filterHeadDiv large-2 columns">
             <span class="filterHead">TAGS</span>
           </div>
-          <div class="inputDiv large-10">
+          <div class="tagsDiv large-10 columns">
             <tags-input ng-model="tags" class="tagsInput">
               <auto-complete source="loadTags($query)"></auto-complete>
             </tags-input>
