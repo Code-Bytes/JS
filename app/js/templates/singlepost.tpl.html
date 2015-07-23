@@ -19,6 +19,13 @@
 
       <gist ng-if="post.gist_id" id="{{ post.gist_id }}"></gist>
 
+      <div class="row tagsSinglePost">
+        <div ng-repeat="tag in post.tags">
+          <div class="tagDiv">
+            <span class="tagText">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
     </article>
 
     <div ng-if="isCurrentUser()">

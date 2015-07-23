@@ -642,6 +642,12 @@ strong {
 .commenterInfo {
   display: inline-block; }
 
+.tagsSinglePost {
+  display: block; }
+
+article {
+  margin-bottom: 25px; }
+
 .editOrDelete {
   float: right;
   display: none; }

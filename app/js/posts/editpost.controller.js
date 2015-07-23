@@ -21,7 +21,15 @@
         });
       });
 
+      //Array of tag objects
+      $scope.tags = [];
+      $scope.xp = {
+        text: ''
+      };
+
       $scope.updatePost = function(post) {
+        $scope.tags.push($scope.xp);
+        post.tags = $scope.tags;
         PostService.editPost(postId, post).success(function() {
           // Route Home
           $location.path('/');
