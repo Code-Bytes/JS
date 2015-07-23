@@ -157,7 +157,7 @@ input[type="radio"] {
   margin: 0 0 0.5rem 0; }
 
 .apppostform {
-  margin: 50px 150px; }
+  margin: 25px 150px; }
 
 .addpost textarea {
   rows: 6; }
@@ -173,8 +173,7 @@ input[type="radio"] {
   box-shadow: none;
   font-size: 32px;
   font-style: bold;
-  color: RGBA(143, 144, 138, 1);
-  text-align: right; }
+  color: RGBA(143, 144, 138, 1); }
 
 .addPostDivider {
   border-top: 1px RGBA(240, 240, 240, 1) solid; }
@@ -339,8 +338,10 @@ input[type="text"] {
   margin-top: 25px; }
 
 .aboutheader {
+  margin: 15px auto;
   text-align: center;
-  margin-top: 10px; }
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder; }
 
 .team-member {
   max-width: 320px;
@@ -350,7 +351,7 @@ input[type="text"] {
     width: 100%;
     max-width: 300px;
     margin: 0 auto 20px auto;
-    opacity: 0.75;
+    opacity: 0.8;
     border-radius: 50%; }
     .team-member .memberpic:hover {
       opacity: 1;

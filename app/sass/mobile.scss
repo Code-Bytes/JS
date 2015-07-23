@@ -2,6 +2,8 @@ body {
   min-width: 250px;
 }
 
+// Feed View
+
 .sidebar {
   display: none;
 }
@@ -20,4 +22,36 @@ body {
 
 .pushdown {
   display: none;
+}
+
+// Add/Edit Post View
+.filterHeadDiv {
+  display: block;
+}
+
+.addPostDiv {
+  display: inline-block;
+}
+
+.inputDiv, .tagsDiv {
+  display: block;
+  margin-top: 35px;
+  border: 1px RGBA(240, 240, 240, 1) solid;
+}
+
+.feedSortSelect {
+  left: 70%;
+}
+
+.tagsInput {
+  margin-top: 0;
+}
+
+.tagsDiv {
+  border: none;
+}
+
+// Single Post View
+.singlepost {
+  padding: 0 20px;
 }

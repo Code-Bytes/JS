@@ -56,16 +56,9 @@
 
     <div class="pagination-centered">
       <ul class="pagination" ng-model="pageNo" >
-        <li class="arrow unavailable"><a href="">&laquo;</a></li>
-        <li toggle-class="current"><a href="#/" ng-click="changePage(1)">1</a></li>
-        <li toggle-class="current"><a href="#/2" ng-click="changePage(2)">2</a></li>
-        <li toggle-class="current"><a href="#/3" ng-click="changePage(3)">3</a></li>
-        <li toggle-class="current"><a href="#/4" ng-click="changePage(4)">4</a></li>
-        <li toggle-class="current"><a href="#/5" ng-click="changePage(5)">5</a></li>
-        <li toggle-class="current"><a href="#/6" ng-click="changePage(6)">6</a></li>
-        <li toggle-class="current"><a href="#/7" ng-click="changePage(7)">7</a></li>
-        <li toggle-class="current"><a href="#/8" ng-click="changePage(8)">8</a></li>
-        <li class="arrow"><a href="">&raquo;</a></li>
+        <li class="arrow" title="Go back"><a href="">&laquo;</a></li>
+        <li toggle-class="current"><a href="#/8" ng-click="changePage(8)">{{ currentpage }}</a></li>
+        <li class="arrow" title="Go forward"><a href="">&raquo;</a></li>
       </ul>
     </div>
 

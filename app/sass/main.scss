@@ -208,7 +208,7 @@ input[type="radio"] {
 /////////////////
 
 .apppostform {
-  margin: 50px 150px;
+  margin: 25px 150px;
 }
 
 .addpost textarea {
@@ -229,7 +229,7 @@ input[type="radio"] {
   font-size: 32px;
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
-  text-align: right;
+  // text-align: right;
 }
 
 .addPostDivider {
@@ -439,8 +439,10 @@ input[type="text"] {
 //////////////////
 
 .aboutheader {
+  margin: 15px auto;
   text-align: center;
-  margin-top: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
 }
 
 .team-member {
@@ -452,7 +454,7 @@ input[type="text"] {
   width: 100%;
   max-width: 300px;
   margin: 0 auto 20px auto;
-  opacity: 0.75;
+  opacity: 0.8;
   border-radius: 50%;
 
     &:hover {

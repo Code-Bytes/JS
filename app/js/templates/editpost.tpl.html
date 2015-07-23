@@ -1,47 +1,82 @@
 <form class="apppostform">
 
-  <div class="row addpost"> <!-- Post Title -->
-    <div class="large-12 columns">
-        <input id="titleInput" ng-model="post.title" type="text" value="{{ post.title }}"/>
-    </div>
-  </div> <!-- End Post Title -->
-
-  <div class="row addpost"> <!-- Expertise Level -->
-    <div class="large-12 columns">
-      <label class="expertise">Select Expertise Level:</label>
-      <div class="radiobtn">
-        <input ng-model="xp.text" type="radio" name="expertiselvl" value="Noob" id="nooblvl"><label for="nooblvl">Noob</label>
-      </div>
-      <div class="radiobtn">
-        <input ng-model="xp.text" type="radio" name="expertiselvl" value="Intermediate" id="intermedlvl"><label for="intermedlvl">Junior</label>
-      </div>
-      <div class="radiobtn">
-        <input ng-model="xp.text" type="radio" name="expertiselvl" value="Advanced" id="advancedlvl"><label for="advancedlvl">Senior</label>
-      </div>
-    </div>
-  </div> <!-- End Expertise Level -->
-
-  <div class="row addpost"> <!-- Gist Url -->
-    <div class="large-12 columns">
-        <input id="gistInput" ng-model="post.gist_id" type="text" value="{{ post.gist_id }}"></textarea>
-    </div>
-  </div> <!-- End Gist Url -->
-
-  <div class="row addpost"> <!-- Post Content -->
-    <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.content" value="{{ post.content }}"></textarea>
-    </div>
-  </div> <!-- End Post Content -->
-
-<!-- Tag Section -->
+    <!-- Title Input -->
   <div class="row addpost">
     <div class="large-12 columns">
-      <tags-input ng-model="tags" class="tagsInput">
-        <auto-complete source="loadTags($query)"></auto-complete>
-      </tags-input>
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv large-2 medium-3 small-12 columns">
+          <span class="filterHead">TITLE</span>
+        </div>
+        <div class="inputDiv large-10 medium-9 small-12 columns">
+          <input id="titleInput" ng-model="post.title" type="text" value="{{ post.title }}"/>
+        </div>
+      </div>
     </div>
   </div>
 
-  <a href="#" class="button tiny radius addpostbtn" ng-click="updatePost(post)">Update</a>
+   <div class="row addpost">
+    <!-- XP Level -->
+    <div class="large-4 medium-12 columns">
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv addPostDiv"><span class="filterHead">XP LEVEL</span>
+        </div>
+          <select ng-model="xpParam" class="feedSortSelect">
+            <option value="" selected>All</option>
+            <option value="noob">Noob</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+          </select>
+      </div>
+    </div>
+
+    <!-- Gist Url -->
+    <div class="large-7 medium-12 columns">
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv large-2 medium-3 columns">
+          <span class="filterHead">GIST ID</span>
+        </div>
+        <div class="inputDiv large-10 medium-9 columns">
+          <input id="gistInput" ng-model="post.gist_id" type="text" value="{{ post.gist_id }}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Content -->
+  <div class="row addpost">
+    <div class="large-12 columns">
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv large-2 medium-3 columns">
+          <span class="filterHead">POST DETAILS</span>
+        </div>
+        <div class="inputDiv large-10 medium-9 columns">
+          <textarea id="postInput" ng-model="post.content" value="{{ post.content }}"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tag Section -->
+    <div class="row addpost">
+      <div class="large-12 columns">
+        <div class="filterPostsDivider addPostDivider">
+          <div class="filterHeadDiv large-2 medium-3 columns">
+            <span class="filterHead">TAGS</span>
+          </div>
+          <div class="tagsDiv large-10 medium-9 columns">
+            <tags-input ng-model="tags" class="tagsInput">
+              <auto-complete source="loadTags($query)"></auto-complete>
+            </tags-input>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="row addpost">
+      <div class="large-12 columns">
+        <a href="#" class="button tiny radius addpostbtn" ng-click="updatePost(post)">Update</a>
+      </div>
+    </div>
 
 </form>

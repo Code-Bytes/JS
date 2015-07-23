@@ -15,3 +15,26 @@ body {
 
 .pushdown {
   display: none; }
+
+.filterHeadDiv {
+  display: block; }
+
+.addPostDiv {
+  display: inline-block; }
+
+.inputDiv, .tagsDiv {
+  display: block;
+  margin-top: 35px;
+  border: 1px RGBA(240, 240, 240, 1) solid; }
+
+.feedSortSelect {
+  left: 70%; }
+
+.tagsInput {
+  margin-top: 0; }
+
+.tagsDiv {
+  border: none; }
+
+.singlepost {
+  padding: 0 20px; }
