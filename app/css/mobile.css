@@ -4,5 +4,11 @@ body {
 .sidebar {
   display: none; }
 
-aside {
+.feedFilter {
+  display: none; }
+
+.feedpost {
+  padding-left: 30px; }
+
+.postDivider {
   display: none; }

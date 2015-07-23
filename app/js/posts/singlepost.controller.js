@@ -66,32 +66,35 @@
       };
 
       // Get all comments
-      PostService.getComments(postId).success(function(data) {
-        $scope.comments = data.comments;
-        $scope.commentTree = unflatten($scope.comments);
-      });
 
-      // Initialize comment form on scope
-      // $scope.commentForm = {};
+      function renderComments() {
+        console.log('inside renderComments');
+        PostService.getComments(postId).success(function(data) {
+          console.log('render comment success');
+          $scope.comments = data.comments;
+          $scope.commentTree = unflatten($scope.comments);
+        });
+      }
+
+      renderComments(); // Run immediately
+
+      $rootScope.$on('Comment:Added', function () {
+        renderComments();
+      });
 
       $scope.addComment = function(comment) {
         PostService.addNewComment(comment, postId).success(function() {
           console.log('comment successfully sent!');
-          // $scope.comment = '';
-          // $scope.commentForm.$setPristine();
-          // var master = { content: '' };
-          // $scope.comment = angular.copy(master);
+          renderComments();
+          $scope.comment = {};
+          $('#commentInput').val('');
         });
       };
-
-      // Initialize comment form on scope
-      // $scope.replyForm = {};
 
       $scope.addReply = function(reply, commentId) {
         PostService.addNewReply(reply, commentId).success(function() {
           console.log('added reply!');
           $scope.comments.push(reply);
-          // $scope.reply = '';
         });
       };
 
@@ -106,8 +109,6 @@
         PostService.removeComment(commentId).success(function() {
           console.log('delete successful');
           $scope.comments.splice(index,1);
-          // Route Home
-          // $location.path('/');
         });
       };
 
@@ -191,48 +192,31 @@
           $scope.commentTree = unflatten($scope.comments);
         });
 
-        // Initialize comment form on scope
-        // $scope.commentForm = {};
-
-        $scope.addComment = function(comment) {
-
-          $rootScope.$on('Comment:Added', function () {
-            PostService.getComments(postId).success(function(data) {
-              console.log('comment successfully sent!');
-              $scope.comments = data.comments;
-              $scope.commentTree = unflatten($scope.comments);
-            });
-          });
-        };
-
-        // Initialize comment form on scope
-        // $scope.replyForm = {};
-
         $scope.addReply = function(reply, commentId) {
           PostService.addNewReply(reply, commentId).success(function() {
             console.log('added reply!');
-            $scope.comments.push(reply);
+            // $scope.comments.push(reply);
+            // $scope.addComment();
             $rootScope.$broadcast('Comment:Added', reply);
             // $scope.reply = '';
           });
         };
 
-        $scope.updateComment = function(comment, commentId) {
-          console.log('clicked on edit button');
-          PostService.editComment(comment, commentId).success(function() {
-            console.log('successfully updated comment');
-          });
-        };
+        // $scope.updateComment = function(comment, commentId) {
+        //   console.log('clicked on edit button');
+        //   PostService.editComment(comment, commentId).success(function() {
+        //     console.log('successfully updated comment');
+        //   });
+        // };
 
-        $scope.deleteComment = function(commentId, index) {
-          PostService.removeComment(commentId).success(function() {
-            console.log('delete successful');
-            $scope.comments.splice(index,1);
-            // Route Home
-            // $location.path('/');
-          });
-        };
+        // $scope.deleteComment = function(commentId, index) {
+        //   PostService.removeComment(commentId).success(function() {
+        //     console.log('delete successful');
+        //     $scope.comments.splice(index,1);
+        //   });
+        // };
       },
+
       link: function (scope, element, attrs) {
         var collectionSt = "<collection collection='member.children'></collection>";
         if (angular.isArray(scope.member.children)) {
