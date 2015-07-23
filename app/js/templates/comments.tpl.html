@@ -13,9 +13,6 @@
   <!-- Comment Content -->
   <p ng-hide="editorEnabled">{{ member.content }}</p>
 
-  <p>Comment ID: {{ member.id }}</p>
-  <p>Parent ID: {{ member.parent_id }}</p>
-
   <div ng-show="editorEnabled">
     <form class="editComm" name="commentForm"> <!-- Edit Comment -->
       <textarea ng-model="member.content" value="{{ member.content }}"></textarea>

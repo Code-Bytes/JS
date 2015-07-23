@@ -1,17 +1,27 @@
+.container {
+  position: relative; }
+
 .recentPosts {
   margin: 0 10px; }
 
 .panel {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  max-width: 100%;
+  min-height: 67vh;
+  padding-bottom: 0; }
 
 .tagList {
-  height: 100px; }
+  height: 14vh; }
+
+.pushdown {
+  display: block;
+  height: 57vh; }
 
 .feed {
-  margin-top: 0px; }
+  float: left; }
 
 .feedpost {
-  position: inherit;
+  float: left;
   padding-left: 30px; }

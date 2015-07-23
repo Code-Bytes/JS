@@ -157,14 +157,13 @@ input[type="radio"] {
   margin: 0 0 0.5rem 0; }
 
 .apppostform {
-  margin: 20px; }
+  margin: 50px 150px; }
+
+.addpost textarea {
+  rows: 6; }
 
 .addpost label {
   margin-top: 15px; }
-
-.addpostbtn {
-  margin-top: 20px;
-  margin-left: 140px; }
 
 #titleInput {
   border: none;
@@ -172,7 +171,8 @@ input[type="radio"] {
   font-size: 32px;
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
-  text-align: right; }
+  text-align: right;
+  margin-left: 138px; }
 
 .addPostDivider {
   border-top: 1px RGBA(240, 240, 240, 1) solid; }
@@ -183,19 +183,22 @@ input[type="radio"] {
 
 .inputDiv {
   display: inline-block;
+  margin-left: 100px;
   float: right; }
 
 #postInput {
   border: none;
   box-shadow: none;
   font-style: bold;
-  color: RGBA(143, 144, 138, 1); }
+  color: RGBA(143, 144, 138, 1);
+  height: 100px; }
 
 #gistInput {
   border: none;
   box-shadow: none;
   font-style: bold;
-  color: RGBA(143, 144, 138, 1); }
+  color: RGBA(143, 144, 138, 1);
+  margin-left: 47px; }
 
 .tagPostHead {
   font-size: 18px; }
@@ -203,6 +206,9 @@ input[type="radio"] {
 input[type="text"] {
   border-style: none;
   box-shadow: none; }
+
+.tagsInput {
+  margin-top: 52px; }
 
 #tags_dropdown {
   overflow-y: auto;
@@ -240,7 +246,7 @@ input[type="text"] {
   width: 100%;
   height: 1px;
   border-bottom: 1px RGBA(240, 240, 240, 1) solid;
-  margin-top: 50px;
+  margin-top: 52px;
   margin-bottom: 30px;
   position: relative; }
 
@@ -308,7 +314,7 @@ input[type="text"] {
   background-color: RGBA(232, 241, 234, 1); }
 
 .tagText {
-  padding: 10px;
+  padding: 8px;
   color: RGBA(102, 102, 102, 1);
   font-size: 12px; }
 
@@ -325,7 +331,7 @@ input[type="text"] {
 .searchBtn {
   background-color: white;
   border: 2px solid RGBA(239, 239, 239, 1);
-  margin-top: 30px; }
+  margin-top: 25px; }
 
 .aboutheader {
   text-align: center;
@@ -508,6 +514,9 @@ input[type="text"] {
 
 .feedView {
   position: relative; }
+
+.pushdown {
+  display: none; }
 
 .feed {
   margin-top: 50px; }

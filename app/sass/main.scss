@@ -208,7 +208,11 @@ input[type="radio"] {
 /////////////////
 
 .apppostform {
-  margin: 20px;
+  margin: 50px 150px;
+}
+
+.addpost textarea {
+  rows: 6;
 }
 
 .addpost label {
@@ -216,8 +220,7 @@ input[type="radio"] {
 }
 
 .addpostbtn {
-  margin-top: 20px;
-  margin-left: 140px;
+
 }
 
 #titleInput {
@@ -227,6 +230,7 @@ input[type="radio"] {
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
   text-align: right;
+  margin-left: 138px;
 }
 
 .addPostDivider {
@@ -241,6 +245,7 @@ input[type="radio"] {
 
 .inputDiv {
   display: inline-block;
+  margin-left: 100px;
   float: right;
 }
 
@@ -249,6 +254,7 @@ input[type="radio"] {
   box-shadow: none;
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
+  height: 100px;
 }
 
 #gistInput {
@@ -256,6 +262,7 @@ input[type="radio"] {
   box-shadow: none;
   font-style: bold;
   color: RGBA(143, 144, 138, 1);
+  margin-left: 47px;
 }
 
 .tagPostHead {
@@ -265,6 +272,10 @@ input[type="radio"] {
 input[type="text"] {
   border-style: none;
   box-shadow: none;
+}
+
+.tagsInput {
+  margin-top: 52px;
 }
 
 #tags_dropdown {
@@ -314,7 +325,7 @@ input[type="text"] {
   width: 100%;
   height: 1px;
   border-bottom: 1px RGBA(240, 240, 240, 1) solid;
-  margin-top: 50px;
+  margin-top: 52px;
   margin-bottom: 30px;
   position: relative;
 }
@@ -396,7 +407,7 @@ input[type="text"] {
 }
 
 .tagText {
-  padding: 10px;
+  padding: 8px;
   color: RGBA(102, 102, 102, 1);
   font-size: 12px;
 }
@@ -417,7 +428,7 @@ input[type="text"] {
 .searchBtn {
   background-color: white;
   border: 2px solid RGBA(239, 239, 239, 1);
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -672,6 +683,11 @@ input[type="text"] {
 }
 .feedView {
   position: relative;
+}
+
+// Used for medium screenwidth
+.pushdown {
+  display: none;
 }
 
 .feed {

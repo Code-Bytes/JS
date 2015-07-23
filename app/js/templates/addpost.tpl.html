@@ -7,19 +7,20 @@
         <div class="filterHeadDiv large-2">
           <span class="filterHead">TITLE</span>
         </div>
-        <div class="inputDiv large-10">
-          <input id="titleInput" ng-model="post.title" type="text" placeholder="Title"/>
+        <div class="inputDiv large-12">
+          <input id="titleInput" ng-model="post.title" type="text"/>
         </div>
       </div>
     </div>
   </div>
 
 
-
   <div class="row addpost">
+    <!-- XP Level -->
     <div class="large-4 columns">
       <div class="filterPostsDivider addPostDivider">
-        <div class="filterHeadDiv addPostDiv"><span class="filterHead">XP LEVEL</span></div>
+        <div class="filterHeadDiv addPostDiv"><span class="filterHead">XP LEVEL</span>
+        </div>
           <select ng-model="xpParam" class="feedSortSelect">
             <option value="" selected>All</option>
             <option value="noob">Noob</option>
@@ -28,35 +29,56 @@
           </select>
       </div>
     </div>
-  </div>
 
-  <!-- Gist Url -->
-  <div class="row addpost">
-    <div class="large-12 columns">
-      <input id="gistInput" ng-model="post.gist_id" type="text" placeholder="Gist ID"/>
+    <!-- Gist Url -->
+    <div class="large-7 columns">
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv large-2">
+          <span class="filterHead">GIST ID</span>
+        </div>
+        <div class="inputDiv large-10">
+          <input id="gistInput" ng-model="post.gist_id" type="text"/>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Post Content -->
   <div class="row addpost">
     <div class="large-12 columns">
-        <textarea id="postInput" ng-model="post.content" placeholder="Post Details"></textarea>
+      <div class="filterPostsDivider addPostDivider">
+        <div class="filterHeadDiv large-2">
+          <span class="filterHead">POST DETAILS</span>
+        </div>
+        <div class="inputDiv large-10">
+          <textarea id="postInput" ng-model="post.content"></textarea>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Tag Section -->
     <div class="row addpost">
       <div class="large-12 columns">
-        <tags-input ng-model="tags" class="tagsInput">
-          <auto-complete source="loadTags($query)"></auto-complete>
-        </tags-input>
+        <div class="filterPostsDivider addPostDivider">
+          <div class="filterHeadDiv large-2">
+            <span class="filterHead">TAGS</span>
+          </div>
+          <div class="inputDiv large-10">
+            <tags-input ng-model="tags" class="tagsInput">
+              <auto-complete source="loadTags($query)"></auto-complete>
+            </tags-input>
+          </div>
+        </div>
       </div>
     </div>
 
-
+    <div class="row addpost">
+      <div class="large-12 columns">
   <!-- Submit Button -->
-  <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>
-
+        <a href="#" class="button tiny radius addpostbtn" ng-click="addPost(post)">Submit</a>
+      </div>
+    </div>
 </form>
 
 
