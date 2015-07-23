@@ -74,7 +74,7 @@
 
       this.thisUser = function() {
         return $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/me',
+          url: 'https://cryptic-ridge-4186.herokuapp.com/me',
           headers: {
             'Authorization': token
           },
@@ -87,7 +87,7 @@
         // Defines AJAX params for users
         var id = idFunc();
         var userReq = {
-          url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id,
+          url: 'https://cryptic-ridge-4186.herokuapp.com/users/' + id,
           headers: {
             'Authorization': token
           },
@@ -103,7 +103,7 @@
         console.log(id);
 
         var postReq = {
-          url: 'https://pacific-hamlet-4796.herokuapp.com/users/' + id + '/posts',
+          url: 'https://cryptic-ridge-4186.herokuapp.com/users/' + id + '/posts',
           headers: {
             'Authorization': token
           },
