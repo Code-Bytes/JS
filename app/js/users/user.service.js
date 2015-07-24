@@ -11,6 +11,7 @@
       var currentUser = JSON.parse(localStorage.getItem("currentUser"));
       var user = function(){
         if (token !== undefined) {
+          console.log(currentUser);
           return JSON.parse($window.localStorage.currentUser);
         } else {
           return null;
