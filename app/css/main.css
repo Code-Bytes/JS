@@ -616,6 +616,10 @@ strong {
 .commentHead {
   margin-top: 10px; }
 
+.commentDivForHover:hover .editOrDelete {
+  display: inline-block;
+  cursor: pointer; }
+
 .spAvatar {
   border-radius: 100%;
   height: 50px;
@@ -630,14 +634,17 @@ strong {
 .replyForm {
   margin-bottom: 1em; }
 
+.singlePostTitle {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 15px; }
+
+article {
+  margin-bottom: 25px; }
+
 .commentAvatar {
   border-radius: 100%;
   height: 40px;
   width: 40px; }
-
-.feedcomment:hover .editOrDelete {
-  display: inline-block;
-  cursor: pointer; }
 
 .commenterInfo {
   display: inline-block; }
@@ -645,12 +652,12 @@ strong {
 .tagsSinglePost {
   display: block; }
 
-article {
-  margin-bottom: 25px; }
-
 .editOrDelete {
   float: right;
   display: none; }
+
+.addRep {
+  margin-bottom: 15px; }
 
 .foot {
   float: right;

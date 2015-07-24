@@ -16,7 +16,6 @@
       $scope.gistId = $scope.post.gist_id;
       $scope.quantity = 10;
 
-      // var currentUserId;
       UserService.thisUser().success(function (data) {
         $scope.currentUserId = data.user.id;
       });
@@ -68,9 +67,7 @@
       // Get all comments
 
       function renderComments() {
-        console.log('inside renderComments');
         PostService.getComments(postId).success(function(data) {
-          console.log('render comment success');
           $scope.comments = data.comments;
           $scope.commentTree = unflatten($scope.comments);
         });
@@ -195,10 +192,7 @@
         $scope.addReply = function(reply, commentId) {
           PostService.addNewReply(reply, commentId).success(function() {
             console.log('added reply!');
-            // $scope.comments.push(reply);
-            // $scope.addComment();
             $rootScope.$broadcast('Comment:Added', reply);
-            // $scope.reply = '';
           });
         };
 
@@ -209,12 +203,12 @@
         //   });
         // };
 
-        // $scope.deleteComment = function(commentId, index) {
-        //   PostService.removeComment(commentId).success(function() {
-        //     console.log('delete successful');
-        //     $scope.comments.splice(index,1);
-        //   });
-        // };
+        $scope.deleteComment = function(commentId, index) {
+          PostService.removeComment(commentId).success(function() {
+            console.log('delete successful');
+            $scope.comments.splice(index,1);
+          });
+        };
       },
 
       link: function (scope, element, attrs) {
