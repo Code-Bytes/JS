@@ -17,7 +17,7 @@
 
 .pushdown {
   display: block;
-  height: 60vh; }
+  height: 30vh; }
 
 .feed {
   float: left; }
@@ -28,6 +28,15 @@
 
 .feedSortSelect {
   left: 80%; }
+
+.postDivider {
+  position: absolute;
+  bottom: -20px;
+  left: 160px;
+  width: 70%;
+  height: 1px;
+  background-color: RGBA(240, 240, 240, 1);
+  margin-bottom: 60px; }
 
 .apppostform {
   margin: 20px 30px; }
