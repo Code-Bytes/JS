@@ -765,7 +765,13 @@ strong {
 .tagLabel {
   display: inline-block;
   float: left;
+  margin-right: 5px;
 }
+
+.postTagList {
+  margin-top: 0;
+}
+
 
 //Vote Section///
 

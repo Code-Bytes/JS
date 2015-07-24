@@ -581,7 +581,11 @@ strong {
 
 .tagLabel {
   display: inline-block;
-  float: left; }
+  float: left;
+  margin-right: 5px; }
+
+.postTagList {
+  margin-top: 0; }
 
 .voteDivTop {
   position: absolute;

@@ -17,12 +17,13 @@
         data.filter( function(x) {
           if (x.id == postId) {
             $scope.post = x;
+            $scope.tags = $scope.post.tags;
+
           }
         });
       });
 
       //Array of tag objects
-      $scope.tags = [];
       $scope.xp = {
         text: ''
       };
