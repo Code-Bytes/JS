@@ -25,23 +25,9 @@
           templateUrl: 'js/templates/login.tpl.html',
           controller: 'NavController'
         })
-        .state('feed', {
-          url: '/:page',
+        .state('queriedFeed', {
+          url: '/',
           templateUrl: 'js/templates/feed.tpl.html',
-          params: {
-            tags: {
-              value: '',
-              squash: true
-            },
-            sort: {
-              value: 'top',
-              squash: true
-            },
-            page: {
-              value: '1',
-              squash: true
-            },
-          },
           controller: 'FeedController'
         })
         // .state('queriedFeed', {

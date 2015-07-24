@@ -1,11 +1,11 @@
-  (function () {
+    (function () {
   'use strict';
 
   angular.module('CodeBytes')
 
-  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams', '$location', '$state',
+  .controller('FeedController', ['PostService', '$scope', '$rootScope', '$http', '$auth', '$stateParams', '$location',
 
-    function (PostService, $scope, $rootScope, $http, $auth, $stateParams, $location, $state) {
+    function (PostService, $scope, $rootScope, $http, $auth, $stateParams, $location) {
 
       $scope.token = $auth.getToken();
 
@@ -19,36 +19,16 @@
       PostService.getPosts();
       $scope.searchTags = [];
       $scope.xpParam = '';
-      $scope.sort = $stateParams.sort;
-      $scope.page = $stateParams.page;
-
-      $scope.previousPage = function() {
-        if ($scope.page > 1) {
-          $scope.page--;
-          PostService.getPosts($scope.tagParams, $scope.sort, $scope.page);
-          $state.go('.', {page: $scope.page});
-        }
-      };
-
-      $scope.nextPage = function(tagParams, sort) {
-        PostService.getMetaData($scope.tagParams, $scope.sort).success(function(data) {
-          var pages = Math.ceil(data.meta.total / 10);
-          if ($scope.page < pages) {
-            PostService.getPosts($scope.tagParams, $scope.sort, $scope.page++);
-            $state.go('.', {page: $scope.page});
-          }
-        });
-      };
+      $scope.sort = 'top';
 
       // Queries backend for posts containing any of multiple tags
-      $scope.search = function() {
+      $scope.search = function(){
+
         var tagParams = $scope.searchTags.map(function(tag) {
           return tag.text;
         }).join(',');
-        $scope.tagParams = tagParams + ',' + $scope.xpParam;
-        // The line of code below updates the url but it changes behavior of passing params to getPosts function
-        $location.path('/search').search({page: $scope.page, sort: $scope.sort, tags: $scope.tagParams});
-        PostService.getPosts($scope.tagParams, $scope.sort, $scope.page);
+        tagParams = tagParams + ',' + $scope.xpParam;
+        PostService.getPosts(tagParams, $scope.sort);
       };
 
       $scope.reset = function(){
@@ -56,7 +36,6 @@
         $scope.xpParam = '';
         $scope.sort = 'top';
         PostService.getPosts();
-        $location.path('/#/');
       };
 
       // Gets searchable tags from backend
@@ -66,6 +45,7 @@
 
       $rootScope.$on('PostsReceived', function (event, data) {
         $scope.feed = data;
+        console.log($scope.feed);
 
         $scope.dataReturned = function(){
           if ($scope.feed.length < 1) {
@@ -117,7 +97,7 @@
       $scope.getAllTags = PostService.getAllTags;
       $scope.getAllTags().success(function(data){
         $scope.tags = data;
-        $scope.number = 20;
+        $scope.number = 25;
       });
 
       $scope.upVoted = function(vote){
@@ -135,17 +115,17 @@
           return false;
         }
       };
+
+      // Pagination
+      $scope.currentPage = 1;
+      $scope.pageSize = 10;
+      $scope.posts = [];
+
+      $scope.pageChangeHandler = function(num) {
+        console.log('posts page changed to ' + num);
+      };
     }
 
-  ])
-  .directive('toggleClass', function() {
-    return {
-      restrict: 'A',
-      link: function(scope, element, attrs) {
-        element.bind('click', function() {
-          element.toggleClass(attrs.toggleClass);
-        });
-      }
-    };
-  });
+  ]);
+
 }());
