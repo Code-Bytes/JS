@@ -3,6 +3,7 @@
   <!-- Feed Beginning -->
   <div class="large-8 medium-12 small-12 columns feed">
 
+    <div class="pushdown"></div>
     <div class="row feedpost nullSearch" ng-if="dataReturned()">
       <div>
         <p>Oops!</p>
@@ -55,10 +56,10 @@
     <!-- End Post -->
 
     <div class="pagination-centered">
-      <ul class="pagination" ng-model="pageNo" >
-        <li class="arrow" title="Go back"><a href="">&laquo;</a></li>
-        <li toggle-class="current"><a href="#/8" ng-click="changePage(8)">{{ currentpage }}</a></li>
-        <li class="arrow" title="Go forward"><a href="">&raquo;</a></li>
+      <ul class="pagination" ng-model="page" >
+        <li class="arrow" title="Go back"><a href="" ng-click="previousPage()">&laquo;</a></li>
+        <li toggle-class="current">{{ page }}</li>
+        <li class="arrow" title="Go forward"><a href="" ng-click="nextPage()">&raquo;</a></li>
       </ul>
     </div>
 
