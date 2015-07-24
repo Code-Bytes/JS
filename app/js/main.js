@@ -25,41 +25,16 @@
           templateUrl: 'js/templates/login.tpl.html',
           controller: 'NavController'
         })
-        .state('feed', {
+        .state('queriedFeed', {
           url: '/',
           templateUrl: 'js/templates/feed.tpl.html',
           controller: 'FeedController'
         })
-        .state('feed2', {
-          url: '/2',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
-        .state('feed3', {
-          url: '/3',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
-        .state('feed4', {
-          url: '/4',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
-        .state('feed5', {
-          url: '/5',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
-        .state('feed6', {
-          url: '/6',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
-        .state('queriedFeed', {
-          url: '/search/:params',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'FeedController'
-        })
+        // .state('queriedFeed', {
+        //   url: '/search/:params',
+        //   templateUrl: 'js/templates/feed.tpl.html',
+        //   controller: 'FeedController'
+        // })
         .state('popPosts', {
           url: '/poptags/:tags',
           templateUrl: 'js/templates/feed.tpl.html',

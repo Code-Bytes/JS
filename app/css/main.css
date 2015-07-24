@@ -581,7 +581,11 @@ strong {
 
 .tagLabel {
   display: inline-block;
-  float: left; }
+  float: left;
+  margin-right: 5px; }
+
+.postTagList {
+  margin-top: 0; }
 
 .voteDivTop {
   position: absolute;
@@ -596,8 +600,8 @@ strong {
 
 .votes {
   position: absolute;
-  top: 50px;
-  left: -22px; }
+  top: 49px;
+  left: -21px; }
 
 .voteDiv i {
   cursor: pointer; }
@@ -658,6 +662,12 @@ article {
 
 .addRep {
   margin-bottom: 15px; }
+
+.addreplybtn {
+  padding: 0.625rem 1rem 0.6875rem 1rem; }
+
+.fa {
+  font-size: 1.2em; }
 
 .foot {
   float: right;

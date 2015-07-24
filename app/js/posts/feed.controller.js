@@ -1,4 +1,4 @@
-  (function () {
+    (function () {
   'use strict';
 
   angular.module('CodeBytes')
@@ -20,20 +20,15 @@
       $scope.searchTags = [];
       $scope.xpParam = '';
       $scope.sort = 'top';
-      $scope.pageNo = '1';
-
-      $scope.changePage = function(pageNum) {
-        $scope.pageNo = pageNum.toString();
-        PostService.getPosts(undefined, undefined, $scope.pageNo);
-      };
 
       // Queries backend for posts containing any of multiple tags
-      $scope.search = function() {
+      $scope.search = function(){
+
         var tagParams = $scope.searchTags.map(function(tag) {
           return tag.text;
         }).join(',');
         tagParams = tagParams + ',' + $scope.xpParam;
-        PostService.getPosts(tagParams, $scope.sort, $scope.pageNo);
+        PostService.getPosts(tagParams, $scope.sort);
       };
 
       $scope.reset = function(){
@@ -102,7 +97,7 @@
       $scope.getAllTags = PostService.getAllTags;
       $scope.getAllTags().success(function(data){
         $scope.tags = data;
-        $scope.number = 20;
+        $scope.number = 25;
       });
 
       $scope.upVoted = function(vote){
@@ -131,15 +126,6 @@
       };
     }
 
-  ])
-  .directive('toggleClass', function() {
-    return {
-      restrict: 'A',
-      link: function(scope, element, attrs) {
-        element.bind('click', function() {
-          element.toggleClass(attrs.toggleClass);
-        });
-      }
-    };
-  });
+  ]);
+
 }());

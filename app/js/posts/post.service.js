@@ -43,15 +43,14 @@
 
     //Start Methods to Get Post and User info for feed
 
-      // Get array of posts by tag/s and sorting
-      this.getPosts = function(tagParam, sortParam, pageNo) {
+      // Get array of posts
+      this.getPosts = function(tagParam, sortParam) {
 
         var getReq = feedReq;
         getReq.method = 'GET';
         var params = {
           tags: tagParam,
-          sort: sortParam,
-          page: pageNo
+          sort: sortParam
         };
         getReq.params = params;
 
@@ -74,6 +73,18 @@
             $rootScope.$broadcast('PostsReceived', data.posts);
           }
         });
+      };
+
+      this.getMetaData = function(tagParam, sortParam) {
+        var getReq = feedReq;
+        getReq.method = 'GET';
+        var params = {
+          tags: tagParam,
+          sort: sortParam
+        };
+        getReq.params = params;
+
+        return $http(getReq);
       };
 
       // Get array of posts
