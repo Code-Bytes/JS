@@ -351,13 +351,7 @@ input[type="text"] {
     width: 100%;
     max-width: 300px;
     margin: 0 auto 20px auto;
-    opacity: 0.8;
     border-radius: 50%; }
-    .team-member .memberpic:hover {
-      opacity: 1;
-      -moz-box-shadow: 0 0 10px #ccc;
-      -webkit-box-shadow: 0 0 10px #ccc;
-      box-shadow: 0 0 10px #ccc; }
   .team-member h4 {
     font-weight: bold; }
   .team-member span {
@@ -641,6 +635,9 @@ strong {
 .singlePostTitle {
   font-family: 'Raleway', sans-serif;
   margin-bottom: 15px; }
+
+.recentPostsTitle {
+  font-family: 'Raleway', sans-serif; }
 
 article {
   margin-bottom: 25px; }
