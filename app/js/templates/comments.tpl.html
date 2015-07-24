@@ -8,7 +8,7 @@
 
       <div class="editOrDelete" ng-if="(member.user.id === currentUserId) && isLoggedIn()">
 <!--         <span ng-click="editorEnabled = !editorEnabled"><i class="fa fa-pencil-square-o"></i></span> -->
-        <span ng-click="deleteComment(member.id, $index)"><i class="fa fa-minus-square-o"></i></span>
+        <span ng-click="deleteComment(member.id, $index)"><i class="fa fa-minus-square-o" title="Delete comment"></i></span>
       </div>
     </div> <!-- End Comment Head -->
 
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <a href="" class="button tiny radius addreplybtn" ng-click="showForm = !showForm"><i class="fa fa-reply"></i></a>
+  <a href="" class="button tiny radius addreplybtn" ng-click="showForm = !showForm" title="Reply to comment"><i class="fa fa-reply"></i></a>
 
   <form class="large-12 columns addRep" ng-show="showForm" ng-if="isLoggedIn()" ng-submit="addReply(reply, member.id)" name="replyForm"> <!-- Reply Form -->
     <textarea id="commentInput" ng-model="reply.content" placeholder="Got a reply?"></textarea>

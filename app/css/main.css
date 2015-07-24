@@ -659,6 +659,12 @@ article {
 .addRep {
   margin-bottom: 15px; }
 
+.addreplybtn {
+  padding: 0.625rem 1rem 0.6875rem 1rem; }
+
+.fa {
+  font-size: 1.2em; }
+
 .foot {
   float: right;
   display: inline-block;

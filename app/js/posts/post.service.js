@@ -56,8 +56,8 @@
         getReq.params = params;
 
         $http(getReq).success( function (data) {
-          console.log(data);
           if (data !== null) {
+
             _.each(data.posts, function(x){
 
               var createdTime = x.created_at;
@@ -70,10 +70,21 @@
                 return moment(updatedTime, "").fromNow();
               };
             });
-
             $rootScope.$broadcast('PostsReceived', data.posts);
           }
         });
+      };
+
+      this.getMetaData = function(tagParam, sortParam) {
+        var getReq = feedReq;
+        getReq.method = 'GET';
+        var params = {
+          tags: tagParam,
+          sort: sortParam
+        };
+        getReq.params = params;
+
+        return $http(getReq);
       };
 
       // Get array of posts
