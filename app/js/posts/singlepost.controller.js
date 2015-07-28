@@ -109,6 +109,12 @@
         });
       };
 
+      // Get all posts for similar posts sidebar
+      PostService.getPosts();
+      $rootScope.$on('PostsReceived', function (event, data) {
+        $scope.posts = data;
+      });
+
     }
 
   ])

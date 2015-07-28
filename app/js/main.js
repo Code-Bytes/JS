@@ -119,8 +119,8 @@
         popupOptions: { width: 1020, height: 618 }
       });
 
-      // Pagination template path
-      // paginationTemplateProvider.setPath('path/to/dirPagination.tpl.html');
+
+
 
     }
 
