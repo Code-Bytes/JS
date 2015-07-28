@@ -40,7 +40,7 @@
 
       // Gets searchable tags from backend
       $scope.loadTags = function(query) {
-        return $http.get('https://pacific-hamlet-4796.herokuapp.com/tags?search=' + query);
+        return $http.get('https://cryptic-ridge-4186.herokuapp.com/tags?search=' + query);
       };
 
       $rootScope.$on('PostsReceived', function (event, data) {
@@ -56,7 +56,7 @@
         _.each($scope.feed, function(postInFeed){
 
           $http({
-            url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + postInFeed.id + '/comments',
+            url: 'https://cryptic-ridge-4186.herokuapp.com/posts/' + postInFeed.id + '/comments',
             headers: {
               'Authorization': $scope.token
             },

@@ -9,9 +9,9 @@
 
       //Gets User Token
       var token       = $auth.getToken(),
-          postUrl     = 'https://pacific-hamlet-4796.herokuapp.com/posts/',
-          commentUrl  = 'https://pacific-hamlet-4796.herokuapp.com/comments/',
-          tagUrl      = 'https://pacific-hamlet-4796.herokuapp.com/tags';
+          postUrl     = 'https://cryptic-ridge-4186.herokuapp.com/posts/',
+          commentUrl  = 'https://cryptic-ridge-4186.herokuapp.com/comments/',
+          tagUrl      = 'https://cryptic-ridge-4186.herokuapp.com/tags';
 
       // Defines AJAX params for posts
       var feedReq = {
@@ -229,7 +229,7 @@
 
       this.getPost = function(id){
         return $http({
-          url: 'https://pacific-hamlet-4796.herokuapp.com/posts/' + id,
+          url: 'https://cryptic-ridge-4186.herokuapp.com/posts/' + id,
           headers: {
             'Authorization': token
           },
