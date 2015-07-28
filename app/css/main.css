@@ -171,7 +171,7 @@ input[type="radio"] {
 #titleInput {
   border: none;
   box-shadow: none;
-  font-size: 32px;
+  font-size: 1.2em;
   font-style: bold;
   color: RGBA(143, 144, 138, 1); }
 
