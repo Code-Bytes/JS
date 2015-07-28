@@ -35,11 +35,6 @@
         //   templateUrl: 'js/templates/feed.tpl.html',
         //   controller: 'FeedController'
         // })
-        .state('popPosts', {
-          url: '/poptags/:tags',
-          templateUrl: 'js/templates/feed.tpl.html',
-          controller: 'PopularTagController'
-        })
         .state('addpost', {
           url: '/addpost',
           templateUrl: 'js/templates/addpost.tpl.html',
